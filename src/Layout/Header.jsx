@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
+import brochure from "../assets/Pdffile/holsolbrochure.pdf";
 import { FaUserFriends, FaPaperPlane, FaRegFileAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 
@@ -22,10 +23,15 @@ const Header = () => {
                     </div>
 
                     {/* Download Brochure */}
-                    <div className="flex items-center gap-1 cursor-pointer hover:text-[var(--primary)] transition">
+                    <a
+                        href={brochure}  // 👈 path to your PDF in public folder
+                        target="_blank"        // 👈 opens in new tab
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1 cursor-pointer hover:text-[var(--primary)] transition"
+                    >
                         <FaRegFileAlt className="text-base" />
                         <span>Download Brochure</span>
-                    </div>
+                    </a>
 
                     {/* Social Icons */}
                     <div className="flex items-center gap-3 text-lg">
