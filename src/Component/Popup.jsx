@@ -1,79 +1,113 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+import popup from '../assets/Image/popupimage.jpg'
+import logo from '../assets/Image/newlogo.jpeg'
 
 const Popup = () => {
-    const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
-    // Show popup when website opens
-    useEffect(() => {
-        setShowPopup(true);
-    }, []);
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
 
-    return (
-        <>
-            {showPopup && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-                    <div className="bg-white rounded-2xl shadow-lg w-96 p-6 relative">
-                        {/* Close button */}
-                        <button
-                            onClick={() => setShowPopup(false)}
-                            className="absolute top-2 right-2 text-gray-600 hover:text-black"
-                        >
-                            ✖
-                        </button>
+  return (
+    <>
+      {showPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
+          <div className="bg-white rounded-2xl shadow-2xl flex w-[800px] max-w-full relative overflow-hidden">
 
-                        <h2 className="text-xl font-semibold mb-4 text-center">
-                            HOLSOL
-                        </h2>
+            {/* Left side with image */}
+            <div className="w-1/2 bg-gray-100 relative hidden md:block">
+              <img
+                src={popup}
+                alt="Solar Panel"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute bottom-4 left-4 text-white">
+                <h3 className="text-2xl font-bold text-[var(--primary)]">HOLSOL Solar</h3>
+                <p className="text-sm text-[var(--primary)]">Avail Government Subsidy</p>
+              </div>
+            </div>
 
-                        <div className="space-y-3">
-                            <div>
-                                <label className="block text-sm font-medium">Name</label>
-                                <input
-                                    type="text"
-                                    className="w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-400"
-                                    placeholder="Enter your name"
-                                />
-                            </div>
+            {/* Right side form */}
+            <div className="w-full md:w-1/2 p-8 relative">
+              {/* Close button */}
+              <button
+                onClick={() => setShowPopup(false)}
+                className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+              >
+                <AiOutlineClose size={22} />
+              </button>
 
-                            <div>
-                                <label className="block text-sm font-medium">Number</label>
-                                <input
-                                    type="text"
-                                    className="w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-400"
-                                    placeholder="Enter your number"
-                                />
-                            </div>
+              {/* Logo */}
+              {/* <div className="flex justify-center mb-4">
+                <img
+                  src={logo}
+                  alt="Company Logo"
+                  className="h-20 w-auto"
+                />
+              </div> */}
+              <h3 className="">
+                HOLSOL
+              </h3>
 
-                            <div>
-                                <label className="block text-sm font-medium">City</label>
-                                <input
-                                    type="text"
-                                    className="w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-400"
-                                    placeholder="Enter your city"
-                                />
-                            </div>
+              <h2 className="text-2xl font-bold text-center text-[var(--primary)] mb-2">
+                Avail Government Subsidy
+              </h2>
 
-                            <div>
-                                <label className="block text-sm font-medium">Pincode</label>
-                                <input
-                                    type="text"
-                                    className="w-full border rounded-lg p-2 outline-none focus:ring-2 focus:ring-blue-400"
-                                    placeholder="Enter your pincode"
-                                />
-                            </div>
-                        </div>
-
-                        <button
-                         onClick={() => setShowPopup(false)}
-                            className="mt-5 w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
-                        >
-                            Submit
-                        </button>
-                    </div>
+              <form className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium mb-1">Name</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your name"
+                  />
                 </div>
-            )}
-        </>
-    )
-}
 
-export default Popup
+                <div>
+                  <label className="block text-sm font-medium mb-1">Number</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your mobile number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-1">City</label>
+                  <select className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Choose a city</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="bangalore">Bangalore</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-1">Pincode</label>
+                  <input
+                    type="text"
+                    className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your pincode"
+                  />
+                </div>
+
+                <button
+                  onClick={() => setShowPopup(false)}
+                  type="submit"
+                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold shadow-md transition"
+                >
+                  GET FREE SITE VISIT
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default Popup;
