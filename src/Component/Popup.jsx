@@ -47,7 +47,7 @@ const Popup = () => {
                   className="h-20 w-auto"
                 />
               </div> */}
-              <h3 className="">
+              <h3 className="text-4xl text-center font-extrabold bg-gradient-to-r from-[#000d39] via-[#2c3e91] to-[#6a7bff] bg-clip-text text-transparent">
                 HOLSOL
               </h3>
 
