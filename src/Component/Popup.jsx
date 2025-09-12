@@ -41,7 +41,7 @@ const Popup = () => {
                   <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                     HOLSOL
                   </span>
-                  <h3 className="text-2xl font-bold">Solar</h3>
+                  <h3 className="text-2xl font-bold">India</h3>
                 </div>
                 <p className="text-sm opacity-90">Avail Government Subsidy</p>
               </div>

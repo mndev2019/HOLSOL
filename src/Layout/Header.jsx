@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import brochure from "../assets/Pdffile/holsolbrochure.pdf";
+// import brochure from "../assets/Pdffile/holsolbrochure.pdf";
 import { FaUserFriends, FaPaperPlane, FaRegFileAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 
