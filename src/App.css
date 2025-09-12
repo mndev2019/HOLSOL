@@ -9,3 +9,16 @@ body{
   content: "";
   position: absolute;
 }
+@keyframes bdt-kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.bdt-animation-kenburns {
+  animation: bdt-kenburns 15s ease-in-out infinite alternate;
+}
+

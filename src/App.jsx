@@ -2,6 +2,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './App.css'
 import WebLayout from './Layout/WebLayout'
 import Home from './Pages/Home'
+import Homenew from './Pages/Homenew'
 
 function App() {
   const ThemeRoute = createBrowserRouter(
@@ -9,7 +10,7 @@ function App() {
       <>
         <Route path="/" element={<WebLayout />}>
 
-          <Route index element={<Home/>} />
+          <Route index element={<Homenew/>} />
         </Route>
 
 

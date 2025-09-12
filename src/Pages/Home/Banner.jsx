@@ -4,7 +4,7 @@ import bannerImg from "../../assets/Image/bannerbg.jpg";
 const Banner = () => {
   return (
     <section
-      className="relative h-[80vh] w-full flex items-center justify-center bg-cover bg-center"
+      className="relative h-[80vh]  bn  w-full flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${bannerImg})` }}
     >
       {/* Overlay shade */}

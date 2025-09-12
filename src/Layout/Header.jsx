@@ -7,25 +7,25 @@ import { FaUserFriends, FaPaperPlane, FaRegFileAlt, FaFacebookF, FaTwitter, FaIn
 const Header = () => {
     return (
         <>
-            <div className="w-full bg-gray-100 text-sm">
+            {/* <div className="w-full bg-gray-100 text-sm">
                 <div className=" flex justify-end items-center gap-6 py-2 px-4">
 
-                    {/* Refer & Earn */}
+              
                     <div className="flex items-center gap-1 cursor-pointer hover:text-[var(--primary)] transition">
                         <FaUserFriends className="text-base" />
                         <span>Refer & Earn</span>
                     </div>
 
-                    {/* Get Expert Suggestion */}
+                  
                     <div className="flex items-center gap-1 cursor-pointer hover:text-[var(--primary)] transition">
                         <FaPaperPlane className="text-base" />
                         <span>Get Expert Suggestion</span>
                     </div>
 
-                    {/* Download Brochure */}
+                    
                     <a
-                        href={brochure}  // 👈 path to your PDF in public folder
-                        target="_blank"        // 👈 opens in new tab
+                        href={brochure}  
+                        target="_blank"        
                         rel="noopener noreferrer"
                         className="flex items-center gap-1 cursor-pointer hover:text-[var(--primary)] transition"
                     >
@@ -33,7 +33,7 @@ const Header = () => {
                         <span>Download Brochure</span>
                     </a>
 
-                    {/* Social Icons */}
+                  
                     <div className="flex items-center gap-3 text-lg">
                         <a href="#" className="hover:text-[var(--primary)]"><FaFacebookF /></a>
                         <a href="#" className="hover:text-[var(--primary)]"><FaTwitter /></a>
@@ -41,7 +41,7 @@ const Header = () => {
                         <a href="#" className="hover:text-[var(--primary)]"><FaLinkedinIn /></a>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <Navbar />
         </>
     )

@@ -66,12 +66,12 @@ const Blogs = () => {
               <h4 className="font-semibold text-lg mt-1 leading-snug group-hover:text-[var(--primary)] transition-colors">
                 {blog.title}
               </h4>
-              <a
+              {/* <a
                 href={blog.link}
                 className="inline-block mt-2 text-sm font-medium text-[var(--primary)] bg-white px-4 py-1 rounded-full shadow-md hover:bg-[var(--primary)] hover:text-white transition"
               >
                 Read More
-              </a>
+              </a> */}
             </div>
           </div>
         ))}

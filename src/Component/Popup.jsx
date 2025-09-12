@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import popup from '../assets/Image/popupimage.jpg'
-import logo from '../assets/Image/newlogo.jpeg'
+// import popup from "../assets/Image/popupimage.jpg";
+import popup from "../assets/Image/bannerbg.jpg";
 
 const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -13,96 +13,121 @@ const Popup = () => {
   return (
     <>
       {showPopup && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-50">
-          <div className="bg-white rounded-2xl shadow-2xl flex w-[800px] max-w-full relative overflow-hidden">
+        <div className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-md z-50">
+          {/* Popup Container */}
+          <div className="relative w-[500px] max-w-[95%] bg-white rounded-3xl shadow-2xl overflow-hidden animate-[fadeIn_0.4s_ease]">
 
-            {/* Left side with image */}
-            <div className="w-1/2 bg-gray-100 relative hidden md:block">
+            {/* Cross Button */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-[3px] right-[10px] bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-2 rounded-full shadow-lg transition z-10"
+            >
+              <AiOutlineClose size={22} />
+            </button>
+
+            {/* Image Header */}
+            <div className="relative h-48 w-full">
               <img
                 src={popup}
                 alt="Solar Panel"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute bottom-4 left-4 text-white">
-                <h3 className="text-2xl font-bold text-[var(--primary)]">HOLSOL Solar</h3>
-                <p className="text-sm text-[var(--primary)]">Avail Government Subsidy</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-6 text-white">
+                <div className="flex">
+
+                </div>
+                <div className="flex items-baseline space-x-2">
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
+                    HOLSOL
+                  </span>
+                  <h3 className="text-2xl font-bold">Solar</h3>
+                </div>
+                <p className="text-sm opacity-90">Avail Government Subsidy</p>
               </div>
             </div>
 
-            {/* Right side form */}
-            <div className="w-full md:w-1/2 p-8 relative">
-              {/* Close button */}
-              <button
-                onClick={() => setShowPopup(false)}
-                className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
-              >
-                <AiOutlineClose size={22} />
-              </button>
-
-              {/* Logo */}
-              {/* <div className="flex justify-center mb-4">
-                <img
-                  src={logo}
-                  alt="Company Logo"
-                  className="h-20 w-auto"
-                />
-              </div> */}
-              <h3 className="text-4xl text-center font-extrabold bg-gradient-to-r from-[#000d39] via-[#2c3e91] to-[#6a7bff] bg-clip-text text-transparent">
-                HOLSOL
-              </h3>
-
-              <h2 className="text-2xl font-bold text-center text-[var(--primary)] mb-2">
-                Avail Government Subsidy
+            {/* Content */}
+            <div className="p-6">
+              <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
+                Get Free Site Visit
               </h2>
+              <p className="text-center text-gray-600 mb-6 text-sm">
+                Fill out the form below and we’ll get in touch with you
+              </p>
 
+              {/* Form */}
               <form className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium mb-1">Name</label>
+                <div className="relative">
                   <input
                     type="text"
-                    className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter your name"
+                    required
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
                   />
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    peer-placeholder-shown:top-5 
+                    peer-placeholder-shown:text-base 
+                    peer-placeholder-shown:text-gray-400 
+                    peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
+                    Name
+                  </label>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-1">Number</label>
+                <div className="relative">
                   <input
                     type="text"
-                    className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter your mobile number"
+                    required
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
                   />
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    peer-placeholder-shown:top-5 
+                    peer-placeholder-shown:text-base 
+                    peer-placeholder-shown:text-gray-400 
+                    peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
+                    Mobile Number
+                  </label>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-1">City</label>
-                  <select className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="">Choose a city</option>
+                <div className="relative">
+                  <select
+                    required
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                  >
+                    <option value="" hidden></option>
                     <option value="delhi">Delhi</option>
                     <option value="mumbai">Mumbai</option>
                     <option value="bangalore">Bangalore</option>
                   </select>
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
+                    City
+                  </label>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-1">Pincode</label>
+                <div className="relative">
                   <input
                     type="text"
-                    className="w-full border rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter your pincode"
+                    required
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
                   />
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    peer-placeholder-shown:top-5 
+                    peer-placeholder-shown:text-base 
+                    peer-placeholder-shown:text-gray-400 
+                    peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
+                    Pincode
+                  </label>
                 </div>
 
                 <button
-                  onClick={() => setShowPopup(false)}
                   type="submit"
-                  className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-lg font-semibold shadow-md transition"
+                  onClick={() => setShowPopup(false)}
+                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
                 >
-                  GET FREE SITE VISIT
+                  Submit & Book Visit
                 </button>
               </form>
             </div>
-
           </div>
         </div>
       )}
