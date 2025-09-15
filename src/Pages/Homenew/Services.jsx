@@ -15,6 +15,7 @@ import systemdesign from '../../assets/Image/systemdesign.jpg'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { useNavigate } from "react-router-dom";
 
 
 const services = [
@@ -58,6 +59,7 @@ const services = [
 ];
 
 const Services = () => {
+    const navigate = useNavigate();
     const NextArrow = ({ onClick }) => (
         <div
             onClick={onClick}
@@ -157,7 +159,7 @@ const Services = () => {
                             </p>
 
                             {/* Button */}
-                            <button className="w-12 h-12 flex items-center justify-center rounded-full 
+                            <button onClick={()=> navigate('/service-detail')} className="w-12 h-12 flex items-center justify-center rounded-full 
                      bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white 
                      transition-all duration-500 group-hover:bg-white group-hover:text-[#0047FF]">
                                 ↗

@@ -2,8 +2,10 @@ import React from 'react'
 import blog from '../../assets/Image/blog1.jpg'
 import blog1 from '../../assets/Image/solarrooftop.jpg'
 import blog3 from '../../assets/Image/blog3.jpg'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const Blognew = () => {
+    const navigate = useNavigate();
     const blogs = [
         {
             image: blog,
@@ -68,7 +70,7 @@ const Blognew = () => {
                                         </div>
 
                                         {/* Arrow Button */}
-                                        <button className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] flex items-center justify-center text-white shadow-md  transition">
+                                        <button onClick={()=> navigate('/blog-detail')} className="w-12 h-12 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] flex items-center justify-center text-white shadow-md  transition">
                                             ↗
                                         </button>
                                     </div>

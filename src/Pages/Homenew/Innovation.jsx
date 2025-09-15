@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { FaSun, FaBolt, FaSolarPanel, FaArrowRight } from "react-icons/fa";
+import Popup from "../../Component/Popup";
 // import commercial from '../../assets/Image/commercialsolution.jpg'
 // import solarepc from '../../assets/Image/homes.jpg'
 // import rooftop from '../../assets/Image/solarrooftop.jpgs'
@@ -7,6 +9,7 @@ import { FaSun, FaBolt, FaSolarPanel, FaArrowRight } from "react-icons/fa";
 // import "slick-carousel/slick/slick-theme.css";
 
 const Innovation = () => {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     // const settings = {
     //     dots: true,
     //     infinite: true,
@@ -69,7 +72,10 @@ const Innovation = () => {
                         The process involves site assessment, system design, installation,
                         grid connection, maintenance, monitoring, and customer support.
                     </p>
-                    <button className="mt-8 px-8 py-3 rounded-full border border-gray-900 text-gray-900 font-semibold flex items-center gap-2 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105">
+                    <button
+                        onClick={() => setIsPopupOpen(true)} // 👈 open popup
+                        className="mt-8 px-8 py-3 rounded-full border border-gray-900 text-gray-900 font-semibold flex items-center gap-2 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105"
+                    >
                         Get in Touch
                         <span>↗</span>
                     </button>
@@ -105,13 +111,10 @@ const Innovation = () => {
                 </div>
 
             </section>
-            <section>
-                <div className="grid grid-cols-3">
-                    <div className="col-span-1">
-
-                    </div>
-                </div>
-            </section>
+            {/* ✅ Popup Component */}
+            {isPopupOpen && (
+                <Popup onClose={() => setIsPopupOpen(false)} />
+            )}
             {/* <section className="py-10 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4">
                     <Slider {...settings}>

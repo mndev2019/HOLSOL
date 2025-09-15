@@ -4,8 +4,10 @@ import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { FaRegFileAlt } from 'react-icons/fa';
 import brochure from "../assets/Pdffile/holsolbrochure.pdf";
 import logo from '../../src/assets/Image/newlogoo.png'
+import Popup from '../Component/Popup';
 
 const Navbar = () => {
+     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null); // track dropdown (products/services)
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -99,7 +101,8 @@ const Navbar = () => {
     );
 
     return (
-        <section className={`px-6 lg:px-10 shadow ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
+        <>
+             <section className={`px-6 lg:px-10 shadow ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
             <div className="container mx-auto">
                 <div className="flex justify-between items-center py-1">
                     {/* Logo */}
@@ -121,9 +124,9 @@ const Navbar = () => {
                             <FaRegFileAlt className="text-lg" />
                             <span>Brochure</span>
                         </a>
-                        <a href="" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                        <button onClick={() => setIsPopupOpen(true)} className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <span>Get Free Quote</span>
-                        </a>
+                        </button>
                         <a
                             href="tel:9257055583"
                             className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
@@ -162,6 +165,13 @@ const Navbar = () => {
                 </div>
             </div>
         </section>
+          {
+        isPopupOpen && (
+            <Popup onClose={() => setIsPopupOpen(false)} />
+        )
+    }
+        </>
+   
     );
 };
 

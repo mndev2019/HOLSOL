@@ -1,10 +1,13 @@
 import React from 'react'
+import { useState } from "react";
 import aboutusleft from '../../assets/Image/bannerbg.jpg'
 // import aboutussecond from '../../assets/Image/aboutsecond.jpg'
 import Aboutpresence from './Aboutpresence'
+import Popup from "../../Component/Popup";
 
 
 const About = () => {
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     return (
         <>
             <section className="lg:px-20 px-5 lg:py-20 py-14">
@@ -14,7 +17,7 @@ const About = () => {
                     <div className="relative">
                         {/* Main Image */}
                         <img src={aboutusleft} alt="About Us" className="rounded-lg " />
-{/* 
+                        {/* 
                         <div className="absolute top-10 -left-5">
                             <div className="relative bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white px-10 py-6">
                               
@@ -32,7 +35,7 @@ const About = () => {
                                 </div>
                             </div>
                         </div> */}
-                          <div className="absolute top-10 -left-5">
+                        <div className="absolute top-10 -left-5">
                             <div className="relative bg-white shadow-xl rounded-2xl px-10 py-8 overflow-hidden">
                                 {/* Gradient Ring Circle */}
                                 <div className="relative flex items-center justify-center">
@@ -118,16 +121,23 @@ const About = () => {
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
                                 Powered by RS Group
                             </li>
+                            <li className="flex items-center gap-2 font-semibold text-lg">
+                                <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
+                                Empanelled with PM Surya Ghar Portal
+                            </li>
 
                         </ul>
 
                         {/* Button */}
-                        <button className="bg-gradient-to-r from-yellow-400 to-orange-500   text-black font-medium px-6 py-3 rounded-md shadow-md hover:bg-yellow-600 transition">
+                        <button onClick={() => setIsPopupOpen(true)} className="bg-gradient-to-r from-yellow-400 to-orange-500   text-black font-medium px-6 py-3 rounded-md shadow-md hover:bg-yellow-600 transition">
                             Discover More
                         </button>
                     </div>
                 </div>
             </section>
+            {isPopupOpen && (
+                <Popup onClose={() => setIsPopupOpen(false)} />
+            )}
             <Aboutpresence />
         </>
 

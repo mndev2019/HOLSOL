@@ -8,17 +8,20 @@ import ceo from '../../assets/Image/ceo.JPG'
 import cfo from '../../assets/Image/cfo.jpeg'
 import cmd from '../../assets/Image/cmd.jpeg'
 import head from '../../assets/Image/head.jpeg'
+import operation from '../../assets/Image/headoperation.png'
 
 const Overview = () => {
+    
     const team = [
         { img: ceo, name: "Mr. Avinash Sharma", role: "CEO" },
         { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
         { img: cmd, name: "Mr. Ishwar Singh", role: "CMD" },
         { img: head, name: "Mr. Hemant Sharma", role: "Head of Commercial" },
-        { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
-        { img: cmd, name: "Mr. Ishwar Singh", role: "CMD" },
+        { img: operation, name: "Mr Akash Gupta", role: "Head of Operations" },
+       
     ];
 
+    
     // Slider settings
     const settings = {
         arrows: false,
