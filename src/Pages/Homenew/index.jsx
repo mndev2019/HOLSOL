@@ -7,6 +7,7 @@ import Blognew from './Blognew'
 import Services from './Services'
 import Product from './Product'
 import Overview from './Overview'
+import Whychoose from './Whychoose'
 
 const Homenew = () => {
     return (
@@ -16,6 +17,7 @@ const Homenew = () => {
             {/* <Blogs/> */}
             <Product />
             <Services />
+            <Whychoose/>
             <Overview/>
             <Blognew />
             <Presence />
