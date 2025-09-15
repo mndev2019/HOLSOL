@@ -1,244 +1,129 @@
-// import React, { useEffect, useState } from 'react';
-// import logo from '../assets/Image/logo.jpeg';
-
-
-// import { NavLink, useLocation } from 'react-router-dom';
-// import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
-
-
-// const Navbar = () => {
-//     const [isOpen, setIsOpen] = useState(false);
-
-//     const toggleMenu = () => {
-//         setIsOpen(!isOpen);
-//     };
-
-
-//     const location = useLocation();
-
-
-
-
-//     useEffect(() => {
-//         // Scroll to the bottom when the page changes
-//         window.scrollTo({
-//             top: 0,
-//             behavior: 'smooth', // Smooth scroll
-//         });
-//     }, [location]);
-
-
-
-
-//     const navlist = (
-//         <ul className="flex lg:flex-row flex-col list-none gap-8 font-semibold items-center">
-//             <li>
-//                 <NavLink
-//                     to="/"
-//                     className={({ isActive }) => isActive ? "text-secondary" : "hover:text-secondary"}
-//                 >
-//                     HOME
-//                 </NavLink>
-//             </li>
-//             <li>
-//                 <NavLink
-//                     to="/booking"
-//                     className={({ isActive }) => isActive ? "text-secondary" : "hover:text-secondary"}
-//                 >
-//                     ABOUT US
-//                 </NavLink>
-//             </li>
-//             <li>
-//                 <NavLink
-//                     to="/pricing"
-//                     className={({ isActive }) => isActive ? "text-secondary" : "hover:text-secondary"}
-//                 >
-//                     PRODUCTS
-//                 </NavLink>
-//             </li>
-//             <li>
-//                 <NavLink
-//                     to="/pricing"
-//                     className={({ isActive }) => isActive ? "text-secondary" : "hover:text-secondary"}
-//                 >
-//                     CLIENT STORIES
-//                 </NavLink>
-//             </li>
-//             <li>
-//                 <NavLink
-//                     to="/pricing"
-//                     className={({ isActive }) => isActive ? "text-secondary" : "hover:text-secondary"}
-//                 >
-//                     GALLERY
-//                 </NavLink>
-//             </li>
-//             <li>
-//                 <NavLink
-//                     to="/pricing"
-//                     className={({ isActive }) => isActive ? "text-secondary" : "hover:text-secondary"}
-//                 >
-//                     BLOGS
-//                 </NavLink>
-//             </li>
-//             <li>
-//                 <NavLink
-//                     to="/blogs"
-//                     className={({ isActive }) => isActive ? "text-secondary" : "hover:text-secondary"}
-//                 >
-//                     CONTACT US
-//                 </NavLink>
-//             </li>
-
-
-
-
-
-//         </ul>
-//     );
-
-
-//     return (
-//         <>
-//             <section className=' px-10'>
-//                 <div className="container mx-auto">
-//                     <div className="flex justify-between items-center">
-//                          <NavLink to='/'>
-//                             <img src={logo} alt='Logo' className='h-[80px]' />
-//                         </NavLink>
-//   <div className="hidden lg:flex items-center gap-8">
-//                             {navlist}
-
-
-//                         </div>
-
-//                         {/* Sidebar icon for mobile */}
-//                         <div className="lg:hidden">
-//                             <button onClick={toggleMenu}>
-//                                 <MenuOutlined className="text-3xl" />
-//                             </button>
-//                         </div>
-
-
-//                     </div>
-//                 </div>
-
-//                 {/* Sidebar menu for mobile */}
-//                 <div className={`fixed inset-0 bg-white z-50 transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 lg:hidden`} style={{ width: '50%' }}>
-//                     <div className="p-6">
-//                         {/* Close button inside the sidebar */}
-//                         <div className="flex justify-end mb-6">
-//                             <button onClick={toggleMenu}>
-//                                 <CloseOutlined className="text-2xl" />
-//                             </button>
-//                         </div>
-//                         {navlist}
-//                     </div>
-//                 </div>
-//             </section>
-//         </>
-//     );
-// };
-
-// export default Navbar;
 import React, { useEffect, useState } from 'react';
-// import logo from '../assets/Image/logo.jpeg';
-// import logo from '../assets/Image/newlogo.jpeg'
 import { NavLink, useLocation } from 'react-router-dom';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
-import { FaPhoneAlt, FaRegFileAlt } from 'react-icons/fa';
+import { FaRegFileAlt } from 'react-icons/fa';
 import brochure from "../assets/Pdffile/holsolbrochure.pdf";
+import logo from '../../src/assets/Image/newlogoo.png'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const [openDropdown, setOpenDropdown] = useState(null); // track dropdown (products/services)
+    const toggleMenu = () => setIsOpen(!isOpen);
 
     const location = useLocation();
-
     useEffect(() => {
-        // Scroll to top when page changes
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [location]);
 
     const navlist = (
-        <ul className="flex lg:flex-row flex-col list-none gap-8 font-semibold items-center text-white text-xl">
+        <ul
+            className={`flex lg:flex-row flex-col list-none gap-8 font-semibold items-center text-xl ${location.pathname === "/" ? "text-white" : "text-black"
+                }`}
+        >
             <li>
-                <NavLink to="/" className={({ isActive }) => isActive ? "" : ""}>
+                <NavLink to="/" end>
                     HOME
                 </NavLink>
             </li>
             <li>
-                <NavLink to="/about" className={({ isActive }) => isActive ? "" : ""}>
-                    ABOUT US
-                </NavLink>
+                <NavLink to="/about">ABOUT US</NavLink>
+            </li>
+
+            {/* Services Dropdown */}
+            <li className="relative">
+                <button
+                    onClick={() => setOpenDropdown(openDropdown === "services" ? null : "services")}
+                    className="focus:outline-none"
+                >
+                    SERVICES
+                </button>
+
+                {openDropdown === "services" && (
+                    <ul className="absolute left-0 mt-2 w-56 bg-white shadow-lg rounded-md z-50 text-[17px]">
+                        <li>
+                            <NavLink to="/service-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Insurance</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/service-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Installation</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/service-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Maintenance</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/service-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Financing</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/service-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>System Design</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/service-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Energy Consulting</NavLink>
+                        </li>
+                    </ul>
+                )}
+            </li>
+
+            {/* Products Dropdown */}
+            <li className="relative">
+                <button
+                    onClick={() => setOpenDropdown(openDropdown === "products" ? null : "products")}
+                    className="focus:outline-none"
+                >
+                    PRODUCTS
+                </button>
+
+                {openDropdown === "products" && (
+                    <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50 text-[17px]">
+                        <li>
+                            <NavLink to="/product-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Solar Rooftop</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/product-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Industrial</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/product-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Commercial</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/product-detail" className="block px-4 py-2 text-gray-700 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white" onClick={() => setOpenDropdown(null)}>Solar EPC</NavLink>
+                        </li>
+                    </ul>
+                )}
+            </li>
+
+            <li>
+                <NavLink to="/blog-detail">NEWS</NavLink>
             </li>
             <li>
-                <NavLink to="/products" className={({ isActive }) => isActive ? "" : ""}>
-                   SERVICES
-                </NavLink>
+                <NavLink to="/career">CAREER</NavLink>
             </li>
-            <li>
-                <NavLink to="/clients" className={({ isActive }) => isActive ? "" : ""}>
-                  PROJECTS
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to="/gallery" className={({ isActive }) => isActive ? "" : ""}>
-                   NEWS
-                </NavLink>
-            </li>
-            
         </ul>
     );
 
     return (
-        <section className="px-6 lg:px-10 shadow absolute top-0 left-0 w-full z-50">
+        <section className={`px-6 lg:px-10 shadow ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
             <div className="container mx-auto">
                 <div className="flex justify-between items-center py-1">
-
                     {/* Logo */}
                     <NavLink to="/">
-
-                        {/* <img src={logo} alt="Logo" className="h-[60px] lg:h-[70px]" /> */}
-                        <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
+                        {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                             HOLSOL
-                        </span>
-
-
+                        </span> */}
+                        <img src={logo} alt='image' className='h-[60px]'/>
                     </NavLink>
 
-                    {/* Nav Links (center) */}
+                    {/* Nav Links */}
                     <div className="hidden lg:flex items-center gap-8">
                         {navlist}
                     </div>
 
-                    {/* Right Side - Phone */}
-                    <div className='hidden lg:flex items-center gap-2 text-right'>
-                        <a
-                            href={brochure}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
-                        >
+                    {/* Brochure button */}
+                    <div className="hidden lg:flex items-center gap-2 text-right">
+                        <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <FaRegFileAlt className="text-lg" />
                             <span>Brochure</span>
                         </a>
                     </div>
 
-                    {/* <div className="hidden lg:flex items-center gap-2 text-right">
-                        <FaPhoneAlt className="text-2xl text-black" />
-                        <div className="flex flex-col leading-tight">
-                            <span className="text-xs">Call Now !</span>
-                            <span className="font-bold">+91 9257055583</span>
-                        </div>
-                    </div> */}
-
-                    {/* Mobile menu icon */}
+                    {/* Mobile menu button */}
                     <div className="lg:hidden">
                         <button onClick={toggleMenu}>
                             <MenuOutlined className="text-3xl" />
@@ -247,12 +132,8 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Sidebar for mobile */}
-            <div
-                className={`fixed inset-0 bg-white z-50 transform ${isOpen ? "translate-x-0" : "-translate-x-full"
-                    } transition-transform duration-300 lg:hidden`}
-                style={{ width: "70%" }}
-            >
+            {/* Mobile Sidebar */}
+            <div className={`fixed inset-0 bg-white z-50 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 lg:hidden`} style={{ width: "70%" }}>
                 <div className="p-6">
                     {/* Close button */}
                     <div className="flex justify-end mb-6">
@@ -262,23 +143,11 @@ const Navbar = () => {
                     </div>
                     {navlist}
 
-                    {/* Phone in mobile menu */}
-                    <a
-                        href={brochure}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
-                    >
+                    {/* Brochure in mobile */}
+                    <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                         <FaRegFileAlt className="text-lg" />
                         <span>Brochure</span>
                     </a>
-                    {/* <div className="mt-6 flex items-center gap-2">
-                        <FaPhoneAlt className="text-2xl text-black" />
-                        <div className="flex flex-col leading-tight">
-                            <span className="text-xs">Call Now !</span>
-                            <span className="font-bold">+91 9257055583</span>
-                        </div>
-                    </div> */}
                 </div>
             </div>
         </section>
@@ -286,4 +155,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

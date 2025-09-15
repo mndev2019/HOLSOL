@@ -1,5 +1,6 @@
 import { FaAngleRight, FaGift } from "react-icons/fa";
-import Logo from "../assets/Image/newlogo.jpeg";
+// import Logo from "../assets/Image/newlogo.jpeg";
+import logo from '../../src/assets/Image/newlogoo.png'
 
 const Footer = () => {
   return (
@@ -7,12 +8,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
         <div>
-          <img src={Logo} alt="Truzon Solar" className="w-40 mb-4" />
+          {/* <img src={Logo} alt="Truzon Solar" className="w-40 mb-4" /> */}
+          {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
+            HOLSOL
+          </span> */}
+          <img src={logo} alt='image' className='h-[60px]' />
           <p className="text-gray-300 text-sm">
-            HOLSOL Energy Systems Pvt Ltd, established in 2022, is a leading manufacturer,
-            trader, and system integrator in the solar industry. Founded by Shri Ch. Bhavani
-            Suresh, Suntek has grown exponentially, driven by a passion for innovation and
-            out-of-the-box thinking.
+
+            HOLSOL aims to make India the smartest solar-powered nation, leading the world with clean and affordable energy.
+
+
           </p>
         </div>
 
@@ -20,26 +25,53 @@ const Footer = () => {
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
-            {["Home", "About Us", "Awards", "Testimonials", "Our Clients", "Contact Us"].map((link) => (
-              <li key={link} className="flex items-center gap-2 hover:text-white cursor-pointer transition">
+            {[
+              { name: "Home", url: "/" },
+              { name: "About Us", url: "/about" },
+              { name: "Contact Us", url: "/contact" },
+              { name: "RS Infra Solutions", url: "https://rs-group.co.in/rs-infra/" }
+            ].map((item) => (
+              <li
+                key={item.name}
+                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+              >
                 <FaAngleRight className="text-[var(--primary)]" />
-                {link}
+                <a href={item.url} target="_blank" className="hover:underline">
+                  {item.name}
+                </a>
               </li>
             ))}
           </ul>
+
         </div>
 
         {/* Useful Links */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Useful Links</h3>
           <ul className="space-y-2 text-gray-300">
-            {["Blog", "Dealer Form", "Warranty Policy", "Privacy Policy", "Terms & Conditions", "Website Usage Policy"].map((link) => (
-              <li key={link} className="flex items-center gap-2 hover:text-white cursor-pointer transition">
+            {[
+              { name: "Blog", url: "/blog" },
+              { name: "Warranty Policy", url: "/warranty-policy" },
+              { name: "Privacy Policy", url: "/privacy-policy" },
+              { name: "Terms & Conditions", url: "/terms-conditions" },
+              { name: "Website Usage Policy", url: "/website-usage-policy" }
+            ].map((item) => (
+              <li
+                key={item.name}
+                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+              >
                 <FaAngleRight className="text-[var(--primary)]" />
-                {link}
+                <a
+                  href={item.url}
+                  target="_blank"
+                  className="hover:underline"
+                >
+                  {item.name}
+                </a>
               </li>
             ))}
           </ul>
+
         </div>
 
         {/* Refer & Earn Highlight */}
@@ -57,7 +89,18 @@ const Footer = () => {
       {/* Bottom Copyright */}
       <div className="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
         &copy; {new Date().getFullYear()} HOLSOL Solar. All rights reserved.
+        <br />
+        Developed by{" "}
+        <a
+          href="https://ramot.cloud/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-500 hover:underline"
+        >
+          Ramot.cloud
+        </a>
       </div>
+
     </footer>
   );
 };

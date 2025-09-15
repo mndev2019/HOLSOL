@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 // import popup from "../assets/Image/popupimage.jpg";
 import popup from "../assets/Image/bannerbg.jpg";
+import logo from '../../src/assets/Image/newlogoo.png'
 
 const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -37,10 +38,11 @@ const Popup = () => {
                 <div className="flex">
 
                 </div>
-                <div className="flex items-baseline space-x-2">
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
+                <div className="flex items-center space-x-2">
+                  {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                     HOLSOL
-                  </span>
+                  </span> */}
+                     <img src={logo} alt='image' className='h-[50px]'/>
                   <h3 className="text-2xl font-bold">India</h3>
                 </div>
                 <p className="text-sm opacity-90">Avail Government Subsidy</p>

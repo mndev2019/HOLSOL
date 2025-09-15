@@ -1,4 +1,4 @@
-import { FaSun, FaBolt, FaSolarPanel } from "react-icons/fa";
+import { FaSun, FaBolt, FaSolarPanel, FaArrowRight } from "react-icons/fa";
 // import commercial from '../../assets/Image/commercialsolution.jpg'
 // import solarepc from '../../assets/Image/homes.jpg'
 // import rooftop from '../../assets/Image/solarrooftop.jpgs'
@@ -76,25 +76,34 @@ const Innovation = () => {
                 </div>
 
                 {/* Steps */}
-                <div className="grid md:grid-cols-3 gap-10 mt-12">
-                    {steps.map((step) => (
+                <div className="grid md:grid-cols-3 gap-10 mt-12 relative">
+                    {steps.map((step, index) => (
                         <div
                             key={step.id}
                             className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all p-8 flex flex-col items-center text-center relative transform hover:-translate-y-2 hover:scale-105 duration-300"
                         >
                             {/* Number Badge */}
-                            <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white w-12 h-12 flex items-center justify-center rounded-full font-bold shadow-lg">
+                            <span className="lg:hidden absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white w-12 h-12 flex items-center justify-center rounded-full font-bold shadow-lg">
                                 {step.id}
                             </span>
+
                             {/* Icon */}
                             <div className="mb-6">{step.icon}</div>
+
                             {/* Title */}
                             <h3 className="text-xl font-semibold text-gray-900">{step.title}</h3>
+
                             {/* Description */}
                             <p className="text-gray-600 mt-3">{step.desc}</p>
+
+                            {/* Arrow (except last card) */}
+                            {index < steps.length - 1 && (
+                                <FaArrowRight className="hidden md:block text-3xl text-gray-600 absolute top-1/2 -right-8 transform -translate-y-1/2" />
+                            )}
                         </div>
                     ))}
                 </div>
+
             </section>
             <section>
                 <div className="grid grid-cols-3">
