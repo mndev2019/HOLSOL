@@ -29,7 +29,7 @@ const Footer = () => {
               { name: "Home", url: "/" },
               { name: "About Us", url: "/about" },
               { name: "Contact Us", url: "/contact" },
-              { name: "RS Infra Solutions", url: "https://rs-group.co.in/rs-infra/" }
+              { name: "RS Group", url: "https://rs-group.co.in/" }
             ].map((item) => (
               <li
                 key={item.name}

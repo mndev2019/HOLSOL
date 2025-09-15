@@ -14,11 +14,10 @@ const About = () => {
                     <div className="relative">
                         {/* Main Image */}
                         <img src={aboutusleft} alt="About Us" className="rounded-lg " />
-
-                        {/* Green Badge with Yellow Angled Corner */}
+{/* 
                         <div className="absolute top-10 -left-5">
                             <div className="relative bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white px-10 py-6">
-                                {/* Circle with 40 */}
+                              
                                 <div className="flex flex-col items-center">
                                     <div className="w-20 h-20 rounded-full bg-[#00C6FF] flex items-center justify-center text-4xl font-bold">
                                         25
@@ -26,11 +25,31 @@ const About = () => {
                                     <p className="mt-2 text-sm font-medium text-center">Years of Experience</p>
                                 </div>
 
-                                {/* Yellow angled corner */}
+                                
                                 <div className="absolute bottom-0 -left-5 w-0 h-0 
                 border-t-[40px] border-t-transparent 
                 border-r-[40px] border-r-yellow-500">
                                 </div>
+                            </div>
+                        </div> */}
+                          <div className="absolute top-10 -left-5">
+                            <div className="relative bg-white shadow-xl rounded-2xl px-10 py-8 overflow-hidden">
+                                {/* Gradient Ring Circle */}
+                                <div className="relative flex items-center justify-center">
+                                    <div className="w-28 h-28 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] p-[3px]">
+                                        <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                                            <span className="text-4xl font-extrabold text-[#0047FF]">25</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Text */}
+                                <p className="mt-4 text-gray-800 font-bold text-center text-base tracking-wide">
+                                    Years of Experience
+                                </p>
+
+                                {/* Decorative Gradient Bar */}
+                                <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#00C6FF] to-[#0047FF]"></div>
                             </div>
                         </div>
 
@@ -83,18 +102,22 @@ const About = () => {
 
                         {/* Checklist */}
                         <ul className="space-y-2 mb-6">
-                           <li className="flex items-center gap-2 font-semibold text-lg">
-    <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-    Zero-Risk Solar – First in India to provide 5-year solar insurance on structures & systems.
-</li>
-<li className="flex items-center gap-2 font-semibold text-lg">
-    <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-    Tailored Solutions – Custom designs for residential, commercial, and rooftop needs.
-</li>
-<li className="flex items-center gap-2 font-semibold text-lg">
-    <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-    Hassle-Free Service – From consultation to maintenance, everything handled end-to-end.
-</li>
+                            <li className="flex items-center gap-2 font-semibold text-lg">
+                                <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
+                                Zero-Risk Solar – First in India to provide 5-year solar insurance on structures & systems.
+                            </li>
+                            <li className="flex items-center gap-2 font-semibold text-lg">
+                                <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
+                                Tailored Solutions – Custom designs for residential, commercial, and rooftop needs.
+                            </li>
+                            <li className="flex items-center gap-2 font-semibold text-lg">
+                                <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
+                                Hassle-Free Service – From consultation to maintenance, everything handled end-to-end.
+                            </li>
+                            <li className="flex items-center gap-2 font-semibold text-lg">
+                                <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
+                                Powered by RS Group
+                            </li>
 
                         </ul>
 

@@ -1,23 +1,27 @@
 import React from "react";
 import Slider from "react-slick";
-import team2 from '../../assets/Image/team.png';
+// import team2 from '../../assets/Image/team.png';
 import overview from '../../assets/Image/overviewbg.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ceo from '../../assets/Image/ceo.JPG'
+import cfo from '../../assets/Image/cfo.jpeg'
+import cmd from '../../assets/Image/cmd.jpeg'
+import head from '../../assets/Image/head.jpeg'
 
 const Overview = () => {
     const team = [
-        { img: team2, name: "Ishwar Singh", role: "Managing Director" },
-        { img: team2, name: "Ishwar Singh", role: "Managing Director" },
-        { img: team2, name: "Ishwar Singh", role: "Managing Director" },
-        { img: team2, name: "Ishwar Singh", role: "Managing Director" },
-        { img: team2, name: "Ishwar Singh", role: "Managing Director" },
-        { img: team2, name: "Ishwar Singh", role: "Managing Director" },
+        { img: ceo, name: "Mr. Avinash Sharma", role: "CEO" },
+        { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
+        { img: cmd, name: "Mr. Ishwar Singh", role: "CMD" },
+        { img: head, name: "Mr. Hemant Sharma", role: "Head of Commercial" },
+        { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
+        { img: cmd, name: "Mr. Ishwar Singh", role: "CMD" },
     ];
 
     // Slider settings
     const settings = {
-        arrows:false,
+        arrows: false,
         dots: true,
         infinite: true,
         speed: 1000,
@@ -47,12 +51,13 @@ const Overview = () => {
                 {/* Left Side */}
                 <div className="col-span-4 bg-gradient-to-b from-[#00C6FF] to-[#0047FF] text-white flex items-center px-12 py-16">
                     <div>
-                        <h2 className="text-3xl font-bold mb-4 leading-snug bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                        <h2 className="text-3xl font-bold mb-4 leading-snug text-white">
                             OVERVIEW OF COMPANY
                         </h2>
                         <p className="text-lg leading-relaxed">
-                            HOLSOL Energy Systems Pvt Ltd aims to make India the smartest solar-powered nation, leading the world with clean and affordable energy.
+                            HOLSOL Energy Systems Pvt Ltd, in collaboration with RS Group, aims to make India the smartest solar-powered nation, leading the world with clean and affordable energy.
                         </p>
+
                     </div>
                 </div>
 

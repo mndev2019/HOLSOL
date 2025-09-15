@@ -6,6 +6,8 @@ const Whychoose = () => {
         "Tailored Solutions – Custom designs for residential, commercial & rooftop needs",
         "Hassle-Free Service – Consultation to maintenance, handled end-to-end",
         "Innovative Technology – Smart and sustainable solar solutions",
+        "Holsol, an RS Group company, brings India closer to a greener future with smart, sustainable solar solutions.",
+        "Empanelled with PM Surya Ghar Portal"
     ];
 
     return (

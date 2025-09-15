@@ -6,7 +6,12 @@ import service from "../../assets/Image/servicebg.jpg";
 // import design from '../../assets/Image/design.png';
 // import energy from '../../assets/Image/energyconsulting.png';
 // import Financing from '../../assets/Image/financing.png';
-import intallation from '../../assets/Image/solarinstallation.jpg'
+import intallation from '../../assets/Image/intallation.jpg'
+import energy from '../../assets/Image/energy.jpg'
+import insurance from '../../assets/Image/insurance.jpg'
+import maintenanace from '../../assets/Image/maintenanace.jpg'
+import financing from '../../assets/Image/finanacing.jpg'
+import systemdesign from '../../assets/Image/systemdesign.jpg'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
@@ -23,31 +28,32 @@ const services = [
         title: "Maintenance",
         description:
             "Regular upkeep and repair of solar systems to ensure optimal performance and longevity.",
-        img: intallation,
+        img: maintenanace,
     },
     {
         title: "System Design",
         description:
             "Customizing solar solutions based on energy needs, site conditions, and efficiency goals.",
-        img: intallation,
+        img: systemdesign,
     },
     {
         title: "Energy Consulting",
         description:
             "Advising on energy usage, savings, and how solar can fit into overall energy strategies.",
-        img: intallation,
+        img: energy,
     },
     {
         title: "Financing",
         description:
             "Solar installation funding via loans, leases, or PPAs.",
-        img: intallation,
+        img: financing,
     },
     {
         title: "Insurance",
         description:
             "Offering insurance solutions to protect solar investments and ensure peace of mind.",
-        img: intallation,
+        img:insurance
+,
     },
 ];
 

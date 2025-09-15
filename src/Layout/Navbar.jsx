@@ -124,6 +124,13 @@ const Navbar = () => {
                         <a href="" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <span>Get Free Quote</span>
                         </a>
+                        <a
+                            href="tel:9257055583"
+                            className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
+                        >
+                            <span>Call Now</span>
+                        </a>
+
                     </div>
 
                     {/* Mobile menu button */}
