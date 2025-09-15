@@ -107,7 +107,7 @@ const Navbar = () => {
                         {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                             HOLSOL
                         </span> */}
-                        <img src={logo} alt='image' className='h-[60px]'/>
+                        <img src={logo} alt='image' className='h-[60px]' />
                     </NavLink>
 
                     {/* Nav Links */}
@@ -120,6 +120,9 @@ const Navbar = () => {
                         <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <FaRegFileAlt className="text-lg" />
                             <span>Brochure</span>
+                        </a>
+                        <a href="" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                            <span>Get Free Quote</span>
                         </a>
                     </div>
 
@@ -148,6 +151,7 @@ const Navbar = () => {
                         <FaRegFileAlt className="text-lg" />
                         <span>Brochure</span>
                     </a>
+
                 </div>
             </div>
         </section>
