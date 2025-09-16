@@ -34,21 +34,9 @@ const Product = () => {
             <FaChevronLeft size={20} />
         </div>
     );
-    // const settings = {
-    //     dots: false,
-    //     infinite: true,
-    //     speed: 600,
-    //     slidesToShow: 4,
-    //     slidesToScroll: 1,
-    //     nextArrow: <NextArrow />,
-    //     prevArrow: <PrevArrow />,
-    //     responsive: [
-    //         { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    //         { breakpoint: 768, settings: { slidesToShow: 1 } },
-    //     ],
-    // };
+  
     const settings = {
-        arrows: true,
+        arrows: false,
         dots: false,
         infinite: true,
         speed: 600,
