@@ -139,7 +139,7 @@ const Navbar = () => {
                         {/* Mobile menu button */}
                         <div className="lg:hidden">
                             <button onClick={toggleMenu}>
-                            <MenuOutlined className="!text-yellow-500 text-3xl" />
+                                <MenuOutlined className="!text-yellow-500 text-3xl" />
 
                             </button>
                         </div>
@@ -159,19 +159,26 @@ const Navbar = () => {
 
                         {/* Brochure in mobile */}
 
-                        <a href={brochure} target="_blank" rel="noopener noreferrer" className="mb-2 lg:mt-0 mt-2 flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                        <a
+                            href={brochure}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mb-2 lg:mt-0 mt-2 flex justify-center items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
+                        >
                             <FaRegFileAlt className="text-lg" />
                             <span>Brochure</span>
                         </a>
-                        <button onClick={() => setIsPopupOpen(true)} className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+
+                        <button onClick={() => setIsPopupOpen(true)} className="w-full text-center px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <span>Get Free Quote</span>
                         </button>
                         <a
                             href="tel:9257055583"
-                            className="mt-2 flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
+                            className="mt-2 block text-center px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
                         >
-                            <span>Call Now</span>
+                            Call Now
                         </a>
+
 
                     </div>
                 </div>

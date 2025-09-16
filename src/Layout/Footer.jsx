@@ -28,7 +28,7 @@ const Footer = () => {
             {[
               { name: "Home", url: "/" },
               { name: "About Us", url: "/about" },
-              { name: "Contact Us", url: "/contact" },
+              { name: "Contact Us", url: "" },
               { name: "RS Group", url: "https://rs-group.co.in/" }
             ].map((item) => (
               <li
@@ -50,11 +50,11 @@ const Footer = () => {
           <h3 className="text-white text-lg font-semibold mb-4">Useful Links</h3>
           <ul className="space-y-2 text-gray-300">
             {[
-              { name: "Blog", url: "/blog" },
-              { name: "Warranty Policy", url: "/warranty-policy" },
-              { name: "Privacy Policy", url: "/privacy-policy" },
-              { name: "Terms & Conditions", url: "/terms-conditions" },
-              { name: "Website Usage Policy", url: "/website-usage-policy" }
+              { name: "Blog", url: "/blog-detail" },
+              { name: "Warranty Policy", url: "" },
+              { name: "Privacy Policy", url: "" },
+              { name: "Terms & Conditions", url: "" },
+              { name: "Website Usage Policy", url: "" }
             ].map((item) => (
               <li
                 key={item.name}
