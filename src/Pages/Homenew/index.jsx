@@ -12,6 +12,7 @@ import Blogs from '../Home/Blogs'
 import OurLegacy from './OurLegacy'
 import Mobileproduct from './Mobileproduct'
 import ServiceMobile from './ServiceMobile'
+import MobileOverview from './MobileOverview'
 
 const Homenew = () => {
     return (
@@ -25,7 +26,7 @@ const Homenew = () => {
             <ServiceMobile/>
             <Whychoose/>
             <Overview/>
-         
+         <MobileOverview/>
             <Blognew />
             <OurLegacy/>
             <Presence />

@@ -11,7 +11,7 @@ import head from '../../assets/Image/head.jpeg'
 import operation from '../../assets/Image/headoperation.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-const Overview = () => {
+const MobileOverview = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
@@ -28,31 +28,18 @@ const Overview = () => {
 
     const settings = {
         arrows: false,
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 1000,
-        slidesToShow: 4,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                },
-            },
-            {
-                breakpoint: 640,
-                settings: {
-                    slidesToShow: 1,
-                },
-            },
-        ],
+    
     };
 
     return (
-        <section className="w-full lg:px-20 px-5 lg:py-16 py-14 md:block hidden" style={{ backgroundImage: `url(${overview})` }}>
+        <section className="w-full lg:px-20 px-5 lg:py-16 py-14 md:hidden block" style={{ backgroundImage: `url(${overview})` }}>
             <div className="grid md:grid-cols-12 grid-cols-1 lg:gap-5 gap-0">
                 {/* Left Side */}
                 <div className="col-span-4  text-white flex items-center" data-aos="fade-right">
@@ -92,4 +79,4 @@ const Overview = () => {
     );
 };
 
-export default Overview;
+export default MobileOverview;
