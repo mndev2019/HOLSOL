@@ -48,13 +48,7 @@ const Footer = () => {
         {/* Useful Links */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Useful Links</h3>
-          <ul className="space-y-2 text-gray-300">
-                  <li className="mb-2"><a href="">Home</a></li>
-                  <li className="mb-2"><a href="/about">About Us</a></li>
-                  <li className="mb-2"><a href="/service">Services</a></li>
-                  <li className="mb-2"><a href="/sector">Sectors</a></li>
-                  <li><a href="/contact">Contact</a></li>
-                </ul>
+          
           <ul className="space-y-2 text-gray-300">
             {[
               { name: "Blog", url: "/blog-detail" },
