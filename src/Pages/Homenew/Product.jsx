@@ -48,7 +48,7 @@ const Product = () => {
     //     ],
     // };
     const settings = {
-        arrows: true, // enable arrows on desktop
+        arrows: true,
         dots: false,
         infinite: true,
         speed: 600,
@@ -60,19 +60,20 @@ const Product = () => {
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 1024,
-                settings: { slidesToShow: 3, arrows: true } // arrows visible
+                breakpoint: 1024, // <= 1024px
+                settings: { slidesToShow: 3, arrows: true }
             },
             {
-                breakpoint: 768,
-                settings: { slidesToShow: 2, arrows: true } // arrows visible
+                breakpoint: 768, // <= 768px
+                settings: { slidesToShow: 2, arrows: true }
             },
             {
-                breakpoint: 480,
-                settings: { slidesToShow: 1, arrows: false } // hide arrows on mobile
+                breakpoint: 600, // <= 600px (more realistic for mobile)
+                settings: { slidesToShow: 1, arrows: false }
             }
         ]
     };
+
     const product = [
         {
             image: pmsgy,
