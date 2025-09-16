@@ -10,6 +10,7 @@ import Overview from './Overview'
 import Whychoose from './Whychoose'
 import Blogs from '../Home/Blogs'
 import OurLegacy from './OurLegacy'
+import Mobileproduct from './Mobileproduct'
 
 const Homenew = () => {
     return (
@@ -17,7 +18,8 @@ const Homenew = () => {
             <Bannernew />
             <Innovation />
             {/* <Blogs/> */}
-            <Product />
+            <Product  />
+            <Mobileproduct/>
             <Services />
             <Whychoose/>
             <Overview/>

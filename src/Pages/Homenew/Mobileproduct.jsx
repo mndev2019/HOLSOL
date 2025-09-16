@@ -11,74 +11,27 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-// import './Product.css'; // 👈 we’ll put custom CSS here
 
-const Product = () => {
+
+const Mobileproduct = () => {
 
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
 
-    const NextArrow = ({ onClick }) => (
-        <div
-            onClick={onClick}
-            className="absolute top-1/3 right-[-41px] z-10 cursor-pointer bg-white/80 backdrop-blur-md shadow-lg rounded-full p-3 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white transition transform hover:scale-110"
-        >
-            <FaChevronRight size={20} />
-        </div>
-    );
-
-    const PrevArrow = ({ onClick }) => (
-        <div
-            onClick={onClick}
-            className="absolute top-1/3 left-[-41px] z-10 cursor-pointer bg-white/80 backdrop-blur-md shadow-lg rounded-full p-3 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white transition transform hover:scale-110"
-        >
-            <FaChevronLeft size={20} />
-        </div>
-    );
+ 
 
     const settings = {
         arrows: true,
         dots: false,
         infinite: true,
         speed: 600,
-        slidesToShow: 4,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    // dots: true
-                }
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    // dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                   arrows: false
-                }
-            },
-
-           
-        ]
+       
+       
     };
 
     const product = [
@@ -91,12 +44,12 @@ const Product = () => {
     ];
 
     return (
-        <section className="relative lg:px-20 px-5 py-14 bg-gradient-to-br from-[#f8fbff] to-[#eef7ff] overflow-hidden md:block hidden">
-            {/* Background glow effects */}
+        <section className="relative lg:px-20 px-5 py-14 bg-gradient-to-br from-[#f8fbff] to-[#eef7ff] overflow-hidden md:hidden block">
+        
             <div className="absolute top-0 -left-20 w-96 h-96 bg-[#00C6FF]/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 -right-20 w-96 h-96 bg-[#0047FF]/20 rounded-full blur-3xl"></div>
 
-            {/* Heading */}
+        
             <div className="text-center mb-10 relative z-10">
                 <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
                     Innovative Solar Energy Products
@@ -119,7 +72,7 @@ const Product = () => {
                 <Slider {...settings}>
                     {product.map((itm, index) => (
                         <div key={index}>
-                            <div className="px-3"> {/* padding INSIDE, not on slide */}
+                            <div className="px-3"> 
                                 <img
                                     src={itm.image}
                                     alt={itm.text}
@@ -137,4 +90,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default Mobileproduct;
