@@ -11,6 +11,7 @@ import Whychoose from './Whychoose'
 import Blogs from '../Home/Blogs'
 import OurLegacy from './OurLegacy'
 import Mobileproduct from './Mobileproduct'
+import ServiceMobile from './ServiceMobile'
 
 const Homenew = () => {
     return (
@@ -21,6 +22,7 @@ const Homenew = () => {
             <Product  />
             <Mobileproduct/>
             <Services />
+            <ServiceMobile/>
             <Whychoose/>
             <Overview/>
          
