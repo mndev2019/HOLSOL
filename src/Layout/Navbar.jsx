@@ -7,7 +7,7 @@ import logo from '../../src/assets/Image/newlogoo.png'
 import Popup from '../Component/Popup';
 
 const Navbar = () => {
-     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null); // track dropdown (products/services)
     const toggleMenu = () => setIsOpen(!isOpen);
@@ -19,7 +19,7 @@ const Navbar = () => {
 
     const navlist = (
         <ul
-            className={`flex lg:flex-row flex-col list-none gap-8 font-semibold items-center text-xl ${location.pathname === "/" ? "text-white" : "text-black"
+            className={`flex lg:flex-row flex-col list-none gap-8 font-semibold items-center lg:text-xl text-md ${location.pathname === "/" ? "lg:text-white text-black" : "text-black"
                 }`}
         >
             <li>
@@ -102,25 +102,64 @@ const Navbar = () => {
 
     return (
         <>
-             <section className={`px-6 lg:px-10 shadow ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
-            <div className="container mx-auto">
-                <div className="flex justify-between items-center py-1">
-                    {/* Logo */}
-                    <NavLink to="/">
-                        {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
+            <section className={`px-6 lg:px-10 shadow ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
+                <div className="container mx-auto">
+                    <div className="flex justify-between items-center py-1">
+                        {/* Logo */}
+                        <NavLink to="/">
+                            {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                             HOLSOL
                         </span> */}
-                        <img src={logo} alt='image' className='h-[60px]' />
-                    </NavLink>
+                            <img src={logo} alt='image' className='lg:h-[60px] h-[50px]' />
+                        </NavLink>
 
-                    {/* Nav Links */}
-                    <div className="hidden lg:flex items-center gap-8">
-                        {navlist}
+                        {/* Nav Links */}
+                        <div className="hidden lg:flex items-center gap-8">
+                            {navlist}
+                        </div>
+
+                        {/* Brochure button */}
+                        <div className="hidden lg:flex items-center gap-2 text-right">
+                            <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                                <FaRegFileAlt className="text-lg" />
+                                <span>Brochure</span>
+                            </a>
+                            <button onClick={() => setIsPopupOpen(true)} className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                                <span>Get Free Quote</span>
+                            </button>
+                            <a
+                                href="tel:9257055583"
+                                className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
+                            >
+                                <span>Call Now</span>
+                            </a>
+
+                        </div>
+
+                        {/* Mobile menu button */}
+                        <div className="lg:hidden">
+                            <button onClick={toggleMenu}>
+                            <MenuOutlined className="!text-yellow-500 text-3xl" />
+
+                            </button>
+                        </div>
                     </div>
+                </div>
 
-                    {/* Brochure button */}
-                    <div className="hidden lg:flex items-center gap-2 text-right">
-                        <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                {/* Mobile Sidebar */}
+                <div className={`fixed inset-0 bg-white z-50 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 lg:hidden`} style={{ width: "70%" }}>
+                    <div className="p-6">
+                        {/* Close button */}
+                        <div className="flex justify-end mb-6">
+                            <button onClick={toggleMenu}>
+                                <CloseOutlined className="text-2xl" />
+                            </button>
+                        </div>
+                        {navlist}
+
+                        {/* Brochure in mobile */}
+
+                        <a href={brochure} target="_blank" rel="noopener noreferrer" className="mb-2 lg:mt-0 mt-2 flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <FaRegFileAlt className="text-lg" />
                             <span>Brochure</span>
                         </a>
@@ -129,49 +168,21 @@ const Navbar = () => {
                         </button>
                         <a
                             href="tel:9257055583"
-                            className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
+                            className="mt-2 flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
                         >
                             <span>Call Now</span>
                         </a>
 
                     </div>
-
-                    {/* Mobile menu button */}
-                    <div className="lg:hidden">
-                        <button onClick={toggleMenu}>
-                            <MenuOutlined className="text-3xl" />
-                        </button>
-                    </div>
                 </div>
-            </div>
-
-            {/* Mobile Sidebar */}
-            <div className={`fixed inset-0 bg-white z-50 transform ${isOpen ? "translate-x-0" : "-translate-x-full"} transition-transform duration-300 lg:hidden`} style={{ width: "70%" }}>
-                <div className="p-6">
-                    {/* Close button */}
-                    <div className="flex justify-end mb-6">
-                        <button onClick={toggleMenu}>
-                            <CloseOutlined className="text-2xl" />
-                        </button>
-                    </div>
-                    {navlist}
-
-                    {/* Brochure in mobile */}
-                    <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
-                        <FaRegFileAlt className="text-lg" />
-                        <span>Brochure</span>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-          {
-        isPopupOpen && (
-            <Popup onClose={() => setIsPopupOpen(false)} />
-        )
-    }
+            </section>
+            {
+                isPopupOpen && (
+                    <Popup onClose={() => setIsPopupOpen(false)} />
+                )
+            }
         </>
-   
+
     );
 };
 

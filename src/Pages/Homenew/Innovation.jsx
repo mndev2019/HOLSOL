@@ -62,9 +62,9 @@ const Innovation = () => {
             <section className="py-5 px-6 lg:px-20 bg-gradient-to-r from-green-100 via-blue-100 to-purple-100">
                 {/* Heading */}
                 <div className="text-center lg:text-left max-w-2xl mb-10">
-                       <div className="flex items-center gap-4">
+                    <div className="flex items-center justify-center lg:justify-start gap-4 ">
                         <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
-                           Process
+                            Process
                         </h4>
                         <span className="h-[1px] w-16 bg-gray-600"></span>
                     </div>
@@ -94,10 +94,7 @@ const Innovation = () => {
                             key={step.id}
                             className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all p-5 flex flex-col items-center text-center relative transform hover:-translate-y-2 hover:scale-105 duration-300"
                         >
-                            {/* Number Badge */}
-                            <span className="lg:hidden absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white w-12 h-12 flex items-center justify-center rounded-full font-bold shadow-lg">
-                                {step.id}
-                            </span>
+
 
                             {/* Icon */}
                             <div className="mb-6">{step.icon}</div>
@@ -121,7 +118,7 @@ const Innovation = () => {
             {isPopupOpen && (
                 <Popup onClose={() => setIsPopupOpen(false)} />
             )}
-          
+
         </>
 
     );

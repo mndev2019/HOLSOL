@@ -83,6 +83,7 @@ const Services = () => {
         </div>
     );
     const settings = {
+        arrows: true, // enable arrows on desktop
         dots: false,
         infinite: true,
         speed: 600,
@@ -95,18 +96,19 @@ const Services = () => {
         responsive: [
             {
                 breakpoint: 1024,
-                settings: { slidesToShow: 3 }
+                settings: { slidesToShow: 3, arrows: true } // arrows visible
             },
             {
                 breakpoint: 768,
-                settings: { slidesToShow: 2 }
+                settings: { slidesToShow: 2, arrows: true } // arrows visible
             },
             {
                 breakpoint: 480,
-                settings: { slidesToShow: 1 }
+                settings: { slidesToShow: 1, arrows: false } // hide arrows on mobile
             }
         ]
     };
+
 
     return (
         <section
@@ -121,7 +123,7 @@ const Services = () => {
                     <span className="h-[1px] w-16 bg-gray-600"></span>
                 </div>
 
-                <h2 className="text-4xl lg:text-4xl font-extrabold text-gray-900 mt-2" data-aos="flip-left">
+                <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-2" data-aos="flip-left">
                     What we’re offering to{" "}
                     <span className="block">
                         our{" "}

@@ -1,9 +1,12 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { PiBuildingOfficeFill } from "react-icons/pi";
 import overview from '../../assets/Image/overviewbg.jpg';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Presence = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 }); // duration in ms
+  }, []);
   const offices = [
     {
       title: "Corporate Office - Rajasthan",
@@ -33,16 +36,16 @@ const Presence = () => {
         <h4 className="uppercase text-sm tracking-widest text-white">
           Best Solar Energy Solutions
         </h4>
-        <h2 className="text-4xl  font-extrabold text-white mt-2">
+        <h2 className="lg:text-4xl text-3xl  font-extrabold text-white mt-2" data-aos="flip-left">
           Our Presence
         </h2>
 
       </div>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-16 items-center relative z-10">
-       
+      <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-16 gap-10 items-center relative z-10">
+
         <div className="relative">
-        
+
           <div className="absolute left-6 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#00C6FF] to-[#0047FF] animate-pulse" />
 
           <div className="space-y-5">
@@ -51,7 +54,7 @@ const Presence = () => {
                 key={index}
                 className="relative flex gap-6 p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300"
               >
-                
+
                 <div className="absolute -left-3 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white shadow-xl animate-bounce">
                   <PiBuildingOfficeFill />
                 </div>

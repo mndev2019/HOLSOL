@@ -12,7 +12,7 @@ const Footer = () => {
           {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
             HOLSOL
           </span> */}
-          <img src={logo} alt='image' className='h-[60px]' />
+          <img src={logo} alt='image' className='lg:h-[60px] h-[40px]' />
           <p className="text-gray-300 text-sm">
 
             HOLSOL aims to make India the smartest solar-powered nation, leading the world with clean and affordable energy.

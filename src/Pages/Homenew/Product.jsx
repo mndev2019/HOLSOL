@@ -13,10 +13,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Product = () => {
-    
-  useEffect(() => {
-    AOS.init({ duration: 1000 }); // duration in ms
-  }, []);
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // duration in ms
+    }, []);
     const NextArrow = ({ onClick }) => (
         <div
             onClick={onClick}
@@ -34,18 +34,44 @@ const Product = () => {
             <FaChevronLeft size={20} />
         </div>
     );
+    // const settings = {
+    //     dots: false,
+    //     infinite: true,
+    //     speed: 600,
+    //     slidesToShow: 4,
+    //     slidesToScroll: 1,
+    //     nextArrow: <NextArrow />,
+    //     prevArrow: <PrevArrow />,
+    //     responsive: [
+    //         { breakpoint: 1024, settings: { slidesToShow: 2 } },
+    //         { breakpoint: 768, settings: { slidesToShow: 1 } },
+    //     ],
+    // };
     const settings = {
+        arrows: true, // enable arrows on desktop
         dots: false,
         infinite: true,
         speed: 600,
         slidesToShow: 4,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         responsive: [
-            { breakpoint: 1024, settings: { slidesToShow: 2 } },
-            { breakpoint: 768, settings: { slidesToShow: 1 } },
-        ],
+            {
+                breakpoint: 1024,
+                settings: { slidesToShow: 3, arrows: true } // arrows visible
+            },
+            {
+                breakpoint: 768,
+                settings: { slidesToShow: 2, arrows: true } // arrows visible
+            },
+            {
+                breakpoint: 480,
+                settings: { slidesToShow: 1, arrows: false } // hide arrows on mobile
+            }
+        ]
     };
     const product = [
         {
@@ -94,7 +120,7 @@ const Product = () => {
 
                         </span>
                     </h2>
-                    
+
 
                 </div>
                 <div className="slider-container">

@@ -66,21 +66,22 @@ const Bannernew = () => {
                 <div className="absolute inset-0 bg-black/30"></div>
 
                 {/* Social Icons Left */}
-                <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col gap-6 text-white text-lg z-10">
+                <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-6 text-white text-lg z-10">
                     <a href="#" className="hover:text-blue-400 transition">
                         <FaFacebookF />
                     </a>
-                    <a href="#" className="hover:text-gray-300 transition">
+                    <a href="#" className="hover:text-gray-300 transition mt-3">
                         <FaXTwitter />
                     </a>
-                    <a href="#" className="hover:text-pink-400 transition">
+                    <a href="#" className="hover:text-pink-400 transition mt-3">
                         <FaInstagram />
                     </a>
                 </div>
 
+
                 {/* Content Center-Left */}
                 <div className="relative z-10 text-left text-white max-w-3xl px-8 md:px-16">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
                         Power Your Future with <br />
                         {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                                Solar Energy

@@ -18,7 +18,7 @@ const Whychoose = () => {
 
     return (
         <section className="w-full py-14 bg-gradient-to-r from-green-100 via-blue-100 to-purple-100 relative">
-            <img src={sun} className='absolute right-[17px] top-[23px]' style={{ animation: "spin 10s linear infinite" }} />
+            <img src={sun} className='absolute right-[17px] top-[23px] md:h-auto h-[50px]' style={{ animation: "spin 10s linear infinite" }} />
             <div className="max-w-6xl mx-auto px-6 text-center">
                 {/* Heading */}
                 <h2 className="text-3xl font-bold mb-5 text-black" data-aos="flip-left">
@@ -33,7 +33,7 @@ const Whychoose = () => {
                     {features.map((feature, index) => (
                         <div key={index} className="flex items-start gap-4">
                             <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-2xl font-bold">✔</span>
-                            <p className="text-gray-800 font-semibold">{feature}</p>
+                            <p className="text-gray-800 lg:text-md font-[500] text-sm text-start">{feature}</p>
                         </div>
                     ))}
                 </div>
