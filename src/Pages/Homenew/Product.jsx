@@ -36,7 +36,7 @@ const Product = () => {
     );
   
     const settings = {
-        arrows: false,
+        arrows: true,
         dots: false,
         infinite: true,
         speed: 600,
@@ -49,11 +49,11 @@ const Product = () => {
         responsive: [
             {
                 breakpoint: 1024, // <= 1024px
-                settings: { slidesToShow: 3, arrows: true }
+                settings: { slidesToShow: 3}
             },
             {
                 breakpoint: 768, // <= 768px
-                settings: { slidesToShow: 2, arrows: true }
+                settings: { slidesToShow: 2}
             },
             {
                 breakpoint: 600, // <= 600px (more realistic for mobile)
