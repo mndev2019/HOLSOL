@@ -22,7 +22,7 @@ const Mobileproduct = () => {
  
 
     const settings = {
-        arrows: true,
+        arrows: false,
         dots: false,
         infinite: true,
         speed: 600,

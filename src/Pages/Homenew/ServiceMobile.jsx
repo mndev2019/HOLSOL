@@ -60,59 +60,29 @@ const services = [
     },
 ];
 
-const Services = () => {
+const ServiceMobile = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 }); // duration in ms
     }, []);
     const navigate = useNavigate();
-    const NextArrow = ({ onClick }) => (
-        <div
-            onClick={onClick}
-            className="absolute top-1/2 right-[-41px] z-10 cursor-pointer bg-white/80 backdrop-blur-md shadow-lg rounded-full p-2 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white transition transform hover:scale-110"
-        >
-            <FaChevronRight size={15} />
-        </div>
-    );
-
-    const PrevArrow = ({ onClick }) => (
-        <div
-            onClick={onClick}
-            className="absolute top-1/2 left-[-41px] z-10 cursor-pointer bg-white/80 backdrop-blur-md shadow-lg rounded-full p-2 hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] hover:text-white transition transform hover:scale-110"
-        >
-            <FaChevronLeft size={15} />
-        </div>
-    );
+ 
     const settings = {
-        arrows: true, // enable arrows on desktop
+        arrows: false,
         dots: false,
         infinite: true,
         speed: 600,
-        slidesToShow: 4,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-        nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: { slidesToShow: 3, arrows: true } // arrows visible
-            },
-            {
-                breakpoint: 768,
-                settings: { slidesToShow: 2, arrows: true } // arrows visible
-            },
-            {
-                breakpoint: 480,
-                settings: { slidesToShow: 1, arrows: false } // hide arrows on mobile
-            }
-        ]
+       
+      
     };
 
 
     return (
         <section
-            className="lg:px-20 px-5 lg:py-20 py-14 bg-gray-50 md:block hidden"
+            className="lg:px-20 px-5 lg:py-20 py-14 bg-gray-50 md:hidden block"
             style={{ backgroundImage: `url(${service})` }}
         >
             <div className="text-center mb-10">
@@ -185,4 +155,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default ServiceMobile;
