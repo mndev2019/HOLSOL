@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import sun from '../../assets/Image/sun.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Whychoose = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // duration in ms
+    }, []);
     const features = [
         "Zero-Risk Solar – 5-year solar insurance on structures & systems",
         "Tailored Solutions – Custom designs for residential, commercial & rooftop needs",
@@ -11,13 +17,14 @@ const Whychoose = () => {
     ];
 
     return (
-        <section className="w-full py-20 bg-gradient-to-r from-green-100 via-blue-100 to-purple-100">
+        <section className="w-full py-14 bg-gradient-to-r from-green-100 via-blue-100 to-purple-100 relative">
+            <img src={sun} className='absolute right-[17px] top-[23px]' style={{ animation: "spin 10s linear infinite" }} />
             <div className="max-w-6xl mx-auto px-6 text-center">
                 {/* Heading */}
-                <h2 className="text-4xl font-bold mb-8 text-black">
-                    Why Choose <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#00C6FF] to-[#0047FF]'>HOLSOL Energy</span> 
+                <h2 className="text-3xl font-bold mb-5 text-black" data-aos="flip-left">
+                    Why Choose <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#00C6FF] to-[#0047FF]'>HOLSOL Energy</span>
                 </h2>
-                <p className="text-lg mb-12 text-gray-700">
+                <p className="text-lg mb-8 text-gray-700">
                     We provide innovative, reliable, and sustainable solar solutions tailored to your needs.
                 </p>
 

@@ -4,6 +4,7 @@
 }
 body{
    font-family: "Oswald", sans-serif;
+   overflow-x: hidden;
 }
 .heading::before{
   content: "";
@@ -21,4 +22,26 @@ body{
 .bdt-animation-kenburns {
   animation: bdt-kenburns 15s ease-in-out infinite alternate;
 }
+/* sun animation why choose  */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* arrow animation */
+@keyframes moveBackForth {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(15px); /* how far it moves */
+  }
+}
+
+/* heading animation */
+
+
 

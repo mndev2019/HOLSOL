@@ -4,7 +4,7 @@ import logo from '../../src/assets/Image/newlogoo.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-200 py-16 px-6 lg:px-20">
+    <footer className="bg-black text-gray-200 py-10 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
         <div>
@@ -87,7 +87,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Copyright */}
-      <div className="mt-12 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
+      <div className="mt-5 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
         &copy; {new Date().getFullYear()} HOLSOL Solar. All rights reserved.
         <br />
         Developed by{" "}

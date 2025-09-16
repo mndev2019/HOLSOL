@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import service from "../../assets/Image/servicebg.jpg";
 // import inatallation from '../../assets/Image/installation.png';
@@ -16,6 +16,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const services = [
@@ -53,12 +55,15 @@ const services = [
         title: "Insurance",
         description:
             "Offering insurance solutions to protect solar investments and ensure peace of mind.",
-        img:insurance
-,
+        img: insurance
+        ,
     },
 ];
 
 const Services = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // duration in ms
+    }, []);
     const navigate = useNavigate();
     const NextArrow = ({ onClick }) => (
         <div
@@ -109,20 +114,25 @@ const Services = () => {
             style={{ backgroundImage: `url(${service})` }}
         >
             <div className="text-center mb-10">
-                <h4 className="uppercase text-sm tracking-widest text-gray-600">
-                    Services
-                </h4>
-                <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-2">
-                    What we’re offering to{' '}
+                <div className="flex items-center justify-center gap-4">
+                    <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
+                        Services
+                    </h4>
+                    <span className="h-[1px] w-16 bg-gray-600"></span>
+                </div>
+
+                <h2 className="text-4xl lg:text-4xl font-extrabold text-gray-900 mt-2" data-aos="flip-left">
+                    What we’re offering to{" "}
                     <span className="block">
-                        our{' '}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#00C6FF] to-[#0047FF] ">
+                        our{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#00C6FF] to-[#0047FF]">
                             customers
                         </span>
                         .
                     </span>
                 </h2>
             </div>
+
 
 
             <Slider {...settings}>
@@ -159,7 +169,7 @@ const Services = () => {
                             </p>
 
                             {/* Button */}
-                            <button onClick={()=> navigate('/service-detail')} className="w-12 h-12 flex items-center justify-center rounded-full 
+                            <button onClick={() => navigate('/service-detail')} className="w-12 h-12 flex items-center justify-center rounded-full 
                      bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white 
                      transition-all duration-500 group-hover:bg-white group-hover:text-[#0047FF]">
                                 ↗

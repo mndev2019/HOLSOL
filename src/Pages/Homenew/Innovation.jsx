@@ -59,34 +59,40 @@ const Innovation = () => {
 
     return (
         <>
-            <section className="py-20 px-6 lg:px-20 bg-gradient-to-r from-green-100 via-blue-100 to-purple-100">
+            <section className="py-5 px-6 lg:px-20 bg-gradient-to-r from-green-100 via-blue-100 to-purple-100">
                 {/* Heading */}
-                <div className="text-center lg:text-left max-w-2xl mb-16">
-                    <h4 className="uppercase text-sm tracking-widest text-gray-600">
+                <div className="text-center lg:text-left max-w-2xl mb-10">
+                       <div className="flex items-center gap-4">
+                        <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
+                           Process
+                        </h4>
+                        <span className="h-[1px] w-16 bg-gray-600"></span>
+                    </div>
+                    {/* <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
                         Process
-                    </h4>
-                    <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-2">
+                    </h4> */}
+                    <h2 className="text-2xl lg:text-3xl font-extrabold text-gray-900 mt-2">
                         REnergy Innovation
                     </h2>
-                    <p className="mt-4 text-gray-700 text-lg">
+                    <p className="mt-2 text-gray-700 text-md">
                         The process involves site assessment, system design, installation,
                         grid connection, maintenance, monitoring, and customer support.
                     </p>
-                    <button
+                    {/* <button
                         onClick={() => setIsPopupOpen(true)} // 👈 open popup
-                        className="mt-8 px-8 py-3 rounded-full border border-gray-900 text-gray-900 font-semibold flex items-center gap-2 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105"
+                        className="mt-2 px-8 py-3 rounded-full border border-gray-900 text-gray-900 font-semibold flex items-center gap-2 hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105"
                     >
                         Get in Touch
                         <span>↗</span>
-                    </button>
+                    </button> */}
                 </div>
 
                 {/* Steps */}
-                <div className="grid md:grid-cols-3 gap-10 mt-12 relative">
+                <div className="grid md:grid-cols-3 gap-10 mt-2 relative">
                     {steps.map((step, index) => (
                         <div
                             key={step.id}
-                            className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all p-8 flex flex-col items-center text-center relative transform hover:-translate-y-2 hover:scale-105 duration-300"
+                            className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all p-5 flex flex-col items-center text-center relative transform hover:-translate-y-2 hover:scale-105 duration-300"
                         >
                             {/* Number Badge */}
                             <span className="lg:hidden absolute -top-5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white w-12 h-12 flex items-center justify-center rounded-full font-bold shadow-lg">
@@ -115,23 +121,7 @@ const Innovation = () => {
             {isPopupOpen && (
                 <Popup onClose={() => setIsPopupOpen(false)} />
             )}
-            {/* <section className="py-10 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4">
-                    <Slider {...settings}>
-                        {images.map((img, index) => (
-                            <div key={index} className="px-2">
-                                <div className="rounded-2xl overflow-hidden shadow-md">
-                                    <img
-                                        src={img}
-                                        alt={`slide-${index}`}
-                                        className="w-full h-[350px] object-cover"
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </Slider>
-                </div>
-            </section> */}
+          
         </>
 
     );

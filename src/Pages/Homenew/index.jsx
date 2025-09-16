@@ -8,6 +8,8 @@ import Services from './Services'
 import Product from './Product'
 import Overview from './Overview'
 import Whychoose from './Whychoose'
+import Blogs from '../Home/Blogs'
+import OurLegacy from './OurLegacy'
 
 const Homenew = () => {
     return (
@@ -19,7 +21,9 @@ const Homenew = () => {
             <Services />
             <Whychoose/>
             <Overview/>
+         
             <Blognew />
+            <OurLegacy/>
             <Presence />
         </>
     )

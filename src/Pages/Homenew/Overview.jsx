@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 // import team2 from '../../assets/Image/team.png';
 import overview from '../../assets/Image/overviewbg.jpg';
@@ -9,19 +9,23 @@ import cfo from '../../assets/Image/cfo.jpeg'
 import cmd from '../../assets/Image/cmd.jpeg'
 import head from '../../assets/Image/head.jpeg'
 import operation from '../../assets/Image/headoperation.png'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Overview = () => {
-    
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // duration in ms
+    }, []);
+
     const team = [
         { img: ceo, name: "Mr. Avinash Sharma", role: "CEO" },
         { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
         { img: cmd, name: "Mr. Ishwar Singh", role: "CMD" },
         { img: head, name: "Mr. Hemant Sharma", role: "Head of Commercial" },
         { img: operation, name: "Mr Akash Gupta", role: "Head of Operations" },
-       
+
     ];
 
-    
+
     // Slider settings
     const settings = {
         arrows: false,
@@ -52,7 +56,7 @@ const Overview = () => {
         <section className="w-full" style={{ backgroundImage: `url(${overview})` }}>
             <div className="grid grid-cols-12">
                 {/* Left Side */}
-                <div className="col-span-4 bg-gradient-to-b from-[#00C6FF] to-[#0047FF] text-white flex items-center px-12 py-16">
+                <div className="col-span-4  text-white flex items-center px-12 py-16" data-aos="fade-right">
                     <div>
                         <h2 className="text-3xl font-bold mb-4 leading-snug text-white">
                             OVERVIEW OF COMPANY
