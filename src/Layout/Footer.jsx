@@ -61,26 +61,38 @@ const Footer = () => {
               className="flex items-center gap-2 hover:text-white cursor-pointer transition"
             >
               <FaAngleRight className="text-[var(--primary)]" />
-              <Link to="/about" className="hover:underline">
-                About
+              <Link to="/" className="hover:underline">
+                Home
               </Link>
             </li>
-            {[
-              { name: "Home", url: "/" },
-              { name: "About Us", url: "/about" },
-              { name: "Contact Us", url: "" },
-              { name: "RS Group", url: "https://rs-group.co.in/" }
-            ].map((item) => (
-              <li
-                key={item.name}
-                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
-              >
-                <FaAngleRight className="text-[var(--primary)]" />
-                <a href={item.url} target="_blank" className="hover:underline">
-                  {item.name}
-                </a>
-              </li>
-            ))}
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="/about" className="hover:underline">
+                About Us
+              </Link>
+            </li>
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="https://rs-group.co.in/" className="hover:underline">
+                RS Group
+              </Link>
+            </li>
+            <li
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <a href="tel:9257055583" className="hover:underline">
+                Contact
+              </a>
+            </li>
+
+
           </ul>
 
         </div>
@@ -90,27 +102,52 @@ const Footer = () => {
           <h3 className="text-white text-lg font-semibold mb-4">Useful Links</h3>
 
           <ul className="space-y-2 text-gray-300">
-            {[
-              { name: "Blog", url: "/blog-detail" },
-              { name: "Warranty Policy", url: "" },
-              { name: "Privacy Policy", url: "" },
-              { name: "Terms & Conditions", url: "" },
-              { name: "Website Usage Policy", url: "" }
-            ].map((item) => (
-              <li
-                key={item.name}
-                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
-              >
-                <FaAngleRight className="text-[var(--primary)]" />
-                <a
-                  href={item.url}
-                  target="_blank"
-                  className="hover:underline"
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="/blog-detail" className="hover:underline">
+                Blog
+              </Link>
+            </li>
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="/warranty-policy" className="hover:underline">
+                Warranty Policy
+              </Link>
+            </li>
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="/privacy-policy" className="hover:underline">
+                Privacy Policy
+              </Link>
+            </li>
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="/terms" className="hover:underline">
+                Terms & Conditions
+              </Link>
+            </li>
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="/usage-policy" className="hover:underline">
+                Website Usage Policy
+              </Link>
+            </li>
+
           </ul>
 
         </div>
