@@ -1,10 +1,41 @@
-import { FaAngleRight, FaGift } from "react-icons/fa";
+import { FaAngleRight, FaArrowUp, FaGift } from "react-icons/fa";
 // import Logo from "../assets/Image/newlogo.jpeg";
 import logo from '../../src/assets/Image/newlogoo.png'
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
   return (
-    <footer className="bg-black text-gray-200 py-10 px-6 lg:px-20">
+    <footer className="bg-black text-gray-200 py-10 px-6 lg:px-20 relative">
+      {isVisible && (
+        <div
+          onClick={scrollToTop}
+          className="items-center justify-center flex w-[40px] h-[40px] 
+                     rounded-full text-white bg-gradient-to-r from-[#00C6FF] to-[#0047FF] 
+                     fixed right-[13px] bottom-[35px] z-50 shadow-lg cursor-pointer 
+                     transition-opacity duration-300"
+        >
+          <FaArrowUp />
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Description */}
         <div>
@@ -25,6 +56,15 @@ const Footer = () => {
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-300">
+            <li
+
+              className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+            >
+              <FaAngleRight className="text-[var(--primary)]" />
+              <Link to="/about" className="hover:underline">
+                About
+              </Link>
+            </li>
             {[
               { name: "Home", url: "/" },
               { name: "About Us", url: "/about" },
@@ -48,7 +88,7 @@ const Footer = () => {
         {/* Useful Links */}
         <div>
           <h3 className="text-white text-lg font-semibold mb-4">Useful Links</h3>
-          
+
           <ul className="space-y-2 text-gray-300">
             {[
               { name: "Blog", url: "/blog-detail" },

@@ -10,44 +10,27 @@ const About = () => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     return (
         <>
-            <section className="lg:px-20 px-5 lg:py-20 py-14">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <section className="lg:px-20 px-5 lg:py-20 py-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-10 gap-5 items-center">
 
                     {/* Left Side */}
                     <div className="relative">
                         {/* Main Image */}
                         <img src={aboutusleft} alt="About Us" className="rounded-lg " />
-                        {/* 
-                        <div className="absolute top-10 -left-5">
-                            <div className="relative bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white px-10 py-6">
-                              
-                                <div className="flex flex-col items-center">
-                                    <div className="w-20 h-20 rounded-full bg-[#00C6FF] flex items-center justify-center text-4xl font-bold">
-                                        25
-                                    </div>
-                                    <p className="mt-2 text-sm font-medium text-center">Years of Experience</p>
-                                </div>
 
-                                
-                                <div className="absolute bottom-0 -left-5 w-0 h-0 
-                border-t-[40px] border-t-transparent 
-                border-r-[40px] border-r-yellow-500">
-                                </div>
-                            </div>
-                        </div> */}
                         <div className="absolute top-10 -left-5">
-                            <div className="relative bg-white shadow-xl rounded-2xl px-10 py-8 overflow-hidden">
+                            <div className="relative bg-white shadow-xl rounded-2xl lg:px-10 px-3 lg:py-8 py-2 overflow-hidden">
                                 {/* Gradient Ring Circle */}
                                 <div className="relative flex items-center justify-center">
-                                    <div className="w-28 h-28 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] p-[3px]">
+                                    <div className="lg:w-28 w-18 lg:h-28 h-18 rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] p-[3px]">
                                         <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
-                                            <span className="text-4xl font-extrabold text-[#0047FF]">25</span>
+                                            <span className="lg:text-4xl text-2xl font-extrabold text-[#0047FF]">25</span>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Text */}
-                                <p className="mt-4 text-gray-800 font-bold text-center text-base tracking-wide">
+                                <p className="lg:mt-4 mt-2 lg:mb-0 mb-2 text-gray-800 lg:font-bold font-semibold text-center text-base tracking-wide">
                                     Years of Experience
                                 </p>
 
@@ -56,21 +39,6 @@ const About = () => {
                             </div>
                         </div>
 
-                        {/* Small Video Thumbnail (Bottom Right) */}
-                        {/* <div className="absolute bottom-5 right-5">
-                            <div className="relative w-50 rounded-lg overflow-hidden shadow-lg">
-                                <img
-                                    src={aboutussecond}
-                                    alt="Video Thumbnail"
-                                    className="w-full h-full object-cover"
-                                />
-                                <button className="absolute inset-0 flex items-center justify-center">
-                                <span className="w-12 h-12 flex items-center justify-center rounded-full bg-white text-green-700 text-xl shadow-lg">
-                                    ▶
-                                </span>
-                            </button>
-                            </div>
-                        </div> */}
                     </div>
 
                     {/* Right Side */}
@@ -105,23 +73,23 @@ const About = () => {
 
                         {/* Checklist */}
                         <ul className="space-y-2 mb-6">
-                            <li className="flex items-center gap-2 font-semibold text-lg">
+                            <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
                                 Zero-Risk Solar – First in India to provide 5-year solar insurance on structures & systems.
                             </li>
-                            <li className="flex items-center gap-2 font-semibold text-lg">
+                            <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
                                 Tailored Solutions – Custom designs for residential, commercial, and rooftop needs.
                             </li>
-                            <li className="flex items-center gap-2 font-semibold text-lg">
+                            <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
                                 Hassle-Free Service – From consultation to maintenance, everything handled end-to-end.
                             </li>
-                            <li className="flex items-center gap-2 font-semibold text-lg">
+                            <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
                                 Powered by RS Group
                             </li>
-                            <li className="flex items-center gap-2 font-semibold text-lg">
+                            <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
                                 Empanelled with PM Surya Ghar Portal
                             </li>
