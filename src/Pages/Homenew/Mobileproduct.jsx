@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import rooftop from '../../assets/Image/newsolarrooftop.jpg';
 import commercial from '../../assets/Image/commercial.jpg';
 import industrial from '../../assets/Image/industrial (2).jpg';
-import solarepc from '../../assets/Image/solarepc.jpg';
+// import solarepc from '../../assets/Image/solarepc.jpg';
 import pmsgy from '../../assets/Image/pmsgy.jpg';
 import solarkit from '../../assets/Image/solarkit.png'
 
@@ -20,8 +20,6 @@ const Mobileproduct = () => {
         AOS.init({ duration: 1000 });
     }, []);
 
- 
-
     const settings = {
         arrows: false,
         dots: false,
@@ -31,8 +29,8 @@ const Mobileproduct = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-       
-       
+
+
     };
 
     const product = [
@@ -40,18 +38,18 @@ const Mobileproduct = () => {
         { image: rooftop, text: "Solar Rooftop" },
         { image: commercial, text: "Commercial Solutions" },
         { image: industrial, text: "Industrial Solutions" },
-        { image: solarepc, text: "Solar EPC Works" },
+        // { image: solarepc, text: "Solar EPC Works" },
         { image: solarkit, text: "Solar Kit OEM" },
-       
+
     ];
 
     return (
         <section className="relative lg:px-20 px-5 py-14 bg-gradient-to-br from-[#f8fbff] to-[#eef7ff] overflow-hidden md:hidden block">
-        
+
             <div className="absolute top-0 -left-20 w-96 h-96 bg-[#00C6FF]/20 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 -right-20 w-96 h-96 bg-[#0047FF]/20 rounded-full blur-3xl"></div>
 
-        
+
             <div className="text-center mb-10 relative z-10">
                 <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
                     Innovative Solar Energy Products
@@ -74,8 +72,8 @@ const Mobileproduct = () => {
                 <Slider {...settings}>
                     {product.map((itm, index) => (
                         <div key={index}>
-                            <div className="px-3 relative"> 
-                                 {itm.text === "Solar Kit OEM" && (
+                            <div className="px-3 relative">
+                                {itm.text === "Solar Kit OEM" && (
                                     <span className="absolute top-2 left-4 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white text-xs px-3 py-1 rounded-full shadow-md z-10">
                                         Ready to Install
                                     </span>

@@ -102,7 +102,7 @@ const Navbar = () => {
 
     return (
         <>
-            <section className={`px-6 lg:px-10 shadow ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
+            <section className={`px-6 lg:px-10 shadow py-2 ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
                 <div className="container mx-auto">
                     <div className="flex justify-between items-center py-1">
                         {/* Logo */}

@@ -20,16 +20,16 @@ const Blognew = () => {
             day: "19",
             month: "JAN",
             year: "2025",
-            title: "Investing in a Sustainable Energy Future",
-            para: "  Profitable business makes your profit Lorem ipsum dolor sit amet consectetur adipiscing elit, sed"
+            title: "Investing in a Brighter Solar Future",
+            para: "Discover how solar energy is powering homes and businesses with sustainable, cost-effective solutions that reduce reliance on fossil fuels."
         },
         {
             image: blog1,
             day: "19",
             month: "JAN",
             year: "2025",
-            title: "Beneath the Surface: Geothermal Energy Explored",
-            para: "Profitable business makes your profit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            title: "Unveiling the Power of the Sun",
+            para: "Explore the benefits of solar technology and how Holsol is driving innovation to make clean energy accessible for everyone."
         },
         // {
         //     image: blog3,
@@ -49,13 +49,14 @@ const Blognew = () => {
                 <div className="text-center lg:text-left max-w-2xl lg:mb-10 mb-4">
                     <div className="flex items-center lg:justify-start justify-center gap-4">
                         <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
-                           News and Updates
+                            News and Updates
                         </h4>
                         <span className="h-[1px] w-16 bg-gray-600"></span>
                     </div>
 
                     <h2 className="lg:text-4xl text-2xl  font-extrabold text-gray-900 mt-2">
-                        HOLSOL Uncover insights, inspiration, and innovation in our News
+                        {/* HOLSOL Uncover insights, inspiration, and innovation in our News */}
+                        HOLSOL insights, media & news
                     </h2>
                 </div>
                 {

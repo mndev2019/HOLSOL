@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import rooftop from '../../assets/Image/newsolarrooftop.jpg';
 import commercial from '../../assets/Image/commercial.jpg';
 import industrial from '../../assets/Image/industrial (2).jpg';
-import solarepc from '../../assets/Image/solarepc.jpg';
+// import solarepc from '../../assets/Image/solarepc.jpg';
 import pmsgy from '../../assets/Image/pmsgy.jpg';
 import solarkit from '../../assets/Image/solarkit.png'
 import Slider from "react-slick";
@@ -86,7 +86,7 @@ const Product = () => {
         { image: rooftop, text: "Solar Rooftop" },
         { image: commercial, text: "Commercial Solutions" },
         { image: industrial, text: "Industrial Solutions" },
-        { image: solarepc, text: "Solar EPC Works" },
+        // { image: solarepc, text: "Solar EPC Works" },
         { image: solarkit, text: "Solar Kit OEM" },
 
     ];

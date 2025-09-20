@@ -46,8 +46,7 @@ const Footer = () => {
           <img src={logo} alt='image' className='h-[45px]' />
           <p className="text-gray-300 text-sm mt-2">
 
-            HOLSOL aims to make India the smartest solar-powered nation, leading the world with clean and affordable energy.
-
+            HOLSOL India Pvt. Ltd. is a green initiative by R S Group in the renewable energy segment.
 
           </p>
         </div>

@@ -22,42 +22,43 @@ import 'aos/dist/aos.css';
 
 const services = [
     {
-        title: "Installation",
+        title: "High Yield Products",
         description:
-            "Solar panel installation for residential, commercial, and industrial sites.",
+            "1KW – 15KW energy-saving rooftop systems",
         img: intallation,
     },
     {
-        title: "Maintenance",
+        title: "IIT Approved Designs",
         description:
-            "Regular upkeep and repair of solar systems to ensure optimal performance and longevity.",
-        img: maintenanace,
-    },
-    {
-        title: "System Design",
-        description:
-            "Customizing solar solutions based on energy needs, site conditions, and efficiency goals.",
+            "Hercules HDG GI structure design (IIT approved).",
         img: systemdesign,
     },
     {
-        title: "Energy Consulting",
+        title: "Insured Panels & Structure",
         description:
-            "Advising on energy usage, savings, and how solar can fit into overall energy strategies.",
+            "Only company to provide insurance cover.",
         img: energy,
     },
     {
-        title: "Financing",
+        title: "Loyalty Cashback Card",
         description:
-            "Solar installation funding via loans, leases, or PPAs.",
-        img: financing,
-    },
-    {
-        title: "Insurance",
-        description:
-            "Offering insurance solutions to protect solar investments and ensure peace of mind.",
+            "First reward program in India offering ₹1,000 cashback/month up to 10 years.",
         img: insurance
         ,
     },
+    {
+        title: "Maintenance-Free Period",
+        description:
+            "Zero maintenance cost for 5 years post-installation.",
+        img: maintenanace,
+    },
+    {
+        title: "Fast & Easy Finance",
+        description:
+            "Loan facility with easy EMI options.",
+        img: financing,
+    },
+
 ];
 
 const Services = () => {
@@ -89,7 +90,7 @@ const Services = () => {
         speed: 600,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 3000,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
@@ -126,11 +127,11 @@ const Services = () => {
                 <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-2" data-aos="flip-left">
                     Our Offering in {" "}
                     <span className="block">
-                      
+
                         <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#00C6FF] to-[#0047FF]">
                             Solar Rooftop
                         </span>
-                        
+
                     </span>
                 </h2>
             </div>
@@ -139,11 +140,11 @@ const Services = () => {
 
             <Slider {...settings}>
                 {services.map((srv, index) => (
-                    <div key={index} className="px-3">
+                    <div key={index} className="px-3 h-full">
                         <div
                             key={index}
                             className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center text-center 
-             hover:shadow-xl transition-all duration-500 h-full 
+             hover:shadow-xl transition-all duration-500 min-h-[400px] 
              hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] group"
                         >
                             {/* Circle Image with Green Border */}

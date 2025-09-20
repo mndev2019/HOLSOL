@@ -9,10 +9,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Presence = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000 }); // duration in ms
+    AOS.init({ duration: 1000 });
   }, []);
   const settings = {
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
@@ -20,15 +20,13 @@ const Presence = () => {
     arrows: false,
     infinite: true,
     pauseOnHover: false,
+    vertical: true,
+    verticalSwiping: true,
   };
+
   const offices = [
     {
-      title: "Corporate Office - Rajasthan",
-      address:
-        "201, Gangasagar-B, Amarpali Marg, Vaishali Nagar, Jaipur, Rajasthan-302021",
-    },
-    {
-      title: "Branch Office - Uttar Pradesh",
+      title: "Branch Office - Lucknow",
       address:
         "6/349, Sector-6 Gomati Nagar, 226010",
     },
@@ -38,12 +36,12 @@ const Presence = () => {
         "Tosham Road Siwani Mandi, Pana Lohdi, Siwani, Haryana -127046",
     },
     {
-      title: "Branch Office - Punjab",
+      title: "Branch Office - Bathinda",
       address:
         "Guru Sarshanawala, Dabwali Road, Division Bathinda, Sub - Division TECH - 2, Bathinda, Punjab - 151001",
     },
     {
-      title: "Branch Office - Maharashtra",
+      title: "Branch Office - Pune",
       address:
         "Office No. 926, Regus, The Platinum Towers, Old Mundhwa Rd, Tukaram Nagar, Kharadi, Pune, Maharashtra 411014",
     },
@@ -51,11 +49,7 @@ const Presence = () => {
 
   return (
     <section className="relative lg:px-20 px-5 py-14 bg-gradient-to-br from-[#f8fbff] to-[#eef7ff] overflow-hidden" style={{ backgroundImage: `url(${overview})` }}>
-      {/* Decorative Blobs */}
-      {/* <div className="absolute top-0 -left-20 w-96 h-96 bg-[#00C6FF]/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 -right-20 w-96 h-96 bg-[#0047FF]/20 rounded-full blur-3xl"></div> */}
 
-      {/* Heading */}
       <div className="text-center mb-10 relative z-10">
         <h4 className="uppercase text-sm tracking-widest text-white">
           Best Solar Energy Solutions
@@ -65,42 +59,26 @@ const Presence = () => {
         </h2>
 
       </div>
-
       <div className="grid lg:grid-cols-2 grid-cols-1  gap-10 items-center relative z-10">
-
-        {/* <div className="relative">
-
-          <div className="absolute left-6 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#00C6FF] to-[#0047FF] animate-pulse" />
-
-          <div className="space-y-5">
-            {offices.map((office, index) => (
-              <div
-                key={index}
-                className="relative flex gap-6 p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300"
-              >
-
-                <div className="absolute -left-3 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white shadow-xl animate-bounce">
-                  <PiBuildingOfficeFill />
-                </div>
-
-                <div className="ml-8">
-                  <h4 className="font-semibold text-lg text-gray-900">
-                    {office.title}
-                  </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed tracking-[0.5px]">
-                    {office.address}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
         <div className="relative">
-
-
+          <div
+            className="relative flex gap-6 p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 mb-5"
+          >
+            <div className="absolute -left-3 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white shadow-xl animate-bounce">
+              <PiBuildingOfficeFill />
+            </div>
+            <div className="ml-8">
+              <h4 className="font-semibold text-lg text-gray-900">
+                Branch Office - Jaipur
+              </h4>
+              <p className="text-gray-600 text-sm leading-relaxed tracking-[0.5px]">
+                201, Gangasagar-B, Amarpali Marg, Vaishali Nagar, Jaipur, Rajasthan-302021
+              </p>
+            </div>
+          </div>
           <Slider {...settings}>
             {offices.map((office, index) => (
-              <div key={index} className="px-4">
+              <div key={index} className="p-2 px-3">
                 <div className="relative flex gap-6 p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300">
                   <div className="absolute -left-3 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white shadow-xl animate-bounce">
                     <PiBuildingOfficeFill />
@@ -118,7 +96,9 @@ const Presence = () => {
               </div>
             ))}
           </Slider>
+
         </div>
+
 
         <div className="relative w-full h-[300px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white hover:scale-[1.02] transition-all duration-300">
           <iframe
