@@ -132,7 +132,7 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 
 import bannerImg1 from "../../assets/Image/bannerbg.jpg";
-import bannerImg2 from "../../assets/Image/bannerhdfccard.jpg";
+import bannerImg2 from "../../assets/Image/hdfccard.png";
 import bannerImg3 from "../../assets/Image/diwalitv2.webp";
 import bannerImg4 from "../../assets/Image/insurancebanner.jpg";
 import bannerImg5 from "../../assets/Image/industrial.jpg";
@@ -207,7 +207,7 @@ const Bannernew = () => {
           <div key={index} className="relative h-[100vh]">
             {/* Background Image */}
             <div
-              className={`h-full w-full bg-cover bg-center flex items-center ${index == 2? "pl-5":" justify-center"}`}
+              className={`h-full w-full bg-cover bg-center flex items-center ${index == 2 || index== 1? "pl-5":" justify-center"}`}
               style={{ backgroundImage: `url(${s.image})` }}
             >
               {/* Overlay */}

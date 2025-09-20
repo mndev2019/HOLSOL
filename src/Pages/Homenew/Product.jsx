@@ -4,14 +4,15 @@ import commercial from '../../assets/Image/commercial.jpg';
 import industrial from '../../assets/Image/industrial (2).jpg';
 // import solarepc from '../../assets/Image/solarepc.jpg';
 import pmsgy from '../../assets/Image/pmsgy.jpg';
-import solarkit from '../../assets/Image/solarkit.png'
+import solarkit from '../../assets/Image/solarkitoem.png'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-// import './Product.css'; // 👈 we’ll put custom CSS here
+import logo from '../../assets/Image/newlogocolored.png'
+
 
 const Product = () => {
 
@@ -126,6 +127,12 @@ const Product = () => {
                                     <span className="absolute top-2 left-4 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white text-xs px-3 py-1 rounded-full shadow-md z-10">
                                         Ready to Install
                                     </span>
+                                )}
+                                {itm.text === "Solar Kit OEM" && (
+                                    <div className='absolute right-4 top-4 z-20'>
+                                        <img src={logo} className='h-5' />
+                                    </div>
+
                                 )}
                                 <img
                                     src={itm.image}
