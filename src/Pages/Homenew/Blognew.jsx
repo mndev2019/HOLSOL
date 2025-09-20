@@ -49,7 +49,7 @@ const Blognew = () => {
                 <div className="text-center lg:text-left max-w-2xl lg:mb-10 mb-4">
                     <div className="flex items-center lg:justify-start justify-center gap-4">
                         <h4 className="uppercase text-[16px] tracking-widest text-gray-600">
-                            Our News
+                           News and Updates
                         </h4>
                         <span className="h-[1px] w-16 bg-gray-600"></span>
                     </div>

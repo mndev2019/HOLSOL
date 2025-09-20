@@ -1,6 +1,6 @@
 import { FaAngleRight, FaArrowUp, FaGift } from "react-icons/fa";
 // import Logo from "../assets/Image/newlogo.jpeg";
-import logo from '../../src/assets/Image/newlogoo.png'
+import logo from '../assets/Image/newlogocolored.png'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -43,8 +43,8 @@ const Footer = () => {
           {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
             HOLSOL
           </span> */}
-          <img src={logo} alt='image' className='lg:h-[60px] h-[40px]' />
-          <p className="text-gray-300 text-sm">
+          <img src={logo} alt='image' className='h-[45px]' />
+          <p className="text-gray-300 text-sm mt-2">
 
             HOLSOL aims to make India the smartest solar-powered nation, leading the world with clean and affordable energy.
 
@@ -166,7 +166,7 @@ const Footer = () => {
 
       {/* Bottom Copyright */}
       <div className="mt-5 border-t border-gray-700 pt-6 text-center text-gray-400 text-sm">
-        &copy; {new Date().getFullYear()} HOLSOL Solar. All rights reserved.
+        &copy; {new Date().getFullYear()} HOLSOL India. All rights reserved.
         <br />
         Developed by{" "}
         <a

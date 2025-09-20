@@ -37,15 +37,17 @@ const OurLegacy = () => {
 
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {[
-              { number: "25+", label: "Years Legacy", color: "from-blue-400 to-blue-600" },
+              { number: "25+", label: "Years of Legacy", color: "from-blue-400 to-blue-600" },
               { number: "200+", label: "Offices", color: "from-purple-400 to-purple-600" },
               { number: "12,000+", label: "Employees", color: "from-pink-400 to-pink-600" },
               { number: "100+", label: "Service Centers", color: "from-green-400 to-green-600" },
-              { number: "100+", label: "Corporate Clients", color: "from-yellow-400 to-yellow-500" },
+              { number: "500+", label: "Corporate Clients", color: "from-yellow-400 to-yellow-500" },
+              { number: "✔", label: "Empaneled in PM Surya Ghar Yojana(Govt. Of India)", color: "from-purple-300 to-purple-700" },
               { number: "✔", label: "Insurance on Solar Panels", color: "from-indigo-400 to-indigo-600" },
-              { number: "✔", label: "Insurance on Structure", color: "from-teal-400 to-teal-600" },
-              { number: "✔", label: "IIT Approved Designs", color: "from-red-400 to-red-600" },
               { number: "₹1.2L", label: "Cashback Loyalty Card", color: "from-orange-400 to-orange-500" },
+              { number: "✔", label: "Insurance on Solar Structure", color: "from-teal-400 to-teal-600" },
+              { number: "✔", label: "IIT & MNIT Approved Solar Structure", color: "from-red-400 to-red-600" },
+              
             ].map((item, idx) => (
               <div
                 key={idx}

@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import rooftop from '../../assets/Image/rooftop.jpg';
+import rooftop from '../../assets/Image/newsolarrooftop.jpg';
 import commercial from '../../assets/Image/commercial.jpg';
 import industrial from '../../assets/Image/industrial (2).jpg';
-import solarepc from '../../assets/Image/solarepc (2).jpg';
-import pmsgy from '../../assets/Image/pmsgy (2).jpg';
-import pmkusum from '../../assets/Image/pm.jpg';
+import solarepc from '../../assets/Image/solarepc.jpg';
+import pmsgy from '../../assets/Image/pmsgy.jpg';
+import solarkit from '../../assets/Image/solarkit.png'
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -35,12 +36,13 @@ const Mobileproduct = () => {
     };
 
     const product = [
-        { image: pmsgy, text: "PMSGY Installation" },
+        { image: pmsgy, text: "PM Surya Ghar Yojana" },
         { image: rooftop, text: "Solar Rooftop" },
         { image: commercial, text: "Commercial Solutions" },
         { image: industrial, text: "Industrial Solutions" },
-        { image: solarepc, text: "Solar EPC" },
-        { image: pmkusum, text: "PM KUSUM Installations" },
+        { image: solarepc, text: "Solar EPC Works" },
+        { image: solarkit, text: "Solar Kit OEM" },
+       
     ];
 
     return (
@@ -72,7 +74,12 @@ const Mobileproduct = () => {
                 <Slider {...settings}>
                     {product.map((itm, index) => (
                         <div key={index}>
-                            <div className="px-3"> 
+                            <div className="px-3 relative"> 
+                                 {itm.text === "Solar Kit OEM" && (
+                                    <span className="absolute top-2 left-4 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white text-xs px-3 py-1 rounded-full shadow-md z-10">
+                                        Ready to Install
+                                    </span>
+                                )}
                                 <img
                                     src={itm.image}
                                     alt={itm.text}

@@ -17,12 +17,13 @@ const MobileOverview = () => {
     }, []);
 
     const team = [
-        { img: ceo, name: "Mr. Avinash Sharma", role: "CEO" },
-        { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
-        { img: cmd, name: "Mr. Ishwar Singh", role: "CMD" },
-        { img: head, name: "Mr. Hemant Sharma", role: "Head of Commercial" },
-        { img: operation, name: "Mr Akash Gupta", role: "Head of Operations" },
-    ];
+          { img: cmd, name: "Mr. Ishwar Singh Rathore", role: "CMD & Founder" },
+          { img: ceo, name: "Mr. Avinash Sharma", role: "CEO" },
+          { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
+          { img: head, name: "Mr. Hemant Sharma", role: " Head Finance" },
+          { img: operation, name: "Mr Akash Gupta", role: "Head Operations" },
+      ];
+  
 
 
 
@@ -48,7 +49,7 @@ const MobileOverview = () => {
                             OVERVIEW OF COMPANY
                         </h2>
                         <p className="md:text-lg text-sm leading-relaxed lg:mb-0 mb-5">
-                            HOLSOL Energy Systems Pvt Ltd, in collaboration with RS Group, aims to make India the smartest solar-powered nation,leading the world with clean and affordable energy.
+                             HOLSOL India Pvt. Ltd. is a green initiative by R S Group in the renewable energy segment.
 
                         </p>
 

@@ -18,17 +18,18 @@ const Homenew = () => {
     return (
         <>
             <Bannernew />
-            <Innovation />
+            {/* <Innovation /> */}
             {/* <Blogs/> */}
-            <Product  />
-            <Mobileproduct/>
+            <Product />
+            <Mobileproduct />
             <Services />
-            <ServiceMobile/>
-            <Whychoose/>
-            <Overview/>
-         <MobileOverview/>
+            <ServiceMobile />
+            <Whychoose />
+            <Overview />
+            <MobileOverview />
+            <OurLegacy />
             <Blognew />
-            <OurLegacy/>
+
             <Presence />
         </>
     )

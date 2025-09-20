@@ -124,13 +124,13 @@ const Services = () => {
                 </div>
 
                 <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mt-2" data-aos="flip-left">
-                    What we’re offering to{" "}
+                    Our Offering in {" "}
                     <span className="block">
-                        our{" "}
+                      
                         <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#00C6FF] to-[#0047FF]">
-                            customers
+                            Solar Rooftop
                         </span>
-                        .
+                        
                     </span>
                 </h2>
             </div>

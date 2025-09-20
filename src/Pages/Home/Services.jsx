@@ -32,13 +32,13 @@ const Services = () => {
             <section className='lg:px-20 px-5 lg:py-10 py-5'>
                 <Heading title="Solar Rooftops" />
                 <h3 className='text-[2em] font-[700] text-[#192e5b] py-3'>
-                    HOLSOL Solar: End-to-End Solar Solutions for Residential, Commercial, Industrial Solar Installations Across India
+                    HOLSOL India: End-to-End Solar Solutions for Residential, Commercial, Industrial Solar Installations Across India
                 </h3>
                 <p className='text-[15px] tracking-wide'>
                     Established in 2022, HOLSOL Energy Systems Private Limited is a Trusted solar energy company in India, specializing in Residential, Commercial, and  Industrial Solar installations. Our comprehensive portfolio includes advanced Rooftop Solar Systems and Large-Scale Solar Power Plants
                 </p>
                 <p className='text-[15px] tracking-wide'>
-                    Driven by a strong focus on Research and Development, HOLSOL Solar continuously invests in cutting-edge Solar Technologies to maximize Efficiency, Reduce Electricity Costs and Support India’s transition to Sustainable Energy.
+                    Driven by a strong focus on Research and Development, HOLSOL India continuously invests in cutting-edge Solar Technologies to maximize Efficiency, Reduce Electricity Costs and Support India’s transition to Sustainable Energy.
                 </p>
                 <div className="grid grid-cols-3 gap-6 pt-8">
                     {service.map((itm) => (

@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { FaRegFileAlt } from 'react-icons/fa';
 import brochure from "../assets/Pdffile/holsolbrochure.pdf";
-import logo from '../../src/assets/Image/newlogoo.png'
+import logo from '../assets/Image/newlogocolored.png'
 import Popup from '../Component/Popup';
 
 const Navbar = () => {
@@ -110,7 +110,7 @@ const Navbar = () => {
                             {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                             HOLSOL
                         </span> */}
-                            <img src={logo} alt='image' className='lg:h-[60px] h-[50px]' />
+                            <img src={logo} alt='image' className='lg:h-[45px] h-[30px]' />
                         </NavLink>
 
                         {/* Nav Links */}

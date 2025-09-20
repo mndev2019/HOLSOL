@@ -21,7 +21,7 @@ const Popup = () => {
             {/* Cross Button */}
             <button
               onClick={() => setShowPopup(false)}
-              className="absolute top-[3px] right-[10px] bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-2 rounded-full shadow-lg transition z-10"
+              className="absolute top-[3px] right-[10px] font-bold text-white p-2 rounded-full  transition z-10"
             >
               <AiOutlineClose size={22} />
             </button>
@@ -42,17 +42,17 @@ const Popup = () => {
                   {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                     HOLSOL
                   </span> */}
-                     <img src={logo} alt='image' className='h-[50px]'/>
+                  <img src={logo} alt='image' className='h-[50px]' />
                   <h3 className="text-2xl font-bold">India</h3>
                 </div>
-                <p className="text-sm opacity-90">Avail Government Subsidy</p>
+                <p className="text-sm opacity-90">Empowering Generation</p>
               </div>
             </div>
 
             {/* Content */}
             <div className="p-6">
               <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
-                Get Free Site Visit
+                To Avail Government Subsidy & Free Site Visit
               </h2>
               <p className="text-center text-gray-600 mb-6 text-sm">
                 Fill out the form below and we’ll get in touch with you
