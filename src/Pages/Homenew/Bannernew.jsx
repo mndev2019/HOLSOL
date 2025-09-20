@@ -125,14 +125,15 @@
 // };
 
 // export default Bannernew;
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-// import bannerImg from "../../assets/Image/newbanner.jpg"
+import Slider from "react-slick";
+
 import bannerImg1 from "../../assets/Image/bannerbg.jpg";
 import bannerImg2 from "../../assets/Image/bannerhdfccard.jpg";
-import bannerImg3 from "../../assets/Image/diwalitv.png";
+import bannerImg3 from "../../assets/Image/diwalitv2.webp";
 import bannerImg4 from "../../assets/Image/insurancebanner.jpg";
 import bannerImg5 from "../../assets/Image/industrial.jpg";
 
@@ -185,74 +186,75 @@ const slides = [
 ];
 
 const Bannernew = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
-  const containerRef = useRef(null);
 
-  // Auto slide every 6 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
+  const settings = {
+    dots: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    pauseOnHover: false,
+  };
 
   return (
     <section className="relative h-[100vh] w-full overflow-hidden">
-      <div
-        ref={containerRef}
-        className="flex transition-transform duration-1000 ease-in-out h-full"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-      >
+      <Slider {...settings} className="h-full">
         {slides.map((s, index) => (
-          <div
-            key={index}
-            className="min-w-full h-full bg-cover bg-center relative flex items-center justify-center"
-            style={{ backgroundImage: `url(${s.image})` }}
-          >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/40"></div>
+          <div key={index} className="relative h-[100vh]">
+            {/* Background Image */}
+            <div
+              className={`h-full w-full bg-cover bg-center flex items-center ${index == 2? "pl-5":" justify-center"}`}
+              style={{ backgroundImage: `url(${s.image})` }}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/40"></div>
 
-            {/* Social Icons Left */}
-            <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-6 text-white text-lg z-10">
-              <a href="#" className="hover:text-blue-400 transition">
-                <FaFacebookF />
-              </a>
-              <a href="#" className="hover:text-gray-300 transition">
-                <FaXTwitter />
-              </a>
-              <a href="#" className="hover:text-pink-400 transition">
-                <FaInstagram />
-              </a>
-            </div>
+              {/* Social Icons Left */}
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:flex flex-col gap-6 text-white text-lg z-10">
+                <a href="#" className="hover:text-blue-400 transition">
+                  <FaFacebookF />
+                </a>
+                <a href="#" className="hover:text-gray-300 transition">
+                  <FaXTwitter />
+                </a>
+                <a href="#" className="hover:text-pink-400 transition">
+                  <FaInstagram />
+                </a>
+              </div>
 
-            {/* Content Centered */}
-            <div className="relative z-10 text-left text-white max-w-3xl px-8 md:px-16">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                {s.title} <br />
-                <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                  {s.highlight}
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl">
-                {s.description}
-              </p>
-              <div className="flex gap-4">
-                <button
-                  onClick={() => navigate(s.link)}
-                  className="group relative flex items-center gap-3 px-5 py-2 rounded-full border border-white/60 text-white font-medium text-lg shadow-lg overflow-hidden transition-all duration-300 hover:bg-white hover:text-black"
-                >
-                  {s.button}
-                  <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white text-black group-hover:bg-black group-hover:text-white transition-all duration-300">
-                    <FaArrowRightLong />
-                  </div>
-                </button>
+              {/* Content Centered */}
+              <div className="relative z-10 text-left text-white max-w-3xl px-8 md:px-16">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                  {s.title} <br />
+                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                    {s.highlight}
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl">
+                  {s.description}
+                </p>
+                <div className="flex gap-4">
+                  <button
+                    onClick={() => navigate(s.link)}
+                    className="group relative flex items-center gap-3 px-5 py-2 rounded-full border border-white/60 text-white font-medium text-lg shadow-lg overflow-hidden transition-all duration-300 hover:bg-white hover:text-black"
+                  >
+                    {s.button}
+                    <div className="flex items-center justify-center w-9 h-9 rounded-full bg-white text-black group-hover:bg-black group-hover:text-white transition-all duration-300">
+                      <FaArrowRightLong />
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         ))}
-      </div>
+      </Slider>
     </section>
   );
-}
+};
+
 export default Bannernew;

@@ -12,7 +12,7 @@ const Presence = () => {
     AOS.init({ duration: 1000 });
   }, []);
   const settings = {
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2500,
@@ -24,21 +24,25 @@ const Presence = () => {
     verticalSwiping: true,
   };
 
+
   const offices = [
     {
       title: "Branch Office - Lucknow",
       address:
-        "6/349, Sector-6 Gomati Nagar, 226010",
+        
+         "6/349, Sector - 6, Gomati Nagar , Lucknow , Uttar Pradesh , India , Postal Code 226010  Lucknow India   ",
+         
+
     },
     {
       title: "Branch Office - Haryana",
       address:
-        "Tosham Road Siwani Mandi, Pana Lohdi, Siwani, Haryana -127046",
+        "Tosham  Road  Siwani  Mandi  , Pana  Lohdi  , Siwani , Haryana , India , postal code 127046 Siwani Haryana India",
     },
     {
       title: "Branch Office - Bathinda",
       address:
-        "Guru Sarshanawala, Dabwali Road, Division Bathinda, Sub - Division TECH - 2, Bathinda, Punjab - 151001",
+        "Guru Sarshanawala, Dabwali Road, Division Bathind -  Sub Division TECH - 2, Bathinda, Punjab - 151001",
     },
     {
       title: "Branch Office - Pune",
@@ -68,7 +72,7 @@ const Presence = () => {
               <PiBuildingOfficeFill />
             </div>
             <div className="ml-8">
-              <h4 className="font-semibold text-lg text-gray-900">
+              <h4 className="font-semibold text-md text-gray-900">
                 Branch Office - Jaipur
               </h4>
               <p className="text-gray-600 text-sm leading-relaxed tracking-[0.5px]">
@@ -78,18 +82,21 @@ const Presence = () => {
           </div>
           <Slider {...settings}>
             {offices.map((office, index) => (
-              <div key={index} className="p-2 px-3">
-                <div className="relative flex gap-6 p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300">
+              <div key={index} className="py-1 px-3">
+                <div className="relative flex  p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 ">
                   <div className="absolute -left-3 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white shadow-xl animate-bounce">
                     <PiBuildingOfficeFill />
                   </div>
 
                   <div className="ml-8">
-                    <h4 className="font-semibold text-lg text-gray-900">
+                    <h4 className="font-semibold text-md text-gray-900">
                       {office.title}
                     </h4>
                     <p className="text-gray-600 text-sm leading-relaxed tracking-[0.5px]">
                       {office.address}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed tracking-[0.5px]">
+                      {office.postalcode}
                     </p>
                   </div>
                 </div>
