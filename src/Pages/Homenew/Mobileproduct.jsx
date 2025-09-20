@@ -79,8 +79,11 @@ const Mobileproduct = () => {
                                         Ready to Install
                                     </span>
                                 )}
-                                   {itm.text === "Solar Kit OEM" && (
-                                   <img src={logo} className='h-5'/>
+                                {itm.text === "Solar Kit OEM" && (
+                                    <div className='absolute right-4 top-4 z-20'>
+                                        <img src={logo} className='h-5' />
+                                    </div>
+
                                 )}
                                 <img
                                     src={itm.image}
