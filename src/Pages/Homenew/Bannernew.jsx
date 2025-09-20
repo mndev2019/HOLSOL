@@ -1,3 +1,4 @@
+
 // import React, { useState, useEffect } from "react";
 // import { FaFacebookF, FaInstagram } from "react-icons/fa";
 // import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
@@ -128,7 +129,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
-
+// import bannerImg from "../../assets/Image/newbanner.jpg"
 import bannerImg1 from "../../assets/Image/bannerbg.jpg";
 import bannerImg2 from "../../assets/Image/bannerhdfccard.jpg";
 import bannerImg3 from "../../assets/Image/diwalitv.png";
@@ -253,6 +254,5 @@ const Bannernew = () => {
       </div>
     </section>
   );
-};
-
+}
 export default Bannernew;
