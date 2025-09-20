@@ -11,16 +11,7 @@ const Presence = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 }); // duration in ms
   }, []);
-  const settings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
-    dots: false,
-    arrows: false,
-    infinite: true,
-    pauseOnHover: false,
-  };
+
   const offices = [
     {
       title: "Corporate Office - Rajasthan",
@@ -32,16 +23,7 @@ const Presence = () => {
       address:
         "6/349, Sector-6 Gomati Nagar, 226010",
     },
-    {
-      title: "Branch Office - Haryana",
-      address:
-        "Tosham Road Siwani Mandi, Pana Lohdi, Siwani, Haryana -127046",
-    },
-    {
-      title: "Branch Office - Punjab",
-      address:
-        "Guru Sarshanawala, Dabwali Road, Division Bathinda, Sub - Division TECH - 2, Bathinda, Punjab - 151001",
-    },
+    
     {
       title: "Branch Office - Maharashtra",
       address:
@@ -68,7 +50,7 @@ const Presence = () => {
 
       <div className="grid lg:grid-cols-2 grid-cols-1  gap-10 items-center relative z-10">
 
-        {/* <div className="relative">
+        <div className="relative">
 
           <div className="absolute left-6 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#00C6FF] to-[#0047FF] animate-pulse" />
 
@@ -94,31 +76,8 @@ const Presence = () => {
               </div>
             ))}
           </div>
-        </div> */}
-        <div className="relative">
-
-
-          <Slider {...settings}>
-            {offices.map((office, index) => (
-              <div key={index} className="px-4">
-                <div className="relative flex gap-6 p-5 rounded-2xl bg-white backdrop-blur-md shadow-lg border border-white/40 hover:scale-[1.03] hover:shadow-2xl transition-all duration-300">
-                  <div className="absolute -left-3 top-6 w-10 h-10 flex items-center justify-center rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white shadow-xl animate-bounce">
-                    <PiBuildingOfficeFill />
-                  </div>
-
-                  <div className="ml-8">
-                    <h4 className="font-semibold text-lg text-gray-900">
-                      {office.title}
-                    </h4>
-                    <p className="text-gray-600 text-sm leading-relaxed tracking-[0.5px]">
-                      {office.address}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </div>
+        </div> 
+     
 
         <div className="relative w-full h-[300px] rounded-3xl overflow-hidden shadow-2xl border-4 border-white hover:scale-[1.02] transition-all duration-300">
           <iframe
