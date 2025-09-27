@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root {
+  --primary: #0070c5;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  overflow-x: hidden;
+}
+
+.heading::before {
+  content: "";
+  position: absolute;
+}
+
+@media (min-width: 1024px) {
+  .bdt-animation-kenburns {
+    background-size: 110%;
+    /* slightly bigger than container */
+    background-position: center;
+    animation: kenburns-bg 15s ease-in-out infinite alternate;
+  }
+
+  @keyframes kenburns-bg {
+    0% {
+      background-size: 100%;
+    }
+
+    100% {
+      background-size: 110%;
+    }
+  }
+}
+
+/* sun animation why choose  */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* arrow animation */
+@keyframes moveBackForth {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(15px);
+    /* how far it moves */
+  }
+}
