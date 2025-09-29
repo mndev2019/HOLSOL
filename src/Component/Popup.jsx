@@ -295,6 +295,8 @@ const Popup = () => {
 
                   <form className="space-y-4" onSubmit={handleSubmit}>
                     <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
+
                     {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
                     {/* <input type="hidden" name="_next" value="https://holsol.vercel.app/thank-you" /> */}
                     {/* Name */}
