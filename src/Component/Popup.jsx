@@ -231,7 +231,7 @@ const Popup = () => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     e.target.submit(); // send data
     setSubmitted(true); // show ThankYou component
   };
