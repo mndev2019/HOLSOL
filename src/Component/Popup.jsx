@@ -250,72 +250,72 @@ const Popup = () => {
             >
               <AiOutlineClose size={22} />
             </button>
-
-            {/* Image Header */}
-            <div className="relative h-48 w-full">
-              <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-6 text-white">
-                <div className="flex items-end space-x-2">
-                  <img src={logo} alt="logo" className="h-[40px]" />
-                  <h3 className="text-2xl font-bold">India</h3>
+            {submitted ? (
+              <ThankYou />
+            ) : (
+              <>
+                <div className="relative h-48 w-full">
+                  <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-6 text-white">
+                    <div className="flex items-end space-x-2">
+                      <img src={logo} alt="logo" className="h-[40px]" />
+                      <h3 className="text-2xl font-bold">India</h3>
+                    </div>
+                    <p className="text-sm opacity-90">Empowering Generation</p>
+                  </div>
                 </div>
-                <p className="text-sm opacity-90">Empowering Generation</p>
-              </div>
-            </div>
 
-            {/* Form */}
-            <div className="p-6">
-              <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
-                To Avail Government Subsidy & Free Site Visit
-              </h2>
-              <p className="text-center text-gray-600 mb-6 text-sm">
-                Fill out the form below and we’ll get in touch with you
-              </p>
-              {submitted ? (
-                <ThankYou/>
-              ) : (
 
-                <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST" target="_blank">
-                  <input type="hidden" name="_captcha" value="false" />
-                  {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
-                  <input type="hidden" name="_next" value="https://holsol.vercel.app/thank-you" />
-                  {/* Name */}
-                  <div className="relative">
-                    <input
-                      type="text"
-                      required
-                      name="name"
-                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                    />
-                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                <div className="p-6">
+                  <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
+                    To Avail Government Subsidy & Free Site Visit
+                  </h2>
+                  <p className="text-center text-gray-600 mb-6 text-sm">
+                    Fill out the form below and we’ll get in touch with you
+                  </p>
+
+
+                  <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false" />
+                    {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
+                    <input type="hidden" name="_next" value="https://holsol.vercel.app/thank-you" />
+                    {/* Name */}
+                    <div className="relative">
+                      <input
+                        type="text"
+                        required
+                        name="name"
+                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                      />
+                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                      Name
-                    </label>
-                  </div>
+                        Name
+                      </label>
+                    </div>
 
-                  {/* Mobile */}
-                  <div className="relative">
-                    <input
-                      type="text"
-                      required
-                      name="mobile"
-                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                    />
-                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    {/* Mobile */}
+                    <div className="relative">
+                      <input
+                        type="text"
+                        required
+                        name="mobile"
+                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                      />
+                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                      Mobile Number
-                    </label>
-                  </div>
+                        Mobile Number
+                      </label>
+                    </div>
 
-                  {/* City */}
-                  {/* <div className="relative w-full">
+                    {/* City */}
+                    {/* <div className="relative w-full">
                   <input
                     type="text"
                     required
@@ -335,59 +335,65 @@ const Popup = () => {
                     </p>
                   )}
                 </div> */}
-                  <div className="relative w-full">
-                    <input
-                      type="text"
-                      required
-                      name="city"
-                      value={inputCity}
-                      onChange={handleCityChange}
-                      placeholder=""
-                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                    />
-                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    <div className="relative w-full">
+                      <input
+                        type="text"
+                        required
+                        name="city"
+                        value={inputCity}
+                        onChange={handleCityChange}
+                        placeholder=""
+                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                      />
+                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                      City
-                    </label>
+                        City
+                      </label>
 
-                    {/* Show message instantly while typing */}
-                    {displayCity === "Coming Soon" && (
-                      <p className="text-xs mt-1 text-red-500">
-                        Service not available in this city – Coming Soon
-                      </p>
-                    )}
-                  </div>
+                      {/* Show message instantly while typing */}
+                      {displayCity === "Coming Soon" && (
+                        <p className="text-xs mt-1 text-red-500">
+                          Service not available in this city – Coming Soon
+                        </p>
+                      )}
+                    </div>
 
 
-                  {/* Pincode */}
-                  <div className="relative">
-                    <input
-                      type="text"
-                      required
-                      name="pincode"
-                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                    />
-                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    {/* Pincode */}
+                    <div className="relative">
+                      <input
+                        type="text"
+                        required
+                        name="pincode"
+                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                      />
+                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                      Pincode
-                    </label>
-                  </div>
+                        Pincode
+                      </label>
+                    </div>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    // onClick={() => setShowPopup(false)}
-                    className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
-                  >
-                    Submit & Book Visit
-                  </button>
-                </form>
-              )}
+                    {/* Submit */}
+                    <button
+                      type="submit"
+                      // onClick={() => setShowPopup(false)}
+                      className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
+                    >
+                      Submit & Book Visit
+                    </button>
+                  </form>
 
-            </div>
+
+                </div>
+              </>
+
+
+            )}
+
+
           </div>
         </div>
       )}
