@@ -230,27 +230,10 @@ const Popup = () => {
   // };
   const [submitted, setSubmitted] = useState(false);
 
-
-  const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent page reload
-
-    const formData = new FormData(e.target);
-
-    try {
-      const response = await fetch("https://formsubmit.co/muskanvision2019@gmail.com", {
-        method: "POST",
-        body: formData
-      });
-
-      if (response.ok) {
-        setSubmitted(true); // Show ThankYou component inside popup
-      } else {
-        alert("Something went wrong! Try again.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Submission failed! Try again.");
-    }
+  const handleSubmit = (e) => {
+    // e.preventDefault();
+    e.target.submit(); // send data
+    setSubmitted(true); // show ThankYou component
   };
 
 
@@ -293,12 +276,10 @@ const Popup = () => {
                   </p>
 
 
-                  <form className="space-y-4" onSubmit={handleSubmit}>
+                  <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST" target="_blank">
                     <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
-
                     {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
-                    {/* <input type="hidden" name="_next" value="https://holsol.vercel.app/thank-you" /> */}
+                    <input type="hidden" name="_next" value="https://holsol.vercel.app" />
                     {/* Name */}
                     <div className="relative">
                       <input
