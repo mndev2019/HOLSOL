@@ -157,6 +157,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 import popup from "../assets/Image/bannerbg.jpg";
 import logo from '../../src/assets/Image/newlogocolored.png';
+import ThankYou from "../Pages/Thankyou";
 
 const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -221,6 +222,20 @@ const Popup = () => {
   //     setDisplayCity("Coming Soon"); // Show for cities not in list
   //   }
   // };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();  // prevent React reload
+  //   const form = e.target;
+  //   form.submit();        // submit to Formsubmit
+  //   form.reset();         // reset fields for next submission
+  // };
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.target.submit(); // send data
+    setSubmitted(true); // show ThankYou component
+  };
+
 
   return (
     <>
@@ -257,42 +272,50 @@ const Popup = () => {
               <p className="text-center text-gray-600 mb-6 text-sm">
                 Fill out the form below and we’ll get in touch with you
               </p>
+              {submitted ? (
+                <ThankYou/>
+              ) : (
 
-              <form className="space-y-4">
-                {/* Name */}
-                <div className="relative">
-                  <input
-                    type="text"
-                    required
-                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                  />
-                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST" target="_blank">
+                  <input type="hidden" name="_captcha" value="false" />
+                  {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
+                  <input type="hidden" name="_next" value="https://holsol.vercel.app//thank-you" />
+                  {/* Name */}
+                  <div className="relative">
+                    <input
+                      type="text"
+                      required
+                      name="name"
+                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                    />
+                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                    Name
-                  </label>
-                </div>
+                      Name
+                    </label>
+                  </div>
 
-                {/* Mobile */}
-                <div className="relative">
-                  <input
-                    type="text"
-                    required
-                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                  />
-                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                  {/* Mobile */}
+                  <div className="relative">
+                    <input
+                      type="text"
+                      required
+                      name="mobile"
+                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                    />
+                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                    Mobile Number
-                  </label>
-                </div>
+                      Mobile Number
+                    </label>
+                  </div>
 
-                {/* City */}
-                {/* <div className="relative w-full">
+                  {/* City */}
+                  {/* <div className="relative w-full">
                   <input
                     type="text"
                     required
@@ -312,54 +335,58 @@ const Popup = () => {
                     </p>
                   )}
                 </div> */}
-                <div className="relative w-full">
-                  <input
-                    type="text"
-                    required
-                    value={inputCity}
-                    onChange={handleCityChange}
-                    placeholder=""
-                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                  />
-                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                  <div className="relative w-full">
+                    <input
+                      type="text"
+                      required
+                      name="city"
+                      value={inputCity}
+                      onChange={handleCityChange}
+                      placeholder=""
+                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                    />
+                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                    City
-                  </label>
+                      City
+                    </label>
 
-                  {/* Show message instantly while typing */}
-                  {displayCity === "Coming Soon" && (
-                    <p className="text-xs mt-1 text-red-500">
-                      Service not available in this city – Coming Soon
-                    </p>
-                  )}
-                </div>
+                    {/* Show message instantly while typing */}
+                    {displayCity === "Coming Soon" && (
+                      <p className="text-xs mt-1 text-red-500">
+                        Service not available in this city – Coming Soon
+                      </p>
+                    )}
+                  </div>
 
 
-                {/* Pincode */}
-                <div className="relative">
-                  <input
-                    type="text"
-                    required
-                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                  />
-                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                  {/* Pincode */}
+                  <div className="relative">
+                    <input
+                      type="text"
+                      required
+                      name="pincode"
+                      className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                    />
+                    <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                    Pincode
-                  </label>
-                </div>
+                      Pincode
+                    </label>
+                  </div>
 
-                {/* Submit */}
-                <button
-                  type="submit"
-                  onClick={() => setShowPopup(false)}
-                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
-                >
-                  Submit & Book Visit
-                </button>
-              </form>
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    // onClick={() => setShowPopup(false)}
+                    className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
+                  >
+                    Submit & Book Visit
+                  </button>
+                </form>
+              )}
+
             </div>
           </div>
         </div>

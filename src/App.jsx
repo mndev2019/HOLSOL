@@ -12,6 +12,7 @@ import WarrantyPolicy from './Pages/WarrantyPolicy'
 import PrivacyPolicy from './Pages/PrivacyPolicy'
 import TermsCondition from './Pages/TermsCondition'
 import WebsiteUsage from './Pages/WebsiteUsage'
+import ThankYou from './Pages/Thankyou'
 
 function App() {
   const ThemeRoute = createBrowserRouter(
@@ -29,6 +30,8 @@ function App() {
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/terms' element={<TermsCondition />} />
           <Route path='/usage-policy' element={<WebsiteUsage />} />
+          <Route path='/thank-you' element={<ThankYou/>}/>
+
         </Route>
 
 
