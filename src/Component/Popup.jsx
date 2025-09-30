@@ -1,157 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { AiOutlineClose } from "react-icons/ai";
-
-// import popup from "../assets/Image/bannerbg.jpg";
-// import logo from '../../src/assets/Image/newlogocolored.png'
-
-// const Popup = () => {
-//   const [showPopup, setShowPopup] = useState(false);
-
-//   useEffect(() => {
-//     setShowPopup(true);
-//   }, []);
-
-//   return (
-//     <>
-//       {showPopup && (
-//         <div className="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-md z-50">
-//           {/* Popup Container */}
-//           <div className="relative w-[500px] max-w-[95%] bg-white rounded-3xl shadow-2xl overflow-hidden animate-[fadeIn_0.4s_ease]">
-
-//             {/* Cross Button */}
-//             <button
-//               onClick={() => setShowPopup(false)}
-//               className="absolute top-[3px] right-[10px] font-bold text-white p-2 rounded-full  transition z-10"
-//             >
-//               <AiOutlineClose size={22} />
-//             </button>
-
-//             {/* Image Header */}
-//             <div className="relative h-48 w-full">
-//               <img
-//                 src={popup}
-//                 alt="Solar Panel"
-//                 className="h-full w-full object-cover"
-//               />
-//               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-//               <div className="absolute bottom-4 left-6 text-white">
-//                 <div className="flex">
-
-//                 </div>
-//                 <div className="flex items-end space-x-2">
-//                   {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
-//                     HOLSOL
-//                   </span> */}
-//                   <img src={logo} alt='image' className='h-[40px]' />
-//                   <h3 className="text-2xl font-bold">India</h3>
-//                 </div>
-//                 <p className="text-sm opacity-90">Empowering Generation</p>
-//               </div>
-//             </div>
-
-//             {/* Content */}
-//             <div className="p-6">
-//               <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
-//                 To Avail Government Subsidy & Free Site Visit
-//               </h2>
-//               <p className="text-center text-gray-600 mb-6 text-sm">
-//                 Fill out the form below and we’ll get in touch with you
-//               </p>
-
-//               {/* Form */}
-//               <form className="space-y-4">
-//                 <div className="relative">
-//                   <input
-//                     type="text"
-//                     required
-//                     className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-//                   />
-//                   <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
-//                     peer-placeholder-shown:top-5 
-//                     peer-placeholder-shown:text-base 
-//                     peer-placeholder-shown:text-gray-400 
-//                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-//                     Name
-//                   </label>
-//                 </div>
-
-//                 <div className="relative">
-//                   <input
-//                     type="text"
-//                     required
-//                     className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-//                   />
-//                   <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
-//                     peer-placeholder-shown:top-5 
-//                     peer-placeholder-shown:text-base 
-//                     peer-placeholder-shown:text-gray-400 
-//                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-//                     Mobile Number
-//                   </label>
-//                 </div>
-
-//                 <div className="relative">
-//                   <select
-//                     required
-//                     className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-//                   >
-//                     <option value="" hidden></option>
-//                     <option value="Jaipur">Jaipur</option>
-//                     <option value="Udaipur">Udaipur</option>
-//                     <option value="Jodhpur">Jodhpur</option>
-//                     <option value="Ajmer">Ajmer</option>
-//                     <option value="Kanpur">Kanpur</option>
-//                     <option value="Lucknow">Lucknow</option>
-//                     <option value="Varanasi">Varanasi</option>
-//                     <option value="Agra">Agra</option>
-//                     <option value="Mumbai">Mumbai</option>
-//                     <option value="Pune">Pune</option>
-//                     <option value="Nagpur">Nagpur</option>
-//                     <option value="Nashik">Nashik</option>
-//                     {/* Coming Soon */}
-//                     <option value="coming-soon" >
-//                       Coming Soon
-//                     </option>
-
-//                   </select>
-//                   <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
-//                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-//                     City
-//                   </label>
-//                 </div>
-
-//                 <div className="relative">
-//                   <input
-//                     type="text"
-//                     required
-//                     className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-//                   />
-//                   <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
-//                     peer-placeholder-shown:top-5 
-//                     peer-placeholder-shown:text-base 
-//                     peer-placeholder-shown:text-gray-400 
-//                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-//                     Pincode
-//                   </label>
-//                 </div>
-
-//                 <button
-//                   type="submit"
-//                   onClick={() => setShowPopup(false)}
-//                   className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
-//                 >
-//                   Submit & Book Visit
-//                 </button>
-//               </form>
-//             </div>
-//           </div>
-//         </div>
-//       )}
-//     </>
-//   );
-// };
-
-// export default Popup;
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -228,12 +74,18 @@ const Popup = () => {
   //   form.submit();        // submit to Formsubmit
   //   form.reset();         // reset fields for next submission
   // };
-  const [submitted, setSubmitted] = useState(false);
 
+
+  // const handleSubmit = (e) => {
+  //   // e.preventDefault();
+  //   e.target.submit(); // send data
+
+  // };
   const handleSubmit = (e) => {
-    // e.preventDefault();
-    e.target.submit(); // send data
-    setSubmitted(true); // show ThankYou component
+    // Close popup after a tiny delay to let form submit
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 100); // 100ms is enough
   };
 
 
@@ -250,72 +102,78 @@ const Popup = () => {
             >
               <AiOutlineClose size={22} />
             </button>
-            {submitted ? (
-              <ThankYou />
-            ) : (
-              <>
-                <div className="relative h-48 w-full">
-                  <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  <div className="absolute bottom-4 left-6 text-white">
-                    <div className="flex items-end space-x-2">
-                      <img src={logo} alt="logo" className="h-[40px]" />
-                      <h3 className="text-2xl font-bold">India</h3>
-                    </div>
-                    <p className="text-sm opacity-90">Empowering Generation</p>
-                  </div>
+
+
+            <div className="relative h-48 w-full">
+              <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute bottom-4 left-6 text-white">
+                <div className="flex items-end space-x-2">
+                  <img src={logo} alt="logo" className="h-[40px]" />
+                  <h3 className="text-2xl font-bold">India</h3>
+                </div>
+                <p className="text-sm opacity-90">Empowering Generation</p>
+              </div>
+            </div>
+
+
+            <div className="p-6">
+              <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
+                To Avail Government Subsidy & Free Site Visit
+              </h2>
+              <p className="text-center text-gray-600 mb-6 text-sm">
+                Fill out the form below and we’ll get in touch with you
+              </p>
+
+
+              <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST" target="_blank">
+                <input type="hidden" name="_captcha" value="false" />
+                {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
+                <input type="hidden" name="_next" value="https://holsolindia.com/about" />
+                {/* Name */}
+                <div className="relative">
+                  <input
+                    type="text"
+                    required
+                    name="name"
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                  />
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                    peer-placeholder-shown:top-5 
+                    peer-placeholder-shown:text-base 
+                    peer-placeholder-shown:text-gray-400 
+                    peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
+                    Name
+                  </label>
                 </div>
 
-
-                <div className="p-6">
-                  <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
-                    To Avail Government Subsidy & Free Site Visit
-                  </h2>
-                  <p className="text-center text-gray-600 mb-6 text-sm">
-                    Fill out the form below and we’ll get in touch with you
-                  </p>
-
-
-                  <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST" target="_blank">
-                    <input type="hidden" name="_captcha" value="false" />
-                    {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
-                    <input type="hidden" name="_next" value="https://ramot.in/about" />
-                    {/* Name */}
-                    <div className="relative">
-                      <input
-                        type="text"
-                        required
-                        name="name"
-                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                      />
-                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                {/* Mobile */}
+                <div className="relative">
+                  <input
+                    type="tel"
+                    required
+                    name="mobile"
+                    pattern="[0-9]{10}"         // Only 10 digits
+                    maxLength="10"              // Prevents typing more than 10
+                    inputMode="numeric"
+                    onKeyPress={(e) => {
+                      if (!/[0-9]/.test(e.key)) {
+                        e.preventDefault();  // block non-numeric characters
+                      }
+                    }}
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                  />
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                        Name
-                      </label>
-                    </div>
+                    Mobile Number
+                  </label>
+                </div>
 
-                    {/* Mobile */}
-                    <div className="relative">
-                      <input
-                        type="text"
-                        required
-                        name="mobile"
-                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                      />
-                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
-                    peer-placeholder-shown:top-5 
-                    peer-placeholder-shown:text-base 
-                    peer-placeholder-shown:text-gray-400 
-                    peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                        Mobile Number
-                      </label>
-                    </div>
-
-                    {/* City */}
-                    {/* <div className="relative w-full">
+                {/* City */}
+                {/* <div className="relative w-full">
                   <input
                     type="text"
                     required
@@ -335,63 +193,61 @@ const Popup = () => {
                     </p>
                   )}
                 </div> */}
-                    <div className="relative w-full">
-                      <input
-                        type="text"
-                        required
-                        name="city"
-                        value={inputCity}
-                        onChange={handleCityChange}
-                        placeholder=""
-                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                      />
-                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    required
+                    name="city"
+                    value={inputCity}
+                    onChange={handleCityChange}
+                    placeholder=""
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                  />
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                        City
-                      </label>
+                    City
+                  </label>
 
-                      {/* Show message instantly while typing */}
-                      {displayCity === "Coming Soon" && (
-                        <p className="text-xs mt-1 text-red-500">
-                          Service not available in this city – Coming Soon
-                        </p>
-                      )}
-                    </div>
+                  {/* Show message instantly while typing */}
+                  {displayCity === "Coming Soon" && (
+                    <p className="text-xs mt-1 text-red-500">
+                      Service not available in this city – Coming Soon
+                    </p>
+                  )}
+                </div>
 
 
-                    {/* Pincode */}
-                    <div className="relative">
-                      <input
-                        type="text"
-                        required
-                        name="pincode"
-                        className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
-                      />
-                      <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
+                {/* Pincode */}
+                <div className="relative">
+                  <input
+                    type="text"
+                    required
+                    name="pincode"
+                    maxLength="6"
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                  />
+                  <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
                     peer-placeholder-shown:text-base 
                     peer-placeholder-shown:text-gray-400 
                     peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-600">
-                        Pincode
-                      </label>
-                    </div>
-
-                    {/* Submit */}
-                    <button
-                      type="submit"
-                      // onClick={() => setShowPopup(false)}
-                      className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
-                    >
-                      Submit & Book Visit
-                    </button>
-                  </form>
-
-
+                    Pincode
+                  </label>
                 </div>
-              </>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+
+                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
+                >
+                  Submit & Book Visit
+                </button>
+              </form>
 
 
-            )}
+            </div>
+
 
 
           </div>

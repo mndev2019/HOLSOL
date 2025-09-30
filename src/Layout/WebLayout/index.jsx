@@ -1,10 +1,12 @@
 import React from 'react'
 import Header from '../Header'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import Footer from '../Footer'
 import Popup from '../../Component/Popup'
 
 const WebLayout = () => {
+    const location = useLocation();
+     const hidePopup = location.pathname === "/thank-you";
     return (
         <>
             <Header />
@@ -12,7 +14,7 @@ const WebLayout = () => {
                 <Outlet />
             </main>
             <Footer/>
-             <Popup/>
+                {!hidePopup && <Popup />}
 
         </>
     )
