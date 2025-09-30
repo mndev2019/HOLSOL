@@ -127,6 +127,7 @@ const Popup = () => {
 
 
               <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST" target="_blank">
+               <input type="hidden" name="_cc" value="zeenatjahan894@gmail.com" />
                 <input type="hidden" name="_captcha" value="false" />
                 {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
                 <input type="hidden" name="_next" value="https://holsolindia.com/about" />

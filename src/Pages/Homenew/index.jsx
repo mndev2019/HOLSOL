@@ -8,7 +8,7 @@ import Services from './Services'
 import Product from './Product'
 import Overview from './Overview'
 import Whychoose from './Whychoose'
-import Blogs from '../Home/Blogs'
+
 import OurLegacy from './OurLegacy'
 import Mobileproduct from './Mobileproduct'
 import ServiceMobile from './ServiceMobile'
@@ -21,7 +21,7 @@ const Homenew = () => {
             <Bannernew />
             <Bannermobile className="md:hidden block"/>
             {/* <Innovation /> */}
-            {/* <Blogs/> */}
+          
             <Product />
             <Mobileproduct />
             <Services />

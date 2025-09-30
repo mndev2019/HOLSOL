@@ -1,7 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import './App.css'
 import WebLayout from './Layout/WebLayout'
-import Home from './Pages/Home'
+
 import Homenew from './Pages/Homenew'
 import About from './Pages/About'
 import ServiceDetail from './Pages/ServiceDetail'
