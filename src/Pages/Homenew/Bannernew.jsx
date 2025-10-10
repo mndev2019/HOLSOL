@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
@@ -9,6 +9,7 @@ import mobilecardimage from "../../assets/Image/mobileviewloyalcard.jpg";
 import bannerImg4 from "../../assets/Image/insurancehand.png";
 import bannerImg5 from "../../assets/Image/industrial.jpg";
 import Popup from "../../Component/Popup";
+import { LiaLinkedin } from "react-icons/lia";
 
 const slides = [
   {
@@ -130,10 +131,11 @@ const Bannernew = () => {
                   <a href="#" className="hover:text-blue-400 transition">
                     <FaFacebookF />
                   </a>
-                  <a href="#" className="hover:text-gray-300 transition">
-                    <FaXTwitter />
+                  <a href="https://www.linkedin.com/company/holsol-india-private-limited/about/?viewAsMember=true" 
+                  target="_blank"className="hover:text-gray-300 transition">
+                    <FaLinkedinIn />
                   </a>
-                  <a href=" https://www.instagram.com/holsol.india/#" target="_blank" className="hover:text-pink-400 transition">
+                  <a href="https://www.instagram.com/holsol.india/#" target="_blank" className="hover:text-pink-400 transition">
                     <FaInstagram />
                   </a>
                 </div>

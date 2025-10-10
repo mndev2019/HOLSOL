@@ -14,6 +14,7 @@ import TermsCondition from './Pages/TermsCondition'
 import WebsiteUsage from './Pages/WebsiteUsage'
 import ThankYou from './Pages/Thankyou'
 
+
 function App() {
   const ThemeRoute = createBrowserRouter(
     createRoutesFromElements(
@@ -31,6 +32,7 @@ function App() {
           <Route path='/terms' element={<TermsCondition />} />
           <Route path='/usage-policy' element={<WebsiteUsage />} />
           <Route path='/thank-you' element={<ThankYou/>}/>
+     
 
         </Route>
 
