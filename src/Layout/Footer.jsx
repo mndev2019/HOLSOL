@@ -86,9 +86,12 @@ const Footer = () => {
               className="flex items-center gap-2 hover:text-white cursor-pointer transition"
             >
               <FaAngleRight className="text-[var(--primary)]" />
-              <a href="tel:9257055583" className="hover:underline">
+              <Link to="/contact" className="hover:underline">
                 Contact
-              </a>
+              </Link>
+              {/* <a href="tel:9257055583" className="hover:underline">
+              
+              </a> */}
             </li>
 
 

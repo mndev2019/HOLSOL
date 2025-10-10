@@ -19,12 +19,18 @@ const Popup = () => {
 
 
 
-  const handleSubmit = (e) => {
-    // Close popup after a tiny delay to let form submit
-    setTimeout(() => {
-      setShowPopup(false);
-    }, 100); // 100ms is enough
-  };
+  //  const handleSubmit = (e) => {
+  //   e.preventDefault(); // ✅ Stop React from reloading the page
+
+  //   // Actually submit the form to FormSubmit
+  //   e.target.submit(); // ✅ This is crucial
+
+  //   // Close popup after a tiny delay so the form can finish submitting
+  //   setTimeout(() => {
+  //     setShowPopup(false);
+  //   }, 100);
+  // };
+
 
 
   return (
@@ -55,28 +61,29 @@ const Popup = () => {
             </div>
 
 
-            <div className="p-6">
-              <h2 className="text-2xl font-extrabold text-center text-[#192e5b]">
+            <div className="px-6 py-4">
+              <h2 className="lg:text-2xl text-xl font-extrabold text-center text-[#192e5b]">
                 To Avail Government Subsidy & Free Site Visit
               </h2>
-              <p className="text-center text-gray-600 mb-6 text-sm">
+              <p className="text-center text-gray-600 lg:mb-6 mb-1 text-sm">
                 Fill out the form below and we’ll get in touch with you
               </p>
 
 
-              <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank">
-              
-                <input type="hidden" name="_cc" value="info@ramot.cloud" />
+              {/* <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank"> */}
+              <form className="space-y-4" action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank">
                 <input type="hidden" name="_captcha" value="false" />
-                {/* <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you" /> */}
                 <input type="hidden" name="_next" value="https://holsolindia.com/thank-you" />
+                <input type="hidden" name="_cc" value="info@ramot.cloud" />
+
+
                 {/* Name */}
                 <div className="relative">
                   <input
                     type="text"
                     required
                     name="name"
-                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
+                    className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5  pb-2 text-sm outline-none focus:border-blue-600"
                   />
                   <label className="absolute left-1 top-2 text-gray-500 text-sm transition-all 
                     peer-placeholder-shown:top-5 
@@ -322,7 +329,7 @@ const Popup = () => {
                       onChange={(e) => setSelectedCity(e.target.value)}
                       className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600 appearance-none"
                     >
-                      
+                      <option value="" disabled hidden></option>
                       <option value="sangli">Sangli</option>
                       <option value="satara">Satara</option>
                       <option value="solapur">Solapur</option>
@@ -399,7 +406,7 @@ const Popup = () => {
                 <button
                   type="submit"
 
-                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded-xl font-semibold shadow-lg transition"
+                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white lg:py-3 py-2 rounded-xl font-semibold shadow-lg transition lg:text-lg text-sm"
                 >
                   Submit & Book Visit
                 </button>

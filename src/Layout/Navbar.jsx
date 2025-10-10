@@ -7,6 +7,7 @@ import logo from '../assets/Image/newlogocolored.png'
 import Popup from '../Component/Popup';
 
 const Navbar = () => {
+
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null); // track dropdown (products/services)
@@ -144,6 +145,7 @@ const Navbar = () => {
 
     return (
         <>
+
             <section className={`px-6 lg:px-10 shadow py-2 ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
                 <div className="container mx-auto">
                     <div className="flex justify-between items-center py-1">
@@ -166,8 +168,6 @@ const Navbar = () => {
                                 <FaRegFileAlt className="text-lg" />
                                 <span>Brochure</span>
                             </a>
-  
-
                             <button onClick={() => {
                                 setOpenDropdown(null);
                                 setIsOpen(false);
@@ -220,7 +220,14 @@ const Navbar = () => {
                             <span>Brochure</span>
                         </a>
 
-                        <button onClick={() => setIsPopupOpen(true)} className="w-full text-center px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                        <button onClick={() => {
+                                setOpenDropdown(null);
+                                setIsOpen(false);
+
+                                // Force reset before reopening
+                                setIsPopupOpen(false);
+                                setTimeout(() => setIsPopupOpen(true), 0);
+                            }} className="w-full text-center px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <span>Get Free Quote</span>
                         </button>
                         <a

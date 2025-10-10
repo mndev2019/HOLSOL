@@ -13,6 +13,7 @@ import PrivacyPolicy from './Pages/PrivacyPolicy'
 import TermsCondition from './Pages/TermsCondition'
 import WebsiteUsage from './Pages/WebsiteUsage'
 import ThankYou from './Pages/Thankyou'
+import Contact from './Pages/Contact'
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path='/service-detail' element={<ServiceDetail />} />
           <Route path='/product-detail' element={<ProductDetail />} />
           <Route path='/career' element={<Career />} />
+          <Route path='/contact' element={<Contact/>}/>
           <Route path='/blog-detail' element={<BlogDetail />} />
           <Route path='/warranty-policy' element={<WarrantyPolicy />} />
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
