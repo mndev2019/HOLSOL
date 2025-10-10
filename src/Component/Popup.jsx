@@ -19,17 +19,15 @@ const Popup = () => {
 
 
 
-  //  const handleSubmit = (e) => {
-  //   e.preventDefault(); // ✅ Stop React from reloading the page
+  // const handleSubmit = (e) => {
 
-  //   // Actually submit the form to FormSubmit
-  //   e.target.submit(); // ✅ This is crucial
 
-  //   // Close popup after a tiny delay so the form can finish submitting
+
   //   setTimeout(() => {
   //     setShowPopup(false);
   //   }, 100);
   // };
+  
 
 
 
@@ -71,7 +69,7 @@ const Popup = () => {
 
 
               {/* <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank"> */}
-              <form className="space-y-4" action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank">
+              <form className="space-y-4"  action="https://formsubmit.co/muskanvision2019@gmail.com" method="POST" target="_blank">
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" value="https://holsolindia.com/thank-you" />
                 <input type="hidden" name="_cc" value="info@ramot.cloud" />
