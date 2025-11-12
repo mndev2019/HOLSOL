@@ -16,26 +16,27 @@ const ProductDetail = () => {
     {
       title: 'Solar Rooftop',
       image: solarRooftopImg,
-      description: `Holsol India deliver the Solar Rooftop solutions are designed to help homes harness the power of the sun efficiently. By installing solar panels directly on your roof, you can generate clean, renewable energy, reduce electricity bills, and contribute to a sustainable future.`,
+      description: `Holsol India delivers high-quality Solar Rooftop solutions designed to help homes harness solar energy efficiently. By installing solar panels directly on your rooftop, you can generate clean, renewable power, reduce your electricity bills, and contribute to a greener, more sustainable future.`,
+      
       benefits: [
-        'Cost Savings – Significantly lower your monthly electricity expenses.',
-        'Eco-Friendly Energy – Reduce your carbon footprint with renewable power.',
-        'Customized Solutions – Tailored systems to match your rooftop size and energy needs.',
-        'Reliable & Safe – Durable panels and IIT-approved structures for long-lasting performance.',
-        'Government Subsidy Assistance – Guidance to avail applicable solar incentives.',
-        'Cashback – First time in India you get guaranteed income for the next 10 years.',
+        'Cost Savings – Reduce your monthly electricity expenses significantly with rooftop solar power.',
+        'Eco-Friendly Energy – Lower your carbon footprint by switching to a clean, renewable energy source.',
+        'Customized Solutions – Every system is tailored to match your rooftop size, structure, and energy requirements.',
+        'Reliable & Safe – High-quality panels combined with IIT-approved structures ensure long-lasting performance and maximum safety.',
+        'Government Subsidy Assistance – Get expert guidance to claim eligible solar subsidies and incentives.',
+        'Guaranteed Cashback – For the first time in India, earn guaranteed income for the next 10 years through Holsol’s exclusive cashback program.',
       ],
-      summary: "With Holsol’s Solar Rooftop systems, you don’t just produce energy—you make a smart, sustainable investment for the future."
+      summary: "With Holsol’s Solar Rooftop systems, you don’t just generate electricity—you make a smart, secure, and sustainable investment in your future."
     },
     {
       title: 'Commercial & Industrial Solar Solutions',
       image: commercialImg,
-      description: `Holsol India offers high-performance solar solutions for commercial and industrial applications, helping businesses cut energy costs, improve sustainability, and boost operational efficiency. Our systems are designed to meet large-scale energy demands while ensuring maximum reliability and ROI.`,
+      description: `Holsol India provides high-performance solar solutions specially designed for commercial and industrial applications. Our systems help businesses significantly reduce energy costs, enhance sustainability, and improve overall operational efficiency. Built to meet large-scale energy demands, our solutions deliver maximum reliability, productivity, and long-term ROI.`,
       benefits: [
-        'Significant Cost Savings – Reduce electricity bills and operational expenses.',
-        'Scalable Solutions – From medium-sized offices to large industrial units, systems are tailored to your energy needs.',
-        'High Efficiency – Advanced solar technology for consistent power generation, even in low-light conditions.',
-        'Durable & Safe – IIT-approved structures and quality components ensure long-term performance.',
+        'Significant Cost Savings – Reduce electricity bills and operational expenses with efficient, high-output solar systems.',
+        'Scalable Solutions – From medium-sized commercial spaces to large industrial facilities, every system is customized to meet your specific energy requirements.',
+        'High Efficiency – Powered by advanced solar technology for consistent energy generation—even during low-light or challenging weather conditions.',
+        'Durable & Safe – Constructed with IIT-approved structures and premium-quality components to ensure long-lasting performance and superior safety.',
         'Sustainable & Green – Contribute to environmental responsibility and corporate sustainability goals.',
       ],
       summary: "With Holsol’s Commercial & Industrial solar solutions, businesses can power growth sustainably while optimizing costs."

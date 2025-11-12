@@ -52,7 +52,8 @@ const About = () => {
                             HOLSOL – Powering India’s Smarter Solar Future
                         </h2>
                         <p className="text-gray-600 mb-6">
-                            At HOLSOL, we make solar simple, secure, and sustainable. With insured solar solutions, tailored designs, and government-backed subsidies, we help every household and business save more, worry less, and move toward a smarter, greener India.
+                            {/* At HOLSOL, we make solar simple, secure, and sustainable. With insured solar solutions, tailored designs, and government-backed subsidies, we help every household and business save more, worry less, and move toward a smarter, greener India. */}
+                            At HOLSOL, we make solar energy simple, secure, and sustainable for every home and business. With insured solar solutions, customized system designs, and government-backed subsidies, we help you save more, worry less, and move confidently toward a cleaner and smarter solar-powered future.
                         </p>
 
                         {/* Mission & Vision */}
@@ -60,13 +61,15 @@ const About = () => {
                             <div>
                                 <h3 className="font-semibold text-lg mb-2">Our Mission</h3>
                                 <p className="text-gray-600 text-sm">
-                                    To deliver zero-risk, insured solar solutions that are tailored, affordable, and designed to empower every household, business, and community.
+                                    {/* To deliver zero-risk, insured solar solutions that are tailored, affordable, and designed to empower every household, business, and community. */}
+                                    To deliver zero-risk, fully insured solar solutions that are tailored, affordable, and designed to empower households, businesses, and communities across India.
                                 </p>
                             </div>
                             <div>
                                 <h3 className="font-semibold text-lg mb-2">Our Vision</h3>
                                 <p className="text-gray-600 text-sm">
-                                    To make India the smartest solar-powered nation, leading the world with clean and affordable energy.
+                                    {/* To make India the smartest solar-powered nation, leading the world with clean and affordable energy. */}
+                                    To make India the smartest solar-powered nation, leading the world with clean, efficient, and affordable renewable energy.
                                 </p>
                             </div>
                         </div>
@@ -75,23 +78,24 @@ const About = () => {
                         <ul className="space-y-2 mb-6">
                             <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-                                Zero-Risk Solar – First in India to provide 5-year solar insurance on structures & systems.
+                                Zero-Risk Solar – India’s first provider offering 5-year solar insurance on structures and systems.
+
                             </li>
                             <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-                                Tailored Solutions – Custom designs for residential, commercial, and rooftop needs.
+                                Tailored Solar Solutions – Custom-designed systems for residential, commercial, and rooftop needs.
                             </li>
                             <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-                                Hassle-Free Service – From consultation to maintenance, everything handled end-to-end.
+                                Hassle-Free Solar Service – From consultation, design, and installation to maintenance — we manage everything end-to-end.
                             </li>
                             <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-                                Powered by RS Group
+                                Powered by RS Group - Strong industry expertise and trusted solar leadership.
                             </li>
                             <li className="flex items-center gap-2 font-semibold lg:text-lg md:text-md text-sm">
                                 <span className="bg-gradient-to-r from-[#00C6FF] to-[#0047FF] bg-clip-text text-transparent text-xl">✔</span>
-                                Empanelled with PM Surya Ghar Portal
+                              Empanelled with PM Surya Ghar Portal – Helping you easily access government subsidies and verified solar benefits
                             </li>
 
                         </ul>

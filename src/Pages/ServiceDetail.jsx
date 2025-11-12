@@ -19,95 +19,97 @@ import finance from '../assets/Image/finanaceservice.png'
 const services = [
   {
     title: "High Yield Solar Solutions (1KW – 100 KW)",
-    desc: `At Holsol India, we bring you a trusted range of high-yield solar products from 1KW to 100 KW, designed to deliver maximum energy efficiency and long-term savings. Whether it’s for residential, commercial, or industrial use, our systems are built to generate more power, ensure reliable performance, and optimize your investment.`,
+    desc: `At Holsol India, we offer a trusted range of high-yield solar systems from 1KW to 100KW, engineered to deliver maximum energy efficiency and long-term savings. Whether you need solar power for residential, commercial, or industrial use, our solutions are designed to generate more electricity, ensure reliable performance, and maximize your overall investment.`,
+
     points: [
-      "Wide Range (1KW – 100 KW) – Solutions tailored for homes, offices, and industries.",
-      "Maximum Energy Output – Advanced solar technology that delivers higher generation even in low-light conditions.",
-      "Cost-Efficient – Reduce electricity bills and enjoy faster ROI with durable, long-lasting systems.",
-      "Scalable & Flexible – Easy to expand or customize as per your power requirements.",
-      "Reliable & Safe – Built with top-quality components, certified for safety and durability.",
+      "Wide Capacity Range (1KW – 100KW) – Tailored solar systems for homes, offices, commercial spaces, and industrial setups.",
+      "Maximum Energy Generation – Advanced solar technology designed to deliver higher output—even in low-light or challenging weather conditions.",
+      "Cost-Efficient & High ROI – Reduce monthly electricity bills and enjoy faster returns with durable, long-lasting solar systems.",
+      "Scalable & Flexible Design – Easily expandable and customizable based on your energy consumption and future power requirements.",
+      "Reliable & Safe – Built using premium components that meet industry standards for safety, reliability, and performance.",
     ],
     benefits: [
       "Save up to 80% on electricity costs",
       "Low maintenance, high performance systems",
       "Sustainable, eco-friendly energy solutions",
-      "Powering Your Growth: From a compact 1KW home setup to a robust 15KW industrial solution, Holsol’s high-yield products ensure that every unit of sunlight is converted into maximum energy output. With us, you don’t just go solar—you go smarter.",
+      "Powering Your Growth: From a compact 1KW home setup to a robust 15KW industrial system, Holsol’s high-yield solar solutions ensure that every unit of sunlight is converted into maximum usable energy. With Holsol, you don’t just switch to solar—you choose a smarter, more efficient energy future.",
     ],
     icon: solarsolution,
     bgColor: "bg-blue-100",
   },
   {
     title: "IIT Approved Solar Structure Designs",
-    desc: `At Holsol India, we ensure that every solar installation is approved by strength, safety, and engineering excellence. Our solar structures are designed and approved by IIT experts, guaranteeing unmatched reliability and durability for all projects.`,
+    desc: `At Holsol India, every solar installation is built on a foundation of strength, safety, and engineering excellence. Our solar mounting structures are designed and approved by IIT experts, ensuring unmatched reliability, durability, and long-term performance for all types of solar projects.`,
     points: [
-      "Engineering Precision – Developed with advanced structural analysis to withstand extreme weather conditions like high wind speed, rain, and heat.",
-      "Safety & Stability – Tested for load-bearing capacity, corrosion resistance, and long-term structural strength.",
-      "Standard Compliance – Fully compliant with national and international quality standards, ensuring secure solar mounting.",
-      "Optimized Performance – Designed for proper module alignment and tilt angle to maximize solar power generation.",
+      "Engineering Precision – Developed using advanced structural analysis to withstand extreme weather conditions such as high wind speeds, heavy rainfall, and intense heat.",
+      "Safety & Stability – Thoroughly tested for load-bearing capacity, corrosion resistance, and long-lasting structural strength to ensure secure installations.",
+      "Standard Compliance – Fully compliant with national and international quality standards, delivering safe, certified, and dependable solar mounting solutions.",
+      "Optimized Performance – Designed for accurate module alignment and ideal tilt angle to maximize solar power generation and improve system efficiency.",
     ],
     benefits: [
+
       "Long-lasting, maintenance-free structures",
-      "Assurance of safety and compliance",
-      "Higher efficiency with optimal solar panel positioning",
-      "Peace of mind with IIT-backed engineering validation",
-      "With Holsol’s IIT-approved solar structures, you get more than just a mounting system you get the confidence of world-class design, robust performance, and sustainable reliability.",
+      "Guaranteed safety, stability, and compliance",
+      "Higher efficiency through optimal solar panel positioning",
+      "Confidence backed by IIT-approved engineering validation",
+      "With Holsol’s IIT-approved solar structures, you get more than just a mounting system you gain the assurance of world-class design, robust performance, and long-term sustainable reliability",
     ],
     icon: solarstructure,
     bgColor: "bg-red-100",
   },
   {
     title: "Insured Panels & Structure",
-    desc: `First time in India at Holsol India you get the insurance on your complete rooftop system, we go beyond delivering high-performance solar systems we also provide the assurance of insured panels and structures. This means your investment is safeguarded against unforeseen risks, giving you complete peace of mind.`,
+    desc: `For the first time in India, Holsol India provides complete insurance coverage for your rooftop solar system. We don’t just deliver high-performance solar installations we also give you the added assurance of insured panels and structures, ensuring your investment remains protected against unforeseen risks.`,
     points: [
-      "Financial Protection – Coverage against accidental damage, natural calamities, or unexpected failures.",
+      "Financial Protection – Get coverage against accidental damage, natural calamities, and unexpected system failures.",
       "Long-Term Security – Ensures your solar assets are protected throughout their lifecycle.",
-      "Trusted Assurance – Backed by reliable insurance partners for worry-free ownership.",
+      "Trusted Assurance – Backed by credible insurance partners, giving you worry-free ownership and complete peace of mind.",
     ],
     benefits: [
-      "With Holsol’s insured panels and structures, you don’t just get sustainable energy you also get the confidence of knowing your system is safe, secure, and fully protected.",
+      "With Holsol’s insured panels and structures, you don’t just choose sustainable energy—you choose security, confidence, and long-term protection for your entire solar system.",
     ],
     icon: insured,
     bgColor: "bg-green-100",
   },
   {
     title: "Loyalty Cashback Card",
-    desc: `Loyalty Cashback Card by Holsol – India’s first reward program designed exclusively for solar customers. With this unique benefit, you enjoy ₹1,000 cashback every month, for up to 10 years, making your solar investment even more rewarding.`,
+    desc: `Holsol brings you India’s first-ever Loyalty Cashback Card, a unique reward program created exclusively for solar customers. With this benefit, you receive ₹1,000 cashback every month for up to 10 years, making your solar investment smarter, more valuable, and financially rewarding.`,
     points: [
-      "Guaranteed Cashback – ₹1,000 credited monthly.",
-      "Long-Term Value – Earn up to ₹1,20,000 over 10 years.",
-      "Exclusive Benefit – First-of-its-kind program in India for Indian customers.",
-      "Smarter Investment – Save on energy and earn rewards simultaneously.",
+      "Guaranteed Cashback – Receive ₹1,000 credited to your account every month, without fail.",
+      "Long-Term Value – Earn up to ₹1,20,000 over 10 years, adding significant returns to your solar investment.",
+      "Exclusive Solar Benefit – India’s first-of-its-kind loyalty program designed specifically for solar customers.",
+      "Smarter Overall Investment – Save on electricity while earning guaranteed cashback double benefits from a single solution.",
     ],
     benefits: [
-      "With Holsol’s Loyalty Cashback Card, you don’t just switch to solar you unlock a guaranteed income from the next 10 years.",
+      "With Holsol’s Loyalty Cashback Card, you don’t just switch to solar you unlock guaranteed monthly income for the next 10 years.",
     ],
     icon: cashback,
     bgColor: "bg-yellow-100",
   },
   {
     title: "Maintenance-Free Period",
-    desc: `With Holsol India, your solar journey is completely hassle-free. Every installation comes with a 5-year maintenance-free period, ensuring zero maintenance cost and uninterrupted performance.`,
+    desc: `With Holsol India, your solar experience is truly hassle-free. Every installation includes a 5-year maintenance-free period, ensuring zero upkeep costs and uninterrupted system performance from day one.`,
     points: [
-      "No Extra Expenses – Save on service and upkeep for 5 years.",
+      "No Extra Expenses – Save on all service and maintenance costs for the first 5 years.",
       "Worry-Free Ownership – Systems are monitored and supported by Holsol experts.",
       "Reliable Performance – Enjoy consistent energy generation without hidden costs.",
     ],
     benefits: [
       "Holsol’s maintenance-free period means you focus on savings, while we take care of performance.",
     ],
-    icon:maintenanace,
+    icon: maintenanace,
     bgColor: "bg-indigo-100",
   },
   {
     title: "Fast & Easy Finance",
-    desc: `Going solar with Holsol India is now simpler and more affordable. We offer loan facilities with easy EMI options, so you can invest in clean energy without straining your budget.`,
+    desc: `Going solar with Holsol India is now more affordable and convenient than ever. We provide flexible loan facilities with simple EMI options, allowing you to switch to clean energy without heavy upfront expenses.`,
     points: [
-      "Flexible EMI Plans – Choose a payment plan that suits your financial convenience.",
-      "Quick Approvals – Fast processing to get your solar system up and running sooner.",
-      "Affordable Investment – Make renewable energy accessible without large upfront costs.",
+      "Flexible EMI Plans – Choose a financing plan that perfectly matches your budget and repayment comfort.",
+      "Quick Approvals – Enjoy fast and smooth loan processing so your solar system can be installed sooner.",
+      "Affordable Investment – Make renewable energy accessible and budget-friendly with minimal initial cost.",
     ],
     benefits: [
-      "With Holsol’s Fast & Easy Finance, switching to solar is not just smart it’s hassle-free.",
+      "With Holsol’s Fast & Easy Finance, switching to solar isn’t just smart it’s truly hassle-free.",
     ],
     icon: finance,
     bgColor: "bg-pink-100",
@@ -142,8 +144,8 @@ const ServiceDetail = () => {
                 <div
                   className={`flex items-center justify-center md:w-1/4 p-8 text-2xl ${service.bgColor}`}
                 >
-                  <img src={service.icon} className="lg:h-[140px] md:h-[100px] h-[70px]"/>
-                  
+                  <img src={service.icon} className="lg:h-[140px] md:h-[100px] h-[70px]" />
+
                 </div>
 
                 {/* Content Section */}
@@ -159,7 +161,7 @@ const ServiceDetail = () => {
                   </ul>
                   {service.benefits && (
                     <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-[#0047FF]">
-                      
+
                       <ul className="list-disc list-inside text-gray-800 space-y-1 tracking-[0.3px] text-justify">
                         {service.benefits.map((benefit, i) => (
                           <li key={i}>{benefit}</li>

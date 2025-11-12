@@ -221,13 +221,13 @@ const Navbar = () => {
                         </a>
 
                         <button onClick={() => {
-                                setOpenDropdown(null);
-                                setIsOpen(false);
+                            setOpenDropdown(null);
+                            setIsOpen(false);
 
-                                // Force reset before reopening
-                                setIsPopupOpen(false);
-                                setTimeout(() => setIsPopupOpen(true), 0);
-                            }} className="w-full text-center px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                            // Force reset before reopening
+                            setIsPopupOpen(false);
+                            setTimeout(() => setIsPopupOpen(true), 0);
+                        }} className="w-full text-center px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <span>Get Free Quote</span>
                         </button>
                         <a

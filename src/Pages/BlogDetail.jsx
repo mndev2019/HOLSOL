@@ -14,25 +14,14 @@ const BlogDetail = () => {
       image: blog,
       date: "22 September 2025",
       title: "Sunrise for Solar: GST Cut Spurs Clean Energy Growth",
-      content: `The Indian government has announced a significant reduction in 
-      the Goods and Services Tax (GST) on solar equipment, bringing it down to just 5%. 
-      This policy shift is set to make solar systems more affordable for households and 
-      businesses alike. Experts believe this move will accelerate the adoption of clean energy, 
-      support India’s renewable energy targets, and reduce dependency on fossil fuels. 
-      With installation costs dropping, more families and organizations can now contribute 
-      to a sustainable future powered by the sun.`,
+      content: `The Indian government has announced a major reduction in the Goods and Services Tax (GST) on solar equipment, lowering it to just 5%. This policy change makes solar systems more affordable for both households and businesses. Industry experts predict that this move will significantly boost clean energy adoption, strengthen India’s renewable energy goals, and reduce reliance on fossil fuels.`,
     },
     {
       id: 2,
       image: blog1,
       date: "25 September 2025",
       title: "R.S. Logistics Opens New Warehouse in Lucknow",
-      content: `R.S. Logistics & Warehouse Services Pvt. Ltd. has inaugurated a 
-      state-of-the-art warehouse in Lucknow, in collaboration with TATA Power Renewable Energy. 
-      The facility is designed with energy efficiency in mind and is expected to streamline 
-      supply chain operations while supporting renewable energy solutions. This expansion marks 
-      a significant step toward sustainable logistics and will strengthen regional trade and 
-      distribution networks across Uttar Pradesh.`,
+      content: `R.S. Logistics & Warehouse Services Pvt. Ltd. has inaugurated a state-of-the-art warehouse in Lucknow, developed in collaboration with TATA Power Renewable Energy. The new facility has been designed with a strong focus on energy efficiency and modern infrastructure, enabling smoother and more reliable supply chain operations. This strategic expansion not only enhances regional trade and distribution networks across Uttar Pradesh but also reinforces the company’s commitment to sustainable logistics powered by renewable energy solutions.`,
     },
   ];
   return (

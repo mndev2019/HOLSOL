@@ -19,14 +19,7 @@ const Popup = () => {
 
 
 
-  // const handleSubmit = (e) => {
-
-
-
-  //   setTimeout(() => {
-  //     setShowPopup(false);
-  //   }, 100);
-  // };
+ 
   
 
 
@@ -68,7 +61,7 @@ const Popup = () => {
               </p>
 
 
-              {/* <form className="space-y-4" onSubmit={handleSubmit} action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank"> */}
+            
               <form className="space-y-4"  action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank">
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" value="https://holsolindia.com/thank-you" />
