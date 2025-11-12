@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
-import popup from "../assets/Image/bannerbg.jpg";
+import popup from "../assets/Image/bannerreduce.jpeg";
 import logo from '../../src/assets/Image/newlogocolored.png';
 import ThankYou from "../Pages/Thankyou";
 

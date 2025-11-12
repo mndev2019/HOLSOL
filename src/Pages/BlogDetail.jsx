@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import blog from '../assets/Image/blogres.jpg'
-import blog1 from '../assets/Image/blognew.jpg'
+import blog from '../assets/Image/blogresreduce.jpeg'
+import blog1 from '../assets/Image/blognewreduce.jpeg'
 
 const BlogDetail = () => {
   useEffect(() => {

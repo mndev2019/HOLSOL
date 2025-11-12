@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import rooftop from '../../assets/Image/newsolarrooftop.jpg';
-import commercial from '../../assets/Image/industrial.jpg';
-import industrial from '../../assets/Image/industrial (2).jpg';
+import rooftop from '../../assets/Image/newsolarrooftopreduce.jpeg';
+import commercial from '../../assets/Image/industrialreduce.jpeg';
+import industrial from '../../assets/Image/industrial2reduce.jpeg';
 // import solarepc from '../../assets/Image/solarepc.jpg';
-import pmsgy from '../../assets/Image/pmsgy.jpg';
+import pmsgy from '../../assets/Image/pmsgyreduce.jpeg';
 import solarkit from '../../assets/Image/solarkitoem.png'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

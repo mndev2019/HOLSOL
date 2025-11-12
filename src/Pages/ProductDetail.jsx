@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import solarRooftopImg from '../assets/Image/newsolarrooftop.jpg';
-import commercialImg from '../assets/Image/industrial.jpg';
-import epcImg from '../assets/Image/solarepc.jpg';
-import solarKitImg from '../assets/Image/solarkit.png';
+import solarRooftopImg from '../assets/Image/newsolarrooftopreduce.jpeg';
+import commercialImg from '../assets/Image/industrialreduce.jpeg';
+import epcImg from '../assets/Image/solarepcreduce.jpeg';
+import solarKitImg from '../assets/Image/solarkitreduce.jpeg';
 import { FaCheckCircle } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from "react";
-import aboutusleft from '../../assets/Image/bannerbg.jpg'
+import aboutusleft from '../../assets/Image/bannerreduce.jpeg'
 // import aboutussecond from '../../assets/Image/aboutsecond.jpg'
 import Aboutpresence from './Aboutpresence'
 import Popup from "../../Component/Popup";

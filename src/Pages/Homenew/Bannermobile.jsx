@@ -3,12 +3,12 @@ import { FaChevronLeft, FaChevronRight, FaFacebookF, FaInstagram } from "react-i
 import { FaArrowRightLong, FaXTwitter } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
-import bannerImg1 from "../../assets/Image/bannerbg.jpg";
+import bannerImg1 from "../../assets/Image/bannerreduce.jpeg";
 // import desktopcardimage from "../../assets/Image/redcardbanner.png";
 // import mobilecardimage from "../../assets/Image/mobileviewloyalcard.jpg";
 import mobilecardimage from "../../assets/Image/newbannercardmobile.jpeg";
-import bannerImg4 from "../../assets/Image/insurancehand.png";
-import bannerImg5 from "../../assets/Image/industrial.jpg";
+import bannerImg4 from "../../assets/Image/insurancehandreduce.jpeg";
+import bannerImg5 from "../../assets/Image/industrialreduce.jpeg";
 import Popup from "../../Component/Popup";
 
 const slides = [
