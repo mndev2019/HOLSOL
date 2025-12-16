@@ -14,6 +14,7 @@ import TermsCondition from './Pages/TermsCondition'
 import WebsiteUsage from './Pages/WebsiteUsage'
 import ThankYou from './Pages/Thankyou'
 import Contact from './Pages/Contact'
+import SolarCalculator from './Component/SolarCalculator'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path='/terms' element={<TermsCondition />} />
           <Route path='/usage-policy' element={<WebsiteUsage />} />
           <Route path='/thank-you' element={<ThankYou/>}/>
+          <Route path='/solar-calculator' element={<SolarCalculator/>}/>
      
 
         </Route>

@@ -15,9 +15,11 @@ import ServiceMobile from './ServiceMobile'
 import MobileOverview from './MobileOverview'
 import Bannermobile from './Bannermobile'
 
+
 const Homenew = () => {
     return (
         <>
+        
             <Bannernew />
             <Bannermobile className="md:hidden block"/>
             {/* <Innovation /> */}
@@ -33,6 +35,7 @@ const Homenew = () => {
             <Blognew />
 
             <Presence />
+            
         </>
     )
 }
