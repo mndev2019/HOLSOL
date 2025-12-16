@@ -239,7 +239,10 @@ const Navbar = () => {
                         >
                             Call Now
                         </a>
-                        <button onClick={() => navigate('/solar-calculator')} className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                        <button onClick={() => {
+                            setIsOpen(false);
+                            navigate('/solar-calculator');
+                        }} className="mt-2 block text-center w-full px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                             <span>Solar Calculator</span>
                         </button>
 
