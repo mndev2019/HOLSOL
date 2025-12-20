@@ -6,15 +6,15 @@ import Popup from '../../Component/Popup'
 
 const WebLayout = () => {
     const location = useLocation();
-     const hidePopup = location.pathname === "/thank-you";
+    const hidePopup = location.pathname === "/thank-you";
     return (
         <>
             <Header />
             <main>
                 <Outlet />
             </main>
-            <Footer/>
-                {!hidePopup && <Popup />}
+            <Footer />
+            {!hidePopup && <Popup />}
 
         </>
     )

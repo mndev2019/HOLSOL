@@ -12,6 +12,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(null); // track dropdown (products/services)
     const toggleMenu = () => setIsOpen(!isOpen);
+    
 
     const location = useLocation();
     useEffect(() => {
@@ -20,7 +21,7 @@ const Navbar = () => {
 
     const navlist = (
         <ul
-            className={`flex lg:flex-row flex-col list-none gap-8 font-semibold items-center lg:text-xl text-md ${location.pathname === "/" ? "lg:text-white text-black" : "text-black"
+            className={`flex lg:flex-row flex-col list-none gap-5 font-semibold items-center lg:text-md text-md ${location.pathname === "/" ? "lg:text-white text-black" : "text-black"
                 }`}
         >
             <li>
@@ -147,14 +148,14 @@ const Navbar = () => {
         <>
 
             <section className={`px-6 lg:px-10 shadow py-2 ${location.pathname === "/" ? "absolute top-0 left-0 w-full z-50 " : ""}`}>
-                <div className="container mx-auto">
+                <div className="mx-auto">
                     <div className="flex justify-between items-center py-1">
                         {/* Logo */}
                         <NavLink to="/">
                             {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                             HOLSOL
                         </span> */}
-                            <img src={logo} alt='image' className='lg:h-[45px] h-[30px]' />
+                            <img src={logo} alt='image' className='lg:h-[40px] h-[30px]' />
                         </NavLink>
 
                         {/* Nav Links */}
@@ -164,7 +165,7 @@ const Navbar = () => {
 
                         {/* Brochure button */}
                         <div className="hidden lg:flex items-center gap-2 text-right">
-                            <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                            <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                                 <FaRegFileAlt className="text-lg" />
                                 <span>Brochure</span>
                             </a>
@@ -175,16 +176,16 @@ const Navbar = () => {
                                 // Force reset before reopening
                                 setIsPopupOpen(false);
                                 setTimeout(() => setIsPopupOpen(true), 0);
-                            }} className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                            }} className="flex items-center gap-2 px-3 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                                 <span>Get Free Quote</span>
                             </button>
-                            <a
+                            {/* <a
                                 href="tel:9257055583"
                                 className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition"
                             >
                                 <span>Call Now</span>
-                            </a>
-                            <button onClick={() => navigate('/solar-calculator')} className="flex items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                            </a> */}
+                            <button onClick={() => navigate('/solar-calculator')} className="flex items-center gap-2 px-3 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                                 <span>Solar Calculator</span>
                             </button>
 
@@ -252,7 +253,7 @@ const Navbar = () => {
             </section>
             {
                 isPopupOpen && (
-                    <Popup onClose={() => setIsPopupOpen(false)} />
+                    <Popup immediateOpen={true} onClose={() => setIsPopupOpen(false)} />
                 )
             }
         </>

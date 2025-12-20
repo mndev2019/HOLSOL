@@ -5,25 +5,28 @@ import popup from "../assets/Image/bannerreduce.jpeg";
 import logo from '../../src/assets/Image/newlogocolored.png';
 import ThankYou from "../Pages/Thankyou";
 
-const Popup = () => {
+const Popup = ({ immediateOpen = false }) => {
   const [showPopup, setShowPopup] = useState(false);
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
 
 
 
+  // useEffect(() => {
+  //   setShowPopup(true);
+  // }, []);
   useEffect(() => {
-    setShowPopup(true);
-  }, []);
+    if (immediateOpen) {
+      setShowPopup(true); // Open immediately if prop is true
+      return;
+    }
 
+    const timer = setTimeout(() => {
+      setShowPopup(true);
+    }, 10000); // 10 seconds delay for auto-popup
 
-
-
- 
-  
-
-
-
+    return () => clearTimeout(timer);
+  }, [immediateOpen]);
   return (
     <>
       {showPopup && (
@@ -61,8 +64,8 @@ const Popup = () => {
               </p>
 
 
-            
-              <form className="space-y-4"  action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank">
+
+              <form className="space-y-4" action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank">
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" value="https://holsolindia.com/thank-you" />
                 <input type="hidden" name="_cc" value="info@ramot.cloud" />
