@@ -57,3 +57,24 @@ body {
     /* how far it moves */
   }
 }
+
+/* reponsive navbar */
+/* Default styles */
+.navbar-logo {
+  height: 40px;
+}
+
+.navbar-menu {
+  font-size: 16px; /* default */
+}
+
+/* ✅ Media query: 1024px to 1080px */
+@media screen and (min-width: 1024px) and (max-width: 1080px) {
+  .navbar-logo {
+    height: 30px;
+  }
+
+  .navbar-menu {
+    font-size: 14px; /* sm */
+  }
+}

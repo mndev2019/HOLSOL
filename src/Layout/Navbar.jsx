@@ -21,7 +21,7 @@ const Navbar = () => {
 
     const navlist = (
         <ul
-            className={`flex lg:flex-row flex-col list-none gap-5 font-semibold items-center lg:text-md text-md ${location.pathname === "/" ? "lg:text-white text-black" : "text-black"
+            className={`navbar-menu flex lg:flex-row flex-col list-none gap-5 font-semibold items-center  ${location.pathname === "/" ? "lg:text-white text-black" : "text-black"
                 }`}
         >
             <li>
@@ -155,7 +155,7 @@ const Navbar = () => {
                             {/* <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-[43px] font-[700]">
                             HOLSOL
                         </span> */}
-                            <img src={logo} alt='image' className='lg:h-[40px] h-[30px]' />
+                            <img src={logo} alt='image' className='navbar-logo' />
                         </NavLink>
 
                         {/* Nav Links */}
