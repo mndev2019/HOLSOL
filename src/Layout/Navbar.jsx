@@ -10,7 +10,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(null); // track dropdown (products/services)
+    const [openDropdown, setOpenDropdown] = useState(null); 
     const toggleMenu = () => setIsOpen(!isOpen);
     
 
