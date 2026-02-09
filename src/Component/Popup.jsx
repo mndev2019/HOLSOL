@@ -1,33 +1,69 @@
+
+
+
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-
-// import popup from "../assets/Image/bannerreduce.jpeg";
-import popup from "../assets/Image/newyear.jpeg";
 import logo from '../../src/assets/Image/newlogocolored.png';
 import ThankYou from "../Pages/Thankyou";
+import axios from "axios";
+import { Base_Url } from "../API/Base_Url";
 
-const Popup = ({ immediateOpen = false }) => {
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+
+const Popup = () => {
+  const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
-
-
-
-  // useEffect(() => {
-  //   setShowPopup(true);
-  // }, []);
+  const [name, setname] = useState("");
+  const [mobile, setmobile] = useState("");
+  const [state, setstate] = useState("");
+  const [city, setcity] = useState("");
+  const [pincode, setpincode] = useState("");
+  const [data, setdata] = useState();
+  const handleget = () => {
+    axios.get(`${Base_Url}api/popup`).then(resp => {
+      console.log(resp.data)
+      setdata(resp.data.data)
+    })
+  }
   useEffect(() => {
-    if (immediateOpen) {
-      setShowPopup(true); // Open immediately if prop is true
-      return;
+    handleget();
+  }, [])
+
+ const handlesubmit = async (e) => {
+  e.preventDefault();
+
+  let requestdata = {
+    name,
+    mobile,
+    state,
+    city,
+    pincode
+  };
+
+  try {
+    const res = await axios.post(`${Base_Url}api/enquiry`, requestdata);
+
+    if (res.data.success === true) {
+      toast.success(res.data.message);
+      navigate("/thankyou");
+      setShowPopup(false)
+    } else {
+      toast.error(res.data.message);
     }
+  } catch (error) {
+    toast.error("Server error");
+    console.log(error);
+  }
+};
 
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 10000); // 10 seconds delay for auto-popup
 
-    return () => clearTimeout(timer);
-  }, [immediateOpen]);
+
+useEffect(() => {
+  setShowPopup(true);
+}, []);
   return (
     <>
       {showPopup && (
@@ -44,7 +80,8 @@ const Popup = ({ immediateOpen = false }) => {
 
 
             <div className="relative h-48 w-full">
-              <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" />
+              {/* <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" /> */}
+              <img src={`${Base_Url}${data?.[0]?.image}`} alt="Solar Panel" className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-6 text-white">
                 <div className="flex items-end space-x-2">
@@ -66,10 +103,7 @@ const Popup = ({ immediateOpen = false }) => {
 
 
 
-              <form className="space-y-4" action="https://formsubmit.co/info@holsolindia.com" method="POST" target="_blank">
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://holsolindia.com/thank-you" />
-                <input type="hidden" name="_cc" value="info@ramot.cloud" />
+              <form className="space-y-4" onSubmit={handlesubmit}>
 
 
                 {/* Name */}
@@ -77,6 +111,8 @@ const Popup = ({ immediateOpen = false }) => {
                   <input
                     type="text"
                     required
+                    value={name}
+                    onChange={(e) => setname(e.target.value)}
                     name="name"
                     className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5  pb-2 text-sm outline-none focus:border-blue-600"
                   />
@@ -95,6 +131,8 @@ const Popup = ({ immediateOpen = false }) => {
                     type="tel"
                     required
                     name="mobile"
+                    value={mobile}
+                    onChange={(e) => setmobile(e.target.value)}
                     pattern="[0-9]{10}"         // Only 10 digits
                     maxLength="10"              // Prevents typing more than 10
                     inputMode="numeric"
@@ -122,7 +160,9 @@ const Popup = ({ immediateOpen = false }) => {
                     value={selectedState}
                     onChange={(e) => {
                       setSelectedState(e.target.value);
-                      setSelectedCity(""); // reset city when state changes
+                      setstate(e.target.value);   // ✅ ADD THIS
+                      setSelectedCity("");
+                      setcity("");               // ✅ reset city
                     }}
                     className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600 appearance-none"
                   >
@@ -149,7 +189,10 @@ const Popup = ({ immediateOpen = false }) => {
                       required
                       name="city"
                       value={selectedCity}
-                      onChange={(e) => setSelectedCity(e.target.value)}
+                      onChange={(e) => {
+                        setSelectedCity(e.target.value);
+                        setcity(e.target.value);   // ✅ ADD THIS
+                      }}
                       className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600 appearance-none"
                     >
                       <option value="" disabled hidden></option>
@@ -249,7 +292,10 @@ const Popup = ({ immediateOpen = false }) => {
                       required
                       name="city"
                       value={selectedCity}
-                      onChange={(e) => setSelectedCity(e.target.value)}
+                      onChange={(e) => {
+                        setSelectedCity(e.target.value);
+                        setcity(e.target.value);   // ✅ ADD THIS
+                      }}
                       className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600 appearance-none"
                     >
                       <option value="" disabled hidden></option>
@@ -321,7 +367,10 @@ const Popup = ({ immediateOpen = false }) => {
                       required
                       name="city"
                       value={selectedCity}
-                      onChange={(e) => setSelectedCity(e.target.value)}
+                      onChange={(e) => {
+                        setSelectedCity(e.target.value);
+                        setcity(e.target.value);   // ✅ ADD THIS
+                      }}
                       className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600 appearance-none"
                     >
                       <option value="" disabled hidden></option>
@@ -385,6 +434,8 @@ const Popup = ({ immediateOpen = false }) => {
                     type="text"
                     required
                     name="pincode"
+                    value={pincode}
+                    onChange={(e) => setpincode(e.target.value)}
                     maxLength="6"
                     className="peer w-full border-b-2 border-gray-300 bg-transparent px-1 pt-5 pb-2 text-sm outline-none focus:border-blue-600"
                   />
@@ -401,7 +452,7 @@ const Popup = ({ immediateOpen = false }) => {
                 <button
                   type="submit"
 
-                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white lg:py-3 py-2 rounded-xl font-semibold shadow-lg transition lg:text-lg text-sm"
+                  className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white lg:py-3 py-2 rounded-xl font-semibold shadow-lg transition lg:text-lg text-sm cursor-pointer"
                 >
                   Submit & Book Visit
                 </button>
@@ -420,5 +471,8 @@ const Popup = ({ immediateOpen = false }) => {
 };
 
 export default Popup;
+
+
+
 
 

@@ -1,47 +1,69 @@
-import React, { useEffect } from 'react'
-import blog from '../../assets/Image/blogresreduce.jpeg'
-// import blog1 from '../../assets/Image/solarrooftop.jpg'
-import blog1 from '../../assets/Image/blognewreduce.jpeg'
-// import blog3 from '../../assets/Image/blog3.jpg'
-// import blog3 from '../../assets/Image/blogres3.jpg'
+import React, { useEffect, useState } from 'react'
+// import blog from '../../assets/Image/blogresreduce.jpeg'
+
+// import blog1 from '../../assets/Image/blognewreduce.jpeg'
+
 import { Navigate, useNavigate } from 'react-router-dom'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import arrow from '../../assets/Image/arrows.png'
+import axios from 'axios';
+import { Base_Url } from '../../API/Base_Url';
 
 const Blognew = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 }); // duration in ms
     }, []);
     const navigate = useNavigate();
-    const blogs = [
-        {
-            image: blog,
-            day: "22",
-            month: "SEP",
-            year: "2025",
-            title: "Sunrise for Solar: GST Cut Spurs Clean Energy Growth",
-            para: "From 22 Sept 2025, GST on solar devices drops to 5%, making systems more affordable and boosting clean energy adoption"
-        },
+    const [data, setdata] = useState([]);
+    const handleget = () => {
+        axios.get(`${Base_Url}api/blog`).then(resp => {
+            console.log(resp.data.data)
+            setdata(resp.data.data)
+        })
+    }
+    useEffect(() => {
+        handleget();
+    }, [])
+    // for showing date
+    const getDateParts = (createdAt) => {
+        const date = new Date(createdAt);
 
-        {
-            image: blog1,
-            day: "25",
-            month: "SEP",
-            year: "2025",
-            title: "R.S. Logistics Opens New Warehouse in Lucknow",
-            para: "R.S. Logistics & Warehouse Services Private Limited has inaugurated a new warehouse in Lucknow in collaboration with TATA Power Renewable Energy."
-        }
+        return {
+            day: date.getDate(),
+            month: date.toLocaleString("en-US", { month: "short" }).toUpperCase(),
+            year: date.getFullYear(),
+        };
+    };
 
-        // {
-        //     image: blog3,
-        //     day: "19",
-        //     month: "JAN",
-        //     year: "2025",
-        //     title: "May, 2024Biomass Energy Demystified: Fueling a Future",
-        //     para: "Profitable business makes your profit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
-        // },
-    ]
+    // const blogs = [
+    //     {
+    //         image: blog,
+    //         day: "22",
+    //         month: "SEP",
+    //         year: "2025",
+    //         title: "Sunrise for Solar: GST Cut Spurs Clean Energy Growth",
+    //         para: "From 22 Sept 2025, GST on solar devices drops to 5%, making systems more affordable and boosting clean energy adoption"
+    //     },
+
+    //     {
+    //         image: blog1,
+    //         day: "25",
+    //         month: "SEP",
+    //         year: "2025",
+    //         title: "R.S. Logistics Opens New Warehouse in Lucknow",
+    //         para: "R.S. Logistics & Warehouse Services Private Limited has inaugurated a new warehouse in Lucknow in collaboration with TATA Power Renewable Energy."
+    //     }
+
+    //     // {
+    //     //     image: blog3,
+    //     //     day: "19",
+    //     //     month: "JAN",
+    //     //     year: "2025",
+    //     //     title: "May, 2024Biomass Energy Demystified: Fueling a Future",
+    //     //     para: "Profitable business makes your profit Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+    //     // },
+    // ]
     return (
         <>
             <section className='lg:py-20 py-14 px-6 lg:px-50 bg-gradient-to-r from-green-100 via-blue-100 to-purple-100 relative'>
@@ -62,60 +84,67 @@ const Blognew = () => {
                     </h2>
                 </div>
                 {
-                    blogs.map((itm) => (
-                        <>
-                            <div className="grid lg:grid-cols-12 grid-cols-1 items-center border-b border-[#02160933] py-8">
+                    data?.map((itm) => {
+                        const { day, month, year } = getDateParts(itm.createdAt);
+
+                        return (
+                            <div
+                                key={itm._id}
+                                className="grid lg:grid-cols-12 grid-cols-1 items-center border-b border-[#02160933] py-8"
+                            >
                                 <div className="lg:col-span-5 col-span-1">
-                                    <div className="relative ">
+                                    <div className="relative">
                                         <div className="flex gap-6 items-center">
                                             {/* Image */}
                                             <img
-                                                src={itm.image}
+                                                src={`${Base_Url}${itm?.image}`}
                                                 alt="blog"
                                                 data-aos="zoom-in"
-                                                className="lg:w-[250px] w-full h-[140px] rounded-[10px] object-cover transform transition-transform duration-500 ease-in-out hover:scale-110"
+                                                className="lg:w-[250px] w-full h-[140px] rounded-[10px] object-cover transition-transform duration-500 hover:scale-110"
                                             />
 
                                             {/* Date Card */}
-                                            <div className="bg-white rounded-xl shadow-md px-8 py-6 text-center group hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white lg:block hidden">
+                                            <div className="bg-white rounded-xl shadow-md px-8 py-6 text-center group hover:bg-gradient-to-r from-[#00C6FF] to-[#0047FF] lg:block hidden">
                                                 <p className="text-3xl font-bold text-[#00210E] leading-none group-hover:text-white">
-                                                    {itm.day}
+                                                    {day}
                                                 </p>
                                                 <p className="uppercase text-sm tracking-wider text-gray-600 mt-1 group-hover:text-white">
-                                                    {itm.month}{itm.year}
+                                                    {month}{year}
                                                 </p>
                                             </div>
                                         </div>
+
+                                        {/* Mobile Date */}
                                         <button className="lg:hidden block absolute top-3 right-3 rounded-full px-4 py-1 text-white text-sm font-medium bg-gradient-to-r from-[#00C6FF] to-[#0047FF] shadow-md">
-                                            {itm.day}  {itm.month}
+                                            {day} {month}
                                         </button>
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-7 col-span-1">
                                     <div className="w-full flex items-center justify-between gap-5">
-                                        {/* Text Content */}
                                         <div>
                                             <h3 className="lg:text-[24px] text-[18px] font-semibold text-[#00210E]">
-                                                {itm.title}
+                                                {itm?.title}
                                             </h3>
                                             <p className="lg:text-[17px] text-[14px] text-[#5a5a5a] mt-2">
-                                                {itm.para}
+                                                {itm?.shortDescription}
                                             </p>
                                         </div>
 
-                                        {/* Arrow Button */}
-                                        <button onClick={() => navigate('/blog-detail')} className="lg:w-12 w-[30px] lg:h-12 h-[30px] rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] flex items-center justify-center text-white shadow-md  transition lg:block hidden">
+                                        <button
+                                            onClick={() => navigate('/blog-detail')}
+                                            className="lg:w-12 w-[30px] lg:h-12 h-[30px] rounded-full bg-gradient-to-r from-[#00C6FF] to-[#0047FF] flex items-center justify-center text-white shadow-md lg:block hidden"
+                                        >
                                             ↗
                                         </button>
                                     </div>
                                 </div>
-
-
                             </div>
-                        </>
-                    ))
+                        );
+                    })
                 }
+
 
             </section>
         </>

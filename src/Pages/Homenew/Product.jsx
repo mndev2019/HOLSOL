@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import rooftop from '../../assets/Image/newsolarrooftopreduce.jpeg';
-import commercial from '../../assets/Image/industrialreduce.jpeg';
-import industrial from '../../assets/Image/industrial2reduce.jpeg';
-// import solarepc from '../../assets/Image/solarepc.jpg';
-import pmsgy from '../../assets/Image/pmsgyreduce.jpeg';
-import solarkit from '../../assets/Image/solarkitoemreduce.jpeg'
+import React, { useEffect, useState } from 'react';
+// import rooftop from '../../assets/Image/newsolarrooftopreduce.jpeg';
+// import commercial from '../../assets/Image/industrialreduce.jpeg';
+// import industrial from '../../assets/Image/industrial2reduce.jpeg';
+
+// import pmsgy from '../../assets/Image/pmsgyreduce.jpeg';
+// import solarkit from '../../assets/Image/solarkitoemreduce.jpeg'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,10 +13,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import logo from '../../assets/Image/newlogocolored.png'
 import { useNavigate } from 'react-router-dom';
+import { Base_Url } from '../../API/Base_Url';
+import axios from 'axios';
 
 
 const Product = () => {
-const navigate = useNavigate();
+    const [data , setdata] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
@@ -38,6 +41,15 @@ const navigate = useNavigate();
             <FaChevronLeft size={20} />
         </div>
     );
+    const handleget = () => {
+        axios.get(`${Base_Url}api/product`).then(resp => {
+            console.log(resp.data.data)
+            setdata(resp.data.data)
+        })
+    }
+    useEffect(() => {
+        handleget();
+    }, [])
 
     const settings = {
         arrows: true,
@@ -83,15 +95,14 @@ const navigate = useNavigate();
         ]
     };
 
-    const product = [
-        { image: pmsgy, text: "PM Surya Ghar Yojana" },
-        { image: rooftop, text: "Solar Rooftop" },
-        { image: commercial, text: "Commercial Solutions" },
-        { image: industrial, text: "Industrial Solutions" },
-        // { image: solarepc, text: "Solar EPC Works" },
-        { image: solarkit, text: "Solar Kit OEM" },
+    // const product = [
+    //     { image: pmsgy, text: "PM Surya Ghar Yojana" },
+    //     { image: rooftop, text: "Solar Rooftop" },
+    //     { image: commercial, text: "Commercial Solutions" },
+    //     { image: industrial, text: "Industrial Solutions" },
+    //     { image: solarkit, text: "Solar Kit OEM" },
 
-    ];
+    // ];
 
     return (
         <section className="relative lg:px-20 px-5 py-14 bg-gradient-to-br from-[#f8fbff] to-[#eef7ff] overflow-hidden md:block hidden">
@@ -120,28 +131,17 @@ const navigate = useNavigate();
             {/* Slider */}
             <div className="slider-container">
                 <Slider {...settings}>
-                    {product.map((itm, index) => (
+                    {data.map((itm, index) => (
                         <div key={index}>
-                            <div className="px-3 relative" onClick={()=> navigate('/product-detail')}> {/* padding INSIDE, not on slide */}
-                                {/* Conditional Label */}
-                                {/* {itm.text === "Solar Kit OEM" && (
-                                    <span className="absolute top-2 left-4 bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white text-xs px-3 py-1 rounded-full shadow-md z-10">
-                                        Ready to Install
-                                    </span>
-                                )} */}
-                                {/* {itm.text === "Solar Kit OEM" && (
-                                    <div className='absolute right-4 top-4 z-20'>
-                                        <img src={logo} className='h-5' />
-                                    </div>
-
-                                )} */}
+                            <div className="px-3 relative" onClick={() => navigate('/product-detail')}> 
+                               
                                 <img
-                                    src={itm.image}
+                                    src={`${Base_Url}${itm.image}`}
                                     alt={itm.text}
                                     className="h-[320px] w-full object-cover transform hover:-translate-y-2 hover:scale-105 duration-300 cursor-pointer"
                                 />
                                 <h3 className="text-[20px] text-center mt-3 font-semibold">
-                                    {itm.text}
+                                    {itm.title}
                                 </h3>
                             </div>
                         </div>

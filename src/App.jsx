@@ -15,6 +15,17 @@ import WebsiteUsage from './Pages/WebsiteUsage'
 import ThankYou from './Pages/Thankyou'
 import Contact from './Pages/Contact'
 import SolarCalculator from './Component/SolarCalculator'
+import Register from './Auth/Register'
+import Login from './Auth/Login'
+import ForgotPassword from './Auth/ForgotPassword'
+import Dasboard from './Pages/User/Dasboard'
+import Profile from './Pages/User/Profile'
+import Documents from './Pages/User/Document'
+import Rewards from './Pages/User/Reward'
+import { ToastContainer } from 'react-toastify'
+import ProfileDetail from './Pages/User/ProfileDetail'
+import VerifyOtp from './Auth/VerifyOtp'
+import ResetPassword from './Auth/ResetPassword'
 
 
 function App() {
@@ -36,9 +47,27 @@ function App() {
           <Route path='/usage-policy' element={<WebsiteUsage />} />
           <Route path='/thank-you' element={<ThankYou/>}/>
           <Route path='/solar-calculator' element={<SolarCalculator/>}/>
-     
+          <Route path='/thankyou' element={<ThankYou/>}/>
+           
+
+           {/* auth */}
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/forgot-password' element={<ForgotPassword/>}/>
+          <Route path='/verify-otp' element={<VerifyOtp/>}/>
+          <Route path='/reset-password' element={<ResetPassword/>}/>
+
+          {/* user */}
+          <Route path='/dashboard' element={<Dasboard/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/profile-detail' element={<ProfileDetail/>}/>
+
+          <Route path='/document' element={<Documents/>}/>
+          <Route path='/reward' element={<Rewards/>}/>
+      
 
         </Route>
+
 
 
       </>
@@ -51,6 +80,7 @@ function App() {
 
   return (
     <>
+      <ToastContainer position="top-right" autoClose={2000} />
       <RouterProvider router={ThemeRoute} />
 
     </>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import { FaRegFileAlt } from 'react-icons/fa';
-import brochure from "../assets/Pdffile/holsolfinalbrochure2.pdf";
+// import brochure from "../assets/Pdffile/holsolfinalbrochure2.pdf";
 import logo from '../assets/Image/newlogocolored.png'
 import Popup from '../Component/Popup';
 
@@ -10,9 +10,9 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(null); 
+    const [openDropdown, setOpenDropdown] = useState(null);
     const toggleMenu = () => setIsOpen(!isOpen);
-    
+
 
     const location = useLocation();
     useEffect(() => {
@@ -165,10 +165,15 @@ const Navbar = () => {
 
                         {/* Brochure button */}
                         <div className="hidden lg:flex items-center gap-2 text-right">
-                            <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                            <button 
+                            onClick={()=> navigate('/register')}
+                             className="flex items-center gap-2 px-3 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
+                                <span>Register</span>
+                            </button>
+                            {/* <a href={brochure} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition">
                                 <FaRegFileAlt className="text-lg" />
                                 <span>Brochure</span>
-                            </a>
+                            </a> */}
                             <button onClick={() => {
                                 setOpenDropdown(null);
                                 setIsOpen(false);
@@ -213,7 +218,7 @@ const Navbar = () => {
                         {navlist}
 
                         {/* Brochure in mobile */}
-
+{/* 
                         <a
                             href={brochure}
                             target="_blank"
@@ -222,7 +227,14 @@ const Navbar = () => {
                         >
                             <FaRegFileAlt className="text-lg" />
                             <span>Brochure</span>
-                        </a>
+                        </a> */}
+                          <button 
+                            onClick={()=>{ navigate('/register');
+                                 setIsOpen(false);
+                             } }
+                             className="mb-2 lg:mt-0 mt-2 flex justify-center items-center gap-2 px-5 py-2 rounded bg-gradient-to-r from-[#00C6FF] to-[#0047FF] text-white font-semibold shadow-md hover:scale-105 transition w-full">
+                                <span>Register</span>
+                            </button>
 
                         <button onClick={() => {
                             setOpenDropdown(null);

@@ -1,29 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-// import team2 from '../../assets/Image/team.png';
+
 import overview from '../../assets/Image/overviewbg.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ceo from '../../assets/Image/ceo.JPG'
-import cfo from '../../assets/Image/cfo.jpeg'
-import cmd from '../../assets/Image/cmd.jpeg'
-// import head from '../../assets/Image/head.jpeg'
-// import operation from '../../assets/Image/headoperation.png'
+// import ceo from '../../assets/Image/ceo.JPG'
+// import cfo from '../../assets/Image/cfo.jpeg'
+// import cmd from '../../assets/Image/cmd.jpeg'
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from "axios";
+import { Base_Url } from "../../API/Base_Url";
 const MobileOverview = () => {
+    const [data, setdata] = useState([])
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
+    const handleget = () => {
+        axios.get(`${Base_Url}api/team`).then(resp => {
+            console.log(resp.data.data)
+            setdata(resp.data.data)
+        })
+    }
+    useEffect(() => {
+        handleget();
+    }, [])
 
-    const team = [
-          { img: cmd, name: "Mr. Ishwar Singh Rathore", role: "CMD & Founder" },
-          { img: ceo, name: "Mr. Avinash Sharma", role: "CEO" },
-          { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
-        //   { img: head, name: "Mr. Hemant Sharma", role: " Head Finance" },
-        //   { img: operation, name: "Mr Akash Gupta", role: "Head Operations" },
-      ];
-  
+    // const team = [
+    //       { img: cmd, name: "Mr. Ishwar Singh Rathore", role: "CMD & Founder" },
+    //       { img: ceo, name: "Mr. Avinash Sharma", role: "CEO" },
+    //       { img: cfo, name: "Mr. Amit Kumar", role: "CFO" },
+
+    //   ];
+
 
 
 
@@ -36,7 +46,7 @@ const MobileOverview = () => {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
-    
+
     };
 
     return (
@@ -49,7 +59,7 @@ const MobileOverview = () => {
                             OVERVIEW OF COMPANY
                         </h2>
                         <p className="md:text-lg text-sm leading-relaxed lg:mb-0 mb-5">
-                             HOLSOL India Pvt. Ltd. is a green initiative by R S Group in the renewable energy segment.
+                            HOLSOL India Pvt. Ltd. is a green initiative by R S Group in the renewable energy segment.
 
                         </p>
 
@@ -59,17 +69,17 @@ const MobileOverview = () => {
                 {/* Right Side - Slider */}
                 <div className="col-span-8 flex items-center justify-center ">
                     <Slider {...settings} className="w-full">
-                        {team.map((member, index) => (
+                        {data.map((member, index) => (
                             <div key={index} className="text-center px-4">
                                 <img
-                                    src={member.img}
+                                    src={`${Base_Url}${member.image}`}
                                     alt={member.name}
                                     className="w-full lg:h-64 h-[320px] object-cover object-top rounded-lg"
                                 />
 
                                 <h3 className="text-white font-bold mt-4">{member.name}</h3>
                                 <p className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent text-sm font-semibold">
-                                    {member.role}
+                                    {member.designation}
                                 </p>
                             </div>
                         ))}

@@ -1,16 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { PhoneOutlined, MailOutlined } from "@ant-design/icons";
 import { FaWhatsapp } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from "axios";
+import { Base_Url } from "../../API/Base_Url";
 
 const Contact = () => {
-     useEffect(() => {
-              AOS.init({ duration: 1000 }); // duration in ms
-          }, []);
-    const phone = "+91 9257055583";
-    const whatsapp = "+91 9257055583";
-    const email = "info@holsolindia.com";
+    //data get
+    const [data, setdata] = useState([]);
+    const handleget = () => {
+        axios.get(`${Base_Url}api/contact`).then(resp => {
+            console.log(resp.data.data)
+            setdata(resp.data.data)
+        })
+    }
+    useEffect(() => {
+        handleget();
+    }, [])
+    useEffect(() => {
+        AOS.init({ duration: 1000 }); // duration in ms
+    }, []);
+    // const phone = "+91 9257055583";
+    // const whatsapp = "+91 9257055583";
+    // const email = "info@holsolindia.com";
     const mapEmbedSrc =
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.245217806453!2d75.73235777525845!3d26.861119576690184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db57add311b17%3A0x7039970c4300422b!2sRS%20group!5e0!3m2!1sen!2sin!4v1726069584863!5m2!1sen!2sin"; // Replace with your actual Google Maps embed link
 
@@ -67,10 +80,10 @@ const Contact = () => {
                                 <div className="text-left">
                                     <h3 className="text-lg font-medium">Phone</h3>
                                     <a
-                                        href={`tel:${phone}`}
+                                         href={`tel:+91${data?.phone}`}
                                         className="text-blue-600 hover:underline block"
                                     >
-                                        {phone}
+                                       +91 {data.phone}
                                     </a>
                                 </div>
                             </div>
@@ -83,12 +96,12 @@ const Contact = () => {
                                 <div className="text-left">
                                     <h3 className="text-lg font-medium">WhatsApp</h3>
                                     <a
-                                        href={`https://wa.me/${whatsapp.replace(/\D/g, "")}`}
+                                       href={`https://wa.me/91${data?.whatsapp?.replace(/\D/g, "")}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-blue-600 hover:underline block"
                                     >
-                                        {whatsapp}
+                                       +91 {data.whatsapp}
                                     </a>
                                 </div>
                             </div>
@@ -101,10 +114,10 @@ const Contact = () => {
                                 <div className="text-left">
                                     <h3 className="text-lg font-medium">Email</h3>
                                     <a
-                                        href={`mailto:${email}`}
+                                        href={`mailto:${data?.email}`}
                                         className="text-blue-600 hover:underline block"
                                     >
-                                        {email}
+                                        {data.email}
                                     </a>
                                 </div>
                             </div>
