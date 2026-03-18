@@ -10,9 +10,14 @@ import { Base_Url } from "../API/Base_Url";
 
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import popup from '../assets/Image/popup.jpeg'
+import sun from '../assets/Image/sun.jpg'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Popup = () => {
+   useEffect(() => {
+          AOS.init({ duration: 1000 }); // duration in ms
+      }, []);
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
   const [selectedState, setSelectedState] = useState("");
@@ -33,38 +38,38 @@ const Popup = () => {
   //   handleget();
   // }, [])
 
- const handlesubmit = async (e) => {
-  e.preventDefault();
+  const handlesubmit = async (e) => {
+    e.preventDefault();
 
-  let requestdata = {
-    name,
-    mobile,
-    state,
-    city,
-    pincode
+    let requestdata = {
+      name,
+      mobile,
+      state,
+      city,
+      pincode
+    };
+
+    try {
+      const res = await axios.post(`${Base_Url}api/enquiry`, requestdata);
+
+      if (res.data.success === true) {
+        toast.success(res.data.message);
+        navigate("/thankyou");
+        setShowPopup(false)
+      } else {
+        toast.error(res.data.message);
+      }
+    } catch (error) {
+      toast.error("Server error");
+      console.log(error);
+    }
   };
 
-  try {
-    const res = await axios.post(`${Base_Url}api/enquiry`, requestdata);
-
-    if (res.data.success === true) {
-      toast.success(res.data.message);
-      navigate("/thankyou");
-      setShowPopup(false)
-    } else {
-      toast.error(res.data.message);
-    }
-  } catch (error) {
-    toast.error("Server error");
-    console.log(error);
-  }
-};
 
 
-
-useEffect(() => {
-  setShowPopup(true);
-}, []);
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
   return (
     <>
       {showPopup && (
@@ -80,12 +85,15 @@ useEffect(() => {
             </button>
 
 
-            <div className="relative h-48 w-full">
-              <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" />
+            <div className="relative h-35 w-full">
+
+              {/* <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" /> */}
               {/* <img src={`${Base_Url}${data?.[0]?.image}`} alt="Solar Panel" className="h-full w-full object-cover" /> */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <div className="absolute bottom-4 left-6 text-white">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,_#000000,_#2E58BB)]"></div>
+              <img src={sun} className="h-20 absolute right-10 top-5" style={{ animation: "spin 10s linear infinite" }} />             <div className="absolute bottom-4 left-6 text-white">
+                
                 <div className="flex items-end space-x-2">
+
                   <img src={logo} alt="logo" className="h-[40px]" />
                   <h3 className="text-2xl font-bold">India</h3>
                 </div>
@@ -472,8 +480,5 @@ useEffect(() => {
 };
 
 export default Popup;
-
-
-
 
 
