@@ -10,6 +10,7 @@ import { Base_Url } from "../API/Base_Url";
 
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import popup from '../assets/Image/popup.jpeg'
 
 const Popup = () => {
   const navigate = useNavigate();
@@ -21,16 +22,16 @@ const Popup = () => {
   const [state, setstate] = useState("");
   const [city, setcity] = useState("");
   const [pincode, setpincode] = useState("");
-  const [data, setdata] = useState();
-  const handleget = () => {
-    axios.get(`${Base_Url}api/popup`).then(resp => {
-      console.log(resp.data)
-      setdata(resp.data.data)
-    })
-  }
-  useEffect(() => {
-    handleget();
-  }, [])
+  // const [data, setdata] = useState();
+  // const handleget = () => {
+  //   axios.get(`${Base_Url}api/popup`).then(resp => {
+  //     console.log(resp.data)
+  //     setdata(resp.data.data)
+  //   })
+  // }
+  // useEffect(() => {
+  //   handleget();
+  // }, [])
 
  const handlesubmit = async (e) => {
   e.preventDefault();
@@ -80,8 +81,8 @@ useEffect(() => {
 
 
             <div className="relative h-48 w-full">
-              {/* <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" /> */}
-              <img src={`${Base_Url}${data?.[0]?.image}`} alt="Solar Panel" className="h-full w-full object-cover" />
+              <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" />
+              {/* <img src={`${Base_Url}${data?.[0]?.image}`} alt="Solar Panel" className="h-full w-full object-cover" /> */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               <div className="absolute bottom-4 left-6 text-white">
                 <div className="flex items-end space-x-2">
