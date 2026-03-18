@@ -90,7 +90,7 @@ const Popup = () => {
               {/* <img src={popup} alt="Solar Panel" className="h-full w-full object-cover" /> */}
               {/* <img src={`${Base_Url}${data?.[0]?.image}`} alt="Solar Panel" className="h-full w-full object-cover" /> */}
               <div className="absolute inset-0 bg-[linear-gradient(to_right,_#000000,_#2E58BB)]"></div>
-              <img src={sun} className="h-20 absolute right-10 top-5" style={{ animation: "spin 10s linear infinite" }} />             <div className="absolute bottom-4 left-6 text-white">
+              <img src={sun} className="md:h-20 h-10 absolute right-10 md:top-5 top-3" style={{ animation: "spin 10s linear infinite" }} />             <div className="absolute bottom-4 left-6 text-white">
                 
                 <div className="flex items-end space-x-2">
 
